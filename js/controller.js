@@ -34,3 +34,5 @@ link.addEventListener('click', function (e) {
     }
   });
 });
+
+console.log('hello world');
