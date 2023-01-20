@@ -1,0 +1,47 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(10, [col-start] 1fr [col-end]);
+  grid-template-rows: 10rem min-content min-content;
+  overflow: hidden;
+
+  // 895px / 16px = 55.9375em to convert 895px to em
+  @media only screen and (max-width: 55.9375em) {
+    grid-template-rows: auto min-content min-content;
+  }
+}
+
+.header {
+  grid-column: col-start 1 / -1;
+}
+
+.recipe-item {
+  grid-column: col-start 1 / col-end 3;
+  min-height: 100vh;
+  background-color: #fff;
+  grid-row: 2/ 3;
+
+  // 1073px / 16 = 67.0625em to convert 1073px to em
+  @media screen and (max-width: 67.0625em) {
+    grid-column: col-start 1 / -1;
+  }
+}
+
+.recipe__container {
+  grid-column: col-start 4 / -1;
+  min-height: 100vh;
+  position: relative;
+  grid-row: 2/ 3;
+  transition: transform 0.3s linear;
+
+  // 1073px / 16 = 67.0625em to convert 1073px to em
+  @media screen and (max-width: 67.0625em) {
+    grid-column: col-start 1 / -1;
+  }
+}
+
+.hamburger__container {
+  grid-column: col-start 1 / col-end 1;
+  grid-row: 2/3;
+  align-self: start;
+  z-index: 3000;
+}

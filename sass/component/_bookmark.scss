@@ -1,0 +1,29 @@
+.bookmark {
+  width: 45rem;
+  max-height: 60rem;
+  overflow-y: auto;
+  background-color: #fff;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  padding: 1rem 0;
+  z-index: 6000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s 0.2s linear, visibility 0.3s 0.2s linear;
+
+  // 1073px / 16px = 67.0625em to convert 1073px to em
+  @media only screen and (max-width: 67.0625em) {
+    background-color: $color-grad-1;
+  }
+
+  // 532px / 16px = 33.25em to convert 532px to em
+  @media only screen and (max-width: 33.25em) {
+    width: 100%;
+  }
+
+  &:hover {
+    opacity: 1;
+    visibility: visible;
+  }
+}

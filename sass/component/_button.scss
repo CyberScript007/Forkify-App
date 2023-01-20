@@ -1,0 +1,100 @@
+.btn {
+  cursor: pointer;
+  border: 0;
+
+  &--gradient {
+    background-image: $gradient;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  &--bookmark:hover ~ .bookmark {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &--change {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10.5rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 5rem;
+    text-transform: capitalize;
+    color: $color-primary;
+    background-color: $color-grey-light-1;
+    transition: background-color 0.2s linear;
+
+    // 400px / 16px = 25em to convert 400px to em
+    @media only screen and (max-width: 25em) {
+      width: 12rem;
+    }
+
+    &:hover {
+      background-color: $color-grey-light-2;
+    }
+  }
+
+  &--recipe {
+    background-color: transparent;
+    transition: transform 0.2s linear;
+
+    &:hover {
+      transform: translateY(-0.2rem);
+    }
+  }
+
+  &--add-bookmark {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 100%;
+    background-image: $gradient;
+  }
+
+  &--change:focus,
+  &--recipe:focus,
+  &--add-bookmark {
+    outline: none;
+  }
+
+  &--link:link,
+  &--link:visited {
+    text-decoration: none;
+  }
+
+  &--direction {
+    padding: 1rem 3rem;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: #fff;
+    background-image: $gradient;
+  }
+
+  &--close-modal {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 2rem 4rem;
+    display: flex;
+    align-items: center;
+    background-image: $gradient;
+    border-radius: 5rem;
+    color: #fff;
+
+    @media screen and (max-width: 36.25em) {
+      padding: 1.5rem 3rem;
+    }
+
+    @media screen and (max-width: 19.1875em) {
+      font-size: 1.2rem;
+      padding: 1rem 2.5rem;
+    }
+  }
+}

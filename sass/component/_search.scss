@@ -1,0 +1,115 @@
+.search {
+  display: flex;
+
+  // 895px / 16px = 55.9375em to convert 895px to em
+  @media only screen and (max-width: 55.9375em) {
+    width: 100%;
+    order: 1;
+    align-self: flex-end;
+  }
+
+  &__input {
+    width: 43rem;
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    border-radius: 5rem;
+    font-family: inherit;
+    font-size: 1.8rem;
+    border: 0;
+    transition: outline 0.3s linear, transform 0.3s linear,
+      box-shadow 0.3s linear;
+
+    // 1400px / 16px = 71.25em to convert 1400px to em
+    @media only screen and (max-width: 71.25em) {
+      width: 39rem;
+    }
+
+    // 1080px / 16px = 67.5em to convert 1080px to em
+    @media only screen and (max-width: 67.5em) {
+      width: 34rem;
+      font-size: 1.6rem;
+    }
+
+    // 895px / 16px = 55.9375em to convert 895px to em
+    @media only screen and (max-width: 55.9375em) {
+      width: 100%;
+    }
+
+    // 500px / 16px = 31.25em to convert 500px to em
+    @media only screen and (max-width: 31.25em) {
+      font-size: 1.4rem;
+      padding: 1.5rem 2rem;
+    }
+
+    &:focus {
+      outline: none;
+      transform: translateY(-0.2rem);
+      box-shadow: 0.5rem 0.5rem 1rem $color-grey-light-3;
+    }
+
+    &::placeholder {
+      color: $color-grey-light-3;
+    }
+  }
+
+  &__btn {
+    width: 18rem;
+    border-radius: 5rem;
+    border: 0;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-left: -7rem;
+    transition: outline 0.3s linear, transform 0.3s linear,
+      box-shadow 0.3s linear;
+
+    // 1400px / 16px = 71.25em to convert 1400px to em
+    @media only screen and (max-width: 71.25em) {
+      width: 16rem;
+    }
+
+    // 1080px / 16px = 67.5em to convert 1080px to em
+    @media only screen and (max-width: 67.5em) {
+      width: 14rem;
+      font-size: 1.4rem;
+    }
+
+    // 920px / 16px = 57.5em to convert 92px to em
+    @media only screen and (max-width: 57.5em) {
+      width: 12rem;
+    }
+
+    // 895px / 16px = 55.9375em to convert 895px to em
+    @media only screen and (max-width: 55.9375em) {
+      width: 30%;
+    }
+
+    // 600px / 16px = 37.5em to convert 600px to em
+    @media only screen and (max-width: 37.5em) {
+      width: 45%;
+    }
+  }
+
+  &__icon {
+    // 920px / 16px = 57.5em to convert 92px to em
+    @media only screen and (max-width: 57.5em) {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    // 500px / 16px = 31.25em to convert 500px to em
+    @media only screen and (max-width: 31.25em) {
+      display: none;
+    }
+  }
+
+  &__input:focus ~ &__btn {
+    outline: none;
+    transform: translateY(-0.2rem);
+    box-shadow: 0.5rem 0.5rem 1rem $color-grey-light-3;
+  }
+}

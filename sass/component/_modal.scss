@@ -1,0 +1,116 @@
+.modal {
+  z-index: 8000;
+  background-color: #fff;
+  border-radius: 0.7rem;
+  padding: 5vh 6vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+  row-gap: 5vh;
+  column-gap: 3vw;
+  position: fixed;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  width: 80%;
+  max-height: 100%;
+  overflow-y: auto;
+  margin: 5vh auto;
+
+  // 612px / 16 = 38.25 to convert 612px to em
+  @media screen and (max-width: 38.25em) {
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  }
+
+  // 466px / 16 = 29.125em to convert 466px to em
+  @media screen and (max-width: 29.125em) {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+
+  &__close {
+    position: absolute;
+    height: 2rem;
+    right: 2rem;
+    top: 2rem;
+    font-size: 4rem;
+    color: $color-grey-dark-1;
+    border: 0;
+    overflow: hidden;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.2s linear;
+
+    &:focus {
+      outline: none;
+      color: $color-grey-dark-2;
+    }
+  }
+
+  &__btn {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    margin-bottom: 4vh;
+    background-image: $gradient;
+    background-clip: text;
+    color: transparent;
+  }
+
+  &__input-group {
+    display: grid;
+    grid-template-columns: [label-start] 10rem [label-end input-start] 1fr [input-end];
+    align-items: center;
+    row-gap: 4vh;
+    column-gap: 2vw;
+
+    &:not(:last-child) {
+      margin-bottom: 3vh;
+    }
+  }
+
+  &__label {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $color-grey-dark-2;
+
+    // 580px / 16 = 36.25em to convert 580px to em
+    @media screen and (max-width: 36.25em) {
+      grid-column: label-start/ input-end;
+    }
+  }
+
+  &__input {
+    padding: 1rem;
+    width: 100%;
+    font-family: inherit;
+    font-size: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1.5px solid $color-grey-light-2;
+    transition: all 0.2s ease;
+
+    // 580px / 16 = 36.25em to convert 580px to em
+    @media screen and (max-width: 36.25em) {
+      grid-column: label-start/ input-end;
+    }
+
+    &:focus {
+      background-color: $color-grey-light-1;
+      border: 1.5px solid $color-primary;
+      outline: none;
+    }
+
+    &::placeholder {
+      font-size: 1.5rem;
+      color: $color-grey-light-3;
+    }
+  }
+}

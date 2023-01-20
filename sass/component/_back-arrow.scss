@@ -1,0 +1,33 @@
+.back-arrow {
+  position: absolute;
+  z-index: 1500;
+  top: 0;
+  left: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  overflow: hidden;
+  transition: background-color 0.2s linear;
+
+  // 1073px / 16 = 67.0625em to convert 1073px to em
+  @media screen and (max-width: 67.0625em) {
+    display: flex;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+  }
+
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+  }
+}

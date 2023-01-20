@@ -1,0 +1,23 @@
+/**
+Media query manager
+- Big desktop
+- landscape tablet
+- portrait tablet
+- phone 
+- mini-phone
+1em is equal to 16px because hmtl element is the current element, the html font-size is 16px.
+
+To convert 16px to 1em it will be 16px / 1em.
+
+0-300px                     mini-phone 300px / 16px 
+300px - 600px               phone
+600px-900px                 portrait-tablet
+900px - 1200px              landscape-table  1200px / 16px = 75em
+1800px - infinite           big-desktop
+
+Using perfect media query
+1200px / 16px = 75em to convert 1200px to em
+1400px / 16px = 71.25em to convert 1400px to em
+
+
+**/

@@ -1,0 +1,51 @@
+.paragraphy {
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: $color-grey-dark-2;
+}
+
+.heading--1 {
+  font-size: 3.5rem;
+
+  // 1000px / 16px = 62.5em to convert 1000px to em
+  @media only screen and (max-width: 62.5em) {
+    font-size: 2.9rem;
+  }
+
+  // 800px / 16px = 50em to convert 800px to em
+  @media only screen and (max-width: 50em) {
+    font-size: 2.6rem;
+  }
+
+  // 300px / 16px = 18.75em to convert 300px to em
+  @media only screen and (max-width: 18.75em) {
+    font-size: 2.3rem;
+  }
+}
+
+.heading--2 {
+  font-size: 2rem;
+}
+
+.heading--3 {
+  font-size: 1.5rem;
+
+  // 100px / 16px = 62.5em to convert 100px to em
+  @media only screen and (max-width: 62.5em) {
+    font-size: 1.3rem;
+  }
+
+  // 415px / 16px = 25.9375em to convert 415px to em
+  @media only screen and (max-width: 25.9375em) {
+    font-size: 1.2rem;
+  }
+}
+
+.heading--4 {
+  font-size: 1.4rem;
+
+  // 1033px / 16px = 64.5625em to convert 1033px to em
+  @media only screen and (max-width: 64.5625em) {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forkify App</title>
+    <link rel="stylesheet" href="sass/main.scss" />
+    <script defer src="js/controller.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__container-logo">
+          <img src="img/logo.png" alt="Forkify app logo" class="header__logo" />
+        </div>
+        <form class="search">
+          <input
+            type="text"
+            class="search__input"
+            placeholder="Search over 1,000,000 recipes..."
+          />
+          <button class="btn search__btn btn--gradient">
+            <svg class="icon icon--white search__icon">
+              <use xlink:href="img/icons.svg#icon-search"></use>
+            </svg>
+            search
+          </button>
+        </form>
+        <div class="header__content">
+          <button class="btn header__btn add-recipe">
+            <svg class="icon icon--red">
+              <use xlink:href="img/icons.svg#icon-edit"></use>
+            </svg>
+            <h3 class="heading--3 header__text">add recipe</h3>
+          </button>
+          <button class="btn header__btn btn--bookmark">
+            <svg class="icon icon--red">
+              <use xlink:href="img/icons.svg#icon-bookmark"></use>
+            </svg>
+            <h3 class="heading--3 header__text">bookmarks</h3>
+          </button>
+          <ul class="bookmark">
+            <div class="error-message__container">
+              <div class="error-message">
+                <svg class="icon--red error-message__icon">
+                  <use xlink:href="img/icons.svg#icon-alert-triangle"></use>
+                </svg>
+                <p class="paragraphy">
+                  No bookmarks yet. Find a nice recipe and bookmark it ;)
+                </p>
+              </div>
+            </div>
+          </ul>
+        </div>
+      </header>
+      <aside class="recipe-item">
+        <ul class="recipe-item__list">
+          <div class="spinner__container">
+            <div class="spinner">
+              <svg class="icon--red spinner__icon animate">
+                <use xlink:href="img/icons.svg#icon-spinner"></use>
+              </svg>
+            </div>
+          </div>
+          <a href="#" class="recipe-item__link link">
+            <li class="recipe-item__details">
+              <figure class="recipe-item__container">
+                <img
+                  src="img/ronaldo.jpg"
+                  alt="Recipe item image"
+                  class="recipe-item__img"
+                />
+                <div
+                  class="background-blend recipe-item__background-blend"
+                ></div>
+              </figure>
+              <div class="recipe-item__content">
+                <h4 class="heading--4 recipe-item__title">avocado egg salad</h4>
+                <p class="recipe-item__text">two peas and their pod</p>
+              </div>
+            </li>
+          </a>
+        </ul>
+        <div class="pagination">
+          <button class="btn pagination__prev btn--change btn--pagination">
+            <svg class="icon icon--red">
+              <use xlink:href="img/icons.svg#icon-arrow-left"></use>
+            </svg>
+            page &nbsp; <span class="btn-count">1</span>
+          </button>
+          <button class="btn pagination__next btn--change btn--pagination">
+            page &nbsp; <span class="btn-count">2</span>
+            <svg class="icon icon--red">
+              <use xlink:href="img/icons.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </div>
+        <footer class="footer">
+          &copy; Copyright by
+          <a
+            href="https://github.com/busarishakrullahi"
+            class="footer__link"
+            target="_blank"
+            >Busari Shakrullahi</a
+          >. Use for learning or your portfolio. Don't use to teach. Don't claim
+          as your own.
+        </footer>
+      </aside>
+      <div class="recipe__container">
+        <main class="recipe">
+          <div class="spinner__container">
+            <div class="spinner animate">
+              <svg class="icon--red spinner__icon">
+                <use xlink:href="img/icons.svg#icon-spinner"></use>
+              </svg>
+            </div>
+          </div>
+          <div class="message__container">
+            <div class="message">
+              <svg class="icon--red message__icon">
+                <use xlink:href="img/icons.svg#icon-smile"></use>
+              </svg>
+              <p class="paragraphy">
+                Start by searching for a recipe or an ingredient. Have fun!
+              </p>
+            </div>
+          </div>
+          <figure class="recipe__container-img">
+            <button class="back-arrow">
+              <svg class="icon--white back-arrow__icon">
+                <use xlink:href="img/icons.svg#icon-arrow-left"></use>
+              </svg>
+            </button>
+            <!-- <div class="back-arrow">
+            </div> -->
+            <img src="img/champs.jpg" alt="recipe image" class="recipe__img" />
+            <div class="background-blend"></div>
+            <figcaption class="recipe__caption">
+              <h1 class="heading--1 recipe__title">
+                <span class="recipe__title--skew">
+                  cauliflower pizza crust(with bbq chicken pizza)
+                </span>
+              </h1>
+            </figcaption>
+          </figure>
+          <div class="recipe__details">
+            <div class="recipe__time">
+              <svg class="icon icon--red">
+                <use xlink:href="img/icons.svg#icon-clock"></use>
+              </svg>
+              <p class="recipe__text"><strong>75</strong> minutes</p>
+            </div>
+            <div class="recipe__update">
+              <div class="recipe__time">
+                <svg class="icon--red icon">
+                  <use xlink:href="img/icons.svg#icon-users"></use>
+                </svg>
+                <p class="recipe__text">
+                  <strong><span class="recipe__servings">4</span></strong>
+                  servings
+                </p>
+              </div>
+              <div class="recipe__counter-container">
+                <button class="btn btn--recipe recipe__counter">
+                  <svg class="recipe__icon icon--red icon">
+                    <use xlink:href="img/icons.svg#icon-minus-outline"></use>
+                  </svg>
+                </button>
+                <button class="btn btn--recipe recipe__counter">
+                  <svg class="recipe__icon icon--red icon">
+                    <use xlink:href="img/icons.svg#icon-plus-circle"></use>
+                  </svg>
+                </button>
+              </div>
+              <button class="btn recipe__bookmark btn--add-bookmark">
+                <svg class="icon--white icon">
+                  <use xlink:href="img/icons.svg#icon-bookmark"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="recipe__ingredients">
+            <h2 class="heading--2 recipe__heading-title">recipe ingredients</h2>
+            <ul class="recipe__ingredients-list">
+              <li class="recipe__ingredients-item">
+                <svg class="icon icon--red">
+                  <use xlink:href="img/icons.svg#icon-check"></use>
+                </svg>
+                <p class="recipe__ingredients-item__text">
+                  4 oz cream cheese room temperature
+                </p>
+              </li>
+              <li class="recipe__ingredients-item">
+                <svg class="icon icon--red">
+                  <use xlink:href="img/icons.svg#icon-check"></use>
+                </svg>
+                <p class="recipe__ingredients-item__text">1/4 cup mayonnaise</p>
+              </li>
+              <li class="recipe__ingredients-item">
+                <svg class="icon icon--red">
+                  <use xlink:href="img/icons.svg#icon-check"></use>
+                </svg>
+                <p class="recipe__ingredients-item__text">
+                  1/4 cup parmigiano reggiano grated
+                </p>
+              </li>
+              <li class="recipe__ingredients-item">
+                <svg class="icon icon--red">
+                  <use xlink:href="img/icons.svg#icon-check"></use>
+                </svg>
+                <p class="recipe__ingredients-item__text">
+                  1/2 cup mozzarella shredded/grated
+                </p>
+              </li>
+              <li class="recipe__ingredients-item">
+                <svg class="icon icon--red">
+                  <use xlink:href="img/icons.svg#icon-check"></use>
+                </svg>
+                <p class="recipe__ingredients-item__text">
+                  1/4 cup parmigiano reggiano grated
+                </p>
+              </li>
+              <li class="recipe__ingredients-item">
+                <svg class="icon icon--red">
+                  <use xlink:href="img/icons.svg#icon-check"></use>
+                </svg>
+                <p class="recipe__ingredients-item__text">
+                  2 tbsps black olives sliced
+                </p>
+              </li>
+            </ul>
+          </div>
+          <div class="recipe__cook">
+            <h2 class="heading--2 recipe__heading-title">how to cook it</h2>
+            <p class="recipe__cook-text">
+              This recipe was carefully designed and tested by
+              <strong> Closet Cooking</strong>. Please check out directions at
+              their website.
+            </p>
+            <div class="recipe__cook-direction">
+              <a
+                href="https://github.com/busarishakrullahi"
+                target="_blank"
+                class="btn btn--link btn--direction"
+              >
+                directions &nbsp;
+                <svg class="icon icon--white">
+                  <use xlink:href="img/icons.svg#icon-arrow-right"></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+    <form class="modal hidden">
+      <button class="modal__close">&times;</button>
+      <div class="modal__data">
+        <h2 class="heading--2 modal__title">recipe data</h2>
+        <div class="modal__ontainer">
+          <div class="modal__input-group">
+            <label class="modal__label"> Title </label>
+            <input
+              type="text"
+              name="title"
+              value="TEST23"
+              class="modal__input"
+            />
+          </div>
+          <div class="modal__input-group">
+            <label class="modal__label"> URL </label>
+            <input
+              type="url"
+              name="url"
+              value="TEST23344555"
+              class="modal__input"
+            />
+          </div>
+          <div class="modal__input-group">
+            <label class="modal__label"> Image URL </label>
+            <input
+              type="url"
+              name="image_url"
+              value="TEST23"
+              class="modal__input"
+            />
+          </div>
+          <div class="modal__input-group">
+            <label class="modal__label"> Publisher </label>
+            <input
+              type="text"
+              name="title"
+              value="TEST23"
+              class="modal__input"
+            />
+          </div>
+          <div class="modal__input-group">
+            <label class="modal__label"> Prep time </label>
+            <input
+              type="number"
+              name="prep_time"
+              value="23"
+              class="modal__input"
+            />
+          </div>
+          <div class="modal__input-group">
+            <label class="modal__label"> servings </label>
+            <input
+              type="number"
+              name="servings"
+              value="23"
+              class="modal__input"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="modal__data">
+        <h2 class="heading--2 modal__title">ingredients</h2>
+        <div class="modal__container">
+          <div class="modal__input-group">
+            <label class="modal__label"> Ingredients 1 </label>
+            <input
+              type="text"
+              name="ingredients_1"
+              value="0.5,kg,Rice"
+              class="modal__input"
+              placeholder="Format: 'Quantity,Unit,Description'"
+            />
+          </div>
+          <div class="modal__input-group">
+            <label class="modal__label"> Ingredients 2 </label>
+            <input
+              type="text"
+              name="ingredients_2"
+              value="1,,Avacado"
+              class="modal__input"
+              placeholder="Format: 'Quantity,Unit,Description'"
+            />
+          </div>
+          <div class="modal__input-group">
+            <label class="modal__label"> Ingredients 3 </label>
+            <input
+              type="text"
+              name="ingredients_3"
+              value=",,salt"
+              class="modal__input"
+              placeholder="Format: 'Quantity,Unit,Description'"
+            />
+          </div>
+          <div class="modal__input-group">
+            <label class="modal__label"> Ingredients 4 </label>
+            <input
+              type="text"
+              name="ingredients_4"
+              class="modal__input"
+              placeholder="Format: 'Quantity,Unit,Description'"
+            />
+          </div>
+          <div class="modal__input-group">
+            <label class="modal__label"> Ingredients 5 </label>
+            <input
+              type="text"
+              name="ingredients_5"
+              class="modal__input"
+              placeholder="Format: 'Quantity,Unit,Description'"
+            />
+          </div>
+          <div class="modal__input-group">
+            <label class="modal__label"> Ingredients 6 </label>
+            <input
+              type="text"
+              name="ingredients_6"
+              class="modal__input"
+              placeholder="Format: 'Quantity,Unit,Description'"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="modal__btn">
+        <button type="submit" class="btn btn--close-modal">
+          <svg class="icon icon--white">
+            <use xlink:href="img/icons.svg#icon-upload-cloud"></use>
+          </svg>
+          &nbsp;upload (disabled)
+        </button>
+      </div>
+    </form>
+  </body>
+</html>

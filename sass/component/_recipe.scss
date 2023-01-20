@@ -1,0 +1,218 @@
+.recipe {
+  &__container-img {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, [col-start] 1fr [col-end]);
+    grid-template-rows: repeat(8, [row-start] 7vh [row-end]);
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    grid-column: col-start 1 / -1;
+    grid-row: row-start 1 / -1;
+  }
+
+  &__caption {
+    grid-column: col-start 2 / col-start 8;
+    grid-row: row-start 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+
+  &__title {
+    transform: skewY(-4deg);
+    max-width: 45rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+
+    &--skew {
+      // display: inline-block;
+      background-image: $gradient;
+      padding: 1rem 1.5rem;
+      box-decoration-break: clone;
+    }
+  }
+
+  &__details {
+    display: flex;
+    justify-content: center;
+    padding: 6vh 6vw 4vh 6vw;
+    gap: 3vw;
+
+    // 537px / 16px = 33.5625em to convert 537px to em
+    @media only screen and (max-width: 33.5625em) {
+      gap: 1.5vw;
+    }
+
+    // 455px / 16px = 28.4375em to convert 450px to em
+    @media only screen and (max-width: 28.4375em) {
+      padding: 6vh 2vw 4vh 2vw;
+    }
+
+    // 335px / 16px = 20.9375em to convert 335px to em
+    @media only screen and (max-width: 20.9375em) {
+      flex-direction: column;
+    }
+  }
+
+  &__time {
+    display: flex;
+    gap: 1vw;
+    align-items: center;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-size: 1.8rem;
+    color: $color-grey-dark-1;
+
+    // 669px / 16px = 41.8125em to convert 669px to em
+    @media only screen and (max-width: 41.8125em) {
+      font-size: 1.5rem;
+    }
+
+    // 537px / 16px = 33.5625em to convert 537px to em
+    @media only screen and (max-width: 33.5625em) {
+      font-size: 1.3rem;
+    }
+  }
+
+  &__update {
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    width: 70%;
+
+    // 335px / 16px = 20.9375em to convert 335px to em
+    @media only screen and (max-width: 20.9375em) {
+      width: 100%;
+    }
+  }
+
+  &__counter-container {
+    display: flex;
+    align-items: center;
+    gap: 0.3vw;
+    margin-right: auto;
+  }
+
+  &__icon {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  &__heading-title {
+    text-align: center;
+    text-transform: uppercase;
+    color: $color-primary;
+    padding-bottom: 5vh;
+  }
+
+  // recipe-item
+
+  &-item {
+    display: flex;
+    flex-direction: column;
+    padding: 3rem 0;
+    transition: transform 0.4s linear;
+
+    &__list {
+      margin-bottom: auto;
+    }
+
+    &__link {
+      text-decoration: none;
+    }
+
+    &__details {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 2.5rem;
+      gap: 2rem;
+      cursor: pointer;
+      transition: background-color 0.3s linear, transform 0.3s linear;
+
+      // 290px / 16px = 18.125em to convert 290px to em
+      @media only screen and (max-width: 18.125em) {
+        flex-direction: column;
+      }
+
+      &:hover {
+        background-color: $color-grey-light-1;
+        transform: translateY(-0.3rem);
+      }
+    }
+
+    &__container {
+      position: relative;
+      width: 7rem;
+      height: 7rem;
+      border-radius: 100%;
+    }
+
+    &__background-blend {
+      border-radius: 100%;
+    }
+
+    &__img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 100%;
+    }
+
+    &__title {
+      text-transform: uppercase;
+      font-weight: 500;
+      color: $color-primary;
+    }
+
+    &__text {
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      color: $color-grey-dark-1;
+    }
+  }
+
+  &__ingredients {
+    padding: 8vh 7vw;
+    background-color: $color-grey-light-2;
+
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      column-gap: 3vw;
+      row-gap: 3vh;
+      list-style: none;
+    }
+
+    &-item {
+      display: flex;
+      gap: 1vw;
+      font-size: 1.5rem;
+      color: $color-grey-dark-1;
+    }
+  }
+
+  &__cook {
+    padding: 8vh 10vw;
+    text-align: center;
+
+    &-text {
+      font-size: 1.7rem;
+      color: $color-grey-dark-2;
+      padding-bottom: 4vh;
+    }
+
+    &-direction {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+    }
+  }
+}
