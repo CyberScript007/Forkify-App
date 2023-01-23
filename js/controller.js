@@ -55,7 +55,7 @@ aside.addEventListener('click', function (e) {
 
 const fetchRecipe = async function (id = '47746') {
   const res = await fetch(
-    `https://forkify-api.herokuapp.com/api/get?rId=47746`
+    `https://forkify-api.herokuapp.com/api/get?rId=${id}`
   );
   const data = await res.json();
 
@@ -190,15 +190,15 @@ const fetchRecipe = async function (id = '47746') {
   return markUp;
 };
 
-fetchRecipe();
+// fetchRecipe();
 
-// window.addEventListener('hashchange', function () {
-//   const id = window.location.hash.slice(1);
-//   if (!id) return;
+window.addEventListener('hashchange', function () {
+  const id = window.location.hash.slice(1);
+  if (!id) return;
 
-//   fetchRecipe(id);
-//   console.log(id);
-// });
+  fetchRecipe(id);
+  console.log(id);
+});
 
 // const showRecipe = function () {
 //   const id = window.location.hash;
