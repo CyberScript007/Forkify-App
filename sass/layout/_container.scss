@@ -19,6 +19,7 @@
   min-height: 100vh;
   background-color: #fff;
   grid-row: 2/ 3;
+  z-index: 5000;
 
   // 1073px / 16 = 67.0625em to convert 1073px to em
   @media screen and (max-width: 67.0625em) {
