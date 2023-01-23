@@ -190,7 +190,7 @@ const fetchRecipe = async function (id = '47746') {
   return markUp;
 };
 
-// fetchRecipe();
+fetchRecipe();
 
 // window.addEventListener('hashchange', function () {
 //   const id = window.location.hash.slice(1);
