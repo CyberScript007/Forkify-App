@@ -3,6 +3,11 @@ const link = document.querySelector('.link');
 const recipeContainer = document.querySelector('.recipe__container');
 const backArrow = document.querySelector('.back-arrow');
 
+recipeContainer.addEventListener('click', function (e) {
+  const backArrow = e.target.closest('.backArrow');
+  if (!backArrow) return;
+});
+
 backArrow.addEventListener('click', function () {
   recipeContainer.classList.add('recipe-hidden');
   recipeContainer.classList.remove('recipe-visible');
