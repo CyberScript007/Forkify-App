@@ -1,6 +1,7 @@
 import icon from 'url:./icons.svg';
 const aside = document.querySelector('.recipe-item');
 const recipeContainer = document.querySelector('.recipe__container');
+const recipe = document.querySelector('.recipe');
 
 /**
   Hide recipe container when you click on back arrow
@@ -181,8 +182,8 @@ const fetchRecipe = async function (id = '41470') {
       </a>
     </div>
   </div>`;
-  recipeContainer.innerHTML = '';
-  const markUp = recipeContainer.insertAdjacentHTML('afterend', html);
+  recipe.innerHTML = '';
+  const markUp = recipe.insertAdjacentHTML('afterend', html);
   return markUp;
 };
 
