@@ -4,7 +4,7 @@ const recipeContainer = document.querySelector('.recipe__container');
 const backArrow = document.querySelector('.back-arrow');
 
 recipeContainer.addEventListener('click', function (e) {
-  const backArrow = e.target.closest('.backArrow');
+  const backArrow = e.target.closest('.back-arrow');
   if (!backArrow) return;
   console.log(backArrow);
 });
