@@ -1,13 +1,15 @@
 const aside = document.querySelector('.recipe-item');
 const link = document.querySelector('.link');
 const recipeContainer = document.querySelector('.recipe__container');
-const backArrow = document.querySelector('.back-arrow');
+const backArrow = recipeContainer.querySelector('.back-arrow');
 
 recipeContainer.addEventListener('click', function (e) {
   const backArrow = e.target.closest('.back-arrow');
   if (!backArrow) return;
   console.log(backArrow);
 });
+
+console.log(backArrow);
 
 // backArrow.addEventListener('click', function () {
 //   recipeContainer.classList.add('recipe-hidden');
