@@ -56,8 +56,8 @@ const fetchRecipe = async function (id = '47746') {
   const res = await fetch(
     `https://forkify-api.herokuapp.com/api/get?rId=${id}`
   );
-  const data = await res.json();
-  console.log(data);
+  const recipe = await res.json();
+  console.log(recipe);
 
   const html = `
   <figure class="recipe__container-img">
@@ -66,12 +66,12 @@ const fetchRecipe = async function (id = '47746') {
         <use xlink:href="${icon}#icon-arrow-left"></use>
       </svg>
     </button>
-    <img src= "${data.image_url}" alt="recipe image" class="recipe__img" />
+    <img src= "${recipe.image_url}" alt="recipe image" class="recipe__img" />
     <div class="background-blend"></div>
     <figcaption class="recipe__caption">
       <h1 class="heading--1 recipe__title">
         <span class="recipe__title--skew">
-          ${data.title}
+          ${recipe.title}
         </span>
       </h1>
     </figcaption>
@@ -167,12 +167,12 @@ const fetchRecipe = async function (id = '47746') {
     <h2 class="heading--2 recipe__heading-title">how to cook it</h2>
     <p class="recipe__cook-text">
       This recipe was carefully designed and tested by
-      <strong> ${data.publisher}</strong>. Please check out directions at
+      <strong> ${recipe.publisher}</strong>. Please check out directions at
       their website.
     </p>
     <div class="recipe__cook-direction">
       <a
-        href="${data.source_url}"
+        href="${recipe.source_url}"
         target="_blank"
         class="btn btn--link btn--direction"
       >
