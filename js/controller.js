@@ -1,7 +1,7 @@
 const aside = document.querySelector('.recipe-item');
 const link = document.querySelector('.link');
 const recipeContainer = document.querySelector('.recipe__container');
-const backArrow = recipeContainer.querySelector('.back-arrow');
+const backArrow = recipeContainer.closest('.back-arrow');
 
 recipeContainer.addEventListener('click', function (e) {
   const backArrow = e.target.closest('.back-arrow');
