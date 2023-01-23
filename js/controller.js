@@ -50,10 +50,17 @@ aside.addEventListener('click', function (e) {
 
 // https://forkify-api.herokuapp.com/api/get?rId=47746
 
-const showRecipe = function () {
+window.addEventListener('hashchange', function () {
   const id = window.location.hash;
   if (!id) return;
   console.log(id);
-};
+});
 
-showRecipe();
+// const showRecipe = function () {
+//   const id = window.location.hash;
+//   if (!id) return;
+//   console.log(id);
+
+// };
+
+// showRecipe();
