@@ -1,4 +1,4 @@
-import icon from 'url: ../img/icons.svg';
+import icon from 'url:../img/icons.svg';
 const aside = document.querySelector('.recipe-item');
 const recipeContainer = document.querySelector('.recipe__container');
 const recipe = document.querySelector('.recipe');
