@@ -7,6 +7,11 @@ recipeContainer.addEventListener('click', function (e) {
   const backArrow = e.target.closest('.back-arrow');
   if (!backArrow) return;
   console.log(backArrow);
+  if (backArrow) {
+    recipeContainer.classList.add('recipe-hidden');
+    recipeContainer.classList.remove('recipe-visible');
+    aside.classList.remove('sidebar-hidden');
+  }
 });
 
 console.log(backArrow);
