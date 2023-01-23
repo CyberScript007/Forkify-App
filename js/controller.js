@@ -54,7 +54,7 @@ aside.addEventListener('click', function (e) {
 
 const fetchRecipe = async function (id = '47746') {
   const res = await fetch(
-    `https://forkify-api.herokuapp.com/api/get?rId=${id}`
+    `https://forkify-api.herokuapp.com/api/get?rId=47746`
   );
   const data = await res.json();
   console.log(data);
