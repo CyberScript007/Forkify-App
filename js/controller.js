@@ -59,6 +59,8 @@ const fetchRecipe = async function (id = '47746') {
   );
   const data = await res.json();
 
+  console.log(data.image_url);
+
   console.log(data);
 
   const html = `
