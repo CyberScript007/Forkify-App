@@ -51,7 +51,7 @@ aside.addEventListener('click', function (e) {
 // https://forkify-api.herokuapp.com/api/get?rId=47746
 
 window.addEventListener('hashchange', function () {
-  const id = window.location.hash;
+  const id = window.location.hash.slice(1);
   if (!id) return;
   console.log(id);
 });
