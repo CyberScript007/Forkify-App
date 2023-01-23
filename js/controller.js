@@ -1,3 +1,4 @@
+import icon from 'url:./icons.svg';
 const aside = document.querySelector('.recipe-item');
 const recipeContainer = document.querySelector('.recipe__container');
 
@@ -60,7 +61,7 @@ const fetchRecipe = async function (id = '41470') {
   <figure class="recipe__container-img">
     <button class="back-arrow">
       <svg class="icon--white back-arrow__icon">
-        <use xlink:href="img/icons.svg#icon-arrow-left"></use>
+        <use xlink:href="img/${icon}#icon-arrow-left"></use>
       </svg>
     </button>
     <img src= "img/${data.image_url}" alt="recipe image" class="recipe__img" />
@@ -76,14 +77,14 @@ const fetchRecipe = async function (id = '41470') {
   <div class="recipe__details">
     <div class="recipe__time">
       <svg class="icon icon--red">
-        <use xlink:href="img/icons.svg#icon-clock"></use>
+        <use xlink:href="img/${icon}#icon-clock"></use>
       </svg>
       <p class="recipe__text"><strong>75</strong> minutes</p>
     </div>
     <div class="recipe__update">
       <div class="recipe__time">
         <svg class="icon--red icon">
-          <use xlink:href="img/icons.svg#icon-users"></use>
+          <use xlink:href="img/${icon}#icon-users"></use>
         </svg>
         <p class="recipe__text">
           <strong><span class="recipe__servings">4</span></strong>
@@ -93,18 +94,18 @@ const fetchRecipe = async function (id = '41470') {
       <div class="recipe__counter-container">
         <button class="btn btn--recipe recipe__counter">
           <svg class="recipe__icon icon--red icon">
-            <use xlink:href="img/icons.svg#icon-minus-outline"></use>
+            <use xlink:href="img/${icon}#icon-minus-outline"></use>
           </svg>
         </button>
         <button class="btn btn--recipe recipe__counter">
           <svg class="recipe__icon icon--red icon">
-            <use xlink:href="img/icons.svg#icon-plus-circle"></use>
+            <use xlink:href="img/${icon}#icon-plus-circle"></use>
           </svg>
         </button>
       </div>
       <button class="btn recipe__bookmark btn--add-bookmark">
         <svg class="icon--white icon">
-          <use xlink:href="img/icons.svg#icon-bookmark"></use>
+          <use xlink:href="img/${icon}#icon-bookmark"></use>
         </svg>
       </button>
     </div>
@@ -114,7 +115,7 @@ const fetchRecipe = async function (id = '41470') {
     <ul class="recipe__ingredients-list">
       <li class="recipe__ingredients-item">
         <svg class="icon icon--red">
-          <use xlink:href="img/icons.svg#icon-check"></use>
+          <use xlink:href="img/${icon}#icon-check"></use>
         </svg>
         <p class="recipe__ingredients-item__text">
           4 oz cream cheese room temperature
@@ -122,13 +123,13 @@ const fetchRecipe = async function (id = '41470') {
       </li>
       <li class="recipe__ingredients-item">
         <svg class="icon icon--red">
-          <use xlink:href="img/icons.svg#icon-check"></use>
+          <use xlink:href="img/${icon}#icon-check"></use>
         </svg>
         <p class="recipe__ingredients-item__text">1/4 cup mayonnaise</p>
       </li>
       <li class="recipe__ingredients-item">
         <svg class="icon icon--red">
-          <use xlink:href="img/icons.svg#icon-check"></use>
+          <use xlink:href="img/${icon}#icon-check"></use>
         </svg>
         <p class="recipe__ingredients-item__text">
           1/4 cup parmigiano reggiano grated
@@ -136,7 +137,7 @@ const fetchRecipe = async function (id = '41470') {
       </li>
       <li class="recipe__ingredients-item">
         <svg class="icon icon--red">
-          <use xlink:href="img/icons.svg#icon-check"></use>
+          <use xlink:href="img/${icon}#icon-check"></use>
         </svg>
         <p class="recipe__ingredients-item__text">
           1/2 cup mozzarella shredded/grated
@@ -144,7 +145,7 @@ const fetchRecipe = async function (id = '41470') {
       </li>
       <li class="recipe__ingredients-item">
         <svg class="icon icon--red">
-          <use xlink:href="img/icons.svg#icon-check"></use>
+          <use xlink:href="img/${icon}#icon-check"></use>
         </svg>
         <p class="recipe__ingredients-item__text">
           1/4 cup parmigiano reggiano grated
@@ -152,7 +153,7 @@ const fetchRecipe = async function (id = '41470') {
       </li>
       <li class="recipe__ingredients-item">
         <svg class="icon icon--red">
-          <use xlink:href="img/icons.svg#icon-check"></use>
+          <use xlink:href="img/${icon}#icon-check"></use>
         </svg>
         <p class="recipe__ingredients-item__text">
           2 tbsps black olives sliced
@@ -175,7 +176,7 @@ const fetchRecipe = async function (id = '41470') {
       >
         directions &nbsp;
         <svg class="icon icon--white">
-          <use xlink:href="img/icons.svg#icon-arrow-right"></use>
+          <use xlink:href="img/${icon}#icon-arrow-right"></use>
         </svg>
       </a>
     </div>
