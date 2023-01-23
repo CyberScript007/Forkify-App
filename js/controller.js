@@ -52,7 +52,7 @@ aside.addEventListener('click', function (e) {
 
 // https://forkify-api.herokuapp.com/api/get?rId=47746
 
-const fetchRecipe = async function (id = '41470') {
+const fetchRecipe = async function (id = '47746') {
   const res = await fetch(
     `https://forkify-api.herokuapp.com/api/get?rId=${id}`
   );
