@@ -64,7 +64,7 @@ const fetchRecipe = async function (id = '41470') {
         <use xlink:href="img/${icon}#icon-arrow-left"></use>
       </svg>
     </button>
-    <img src= "img/${data.image_url}" alt="recipe image" class="recipe__img" />
+    <img src= "${data.image_url}" alt="recipe image" class="recipe__img" />
     <div class="background-blend"></div>
     <figcaption class="recipe__caption">
       <h1 class="heading--1 recipe__title">
