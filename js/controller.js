@@ -39,6 +39,7 @@ link.addEventListener('click', function (e) {
 
 const showRecipe = function () {
   const id = window.location.hash;
+  if (!id) return;
   console.log(id);
 };
 
