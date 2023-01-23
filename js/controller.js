@@ -1,7 +1,5 @@
 const aside = document.querySelector('.recipe-item');
-const link = document.querySelector('.link');
 const recipeContainer = document.querySelector('.recipe__container');
-const backArrow = recipeContainer.closest('.back-arrow');
 
 recipeContainer.addEventListener('click', function (e) {
   const backArrow = e.target.closest('.back-arrow');
@@ -14,7 +12,16 @@ recipeContainer.addEventListener('click', function (e) {
   }
 });
 
-console.log(backArrow);
+aside.addEventListener('click', function (e) {
+  const link = e.target.closest('.link');
+  if (!link) return;
+  console.log(link);
+  if (link && window.innerWidth <= Number.parseInt('1073px')) {
+    recipeContainer.classList.remove('recipe-hidden');
+    recipeContainer.classList.add('recipe-visible');
+    aside.classList.add('sidebar-hidden');
+  }
+});
 
 // backArrow.addEventListener('click', function () {
 //   recipeContainer.classList.add('recipe-hidden');
