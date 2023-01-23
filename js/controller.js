@@ -34,3 +34,12 @@ link.addEventListener('click', function (e) {
     }
   });
 });
+
+// https://forkify-api.herokuapp.com/api/get?rId=47746
+
+const showRecipe = function () {
+  const id = window.location.hash;
+  console.log(id);
+};
+
+showRecipe();
