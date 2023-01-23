@@ -12,6 +12,7 @@
   }
 
   &--bookmark:hover ~ .bookmark {
+    display: block;
     opacity: 1;
     visibility: visible;
   }
