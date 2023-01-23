@@ -8,11 +8,11 @@ recipeContainer.addEventListener('click', function (e) {
   if (!backArrow) return;
 });
 
-backArrow.addEventListener('click', function () {
-  recipeContainer.classList.add('recipe-hidden');
-  recipeContainer.classList.remove('recipe-visible');
-  aside.classList.remove('sidebar-hidden');
-});
+// backArrow.addEventListener('click', function () {
+//   recipeContainer.classList.add('recipe-hidden');
+//   recipeContainer.classList.remove('recipe-visible');
+//   aside.classList.remove('sidebar-hidden');
+// });
 
 link.addEventListener('click', function (e) {
   if (window.innerWidth <= Number.parseInt('1073px')) {
