@@ -6,6 +6,7 @@ const backArrow = document.querySelector('.back-arrow');
 recipeContainer.addEventListener('click', function (e) {
   const backArrow = e.target.closest('.backArrow');
   if (!backArrow) return;
+  console.log(backArrow);
 });
 
 // backArrow.addEventListener('click', function () {
