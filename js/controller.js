@@ -14,13 +14,13 @@ recipeContainer.addEventListener('click', function (e) {
 //   aside.classList.remove('sidebar-hidden');
 // });
 
-link.addEventListener('click', function (e) {
-  if (window.innerWidth <= Number.parseInt('1073px')) {
-    recipeContainer.classList.remove('recipe-hidden');
-    recipeContainer.classList.add('recipe-visible');
-    aside.classList.add('sidebar-hidden');
-  }
-});
+// link.addEventListener('click', function (e) {
+//   if (window.innerWidth <= Number.parseInt('1073px')) {
+//     recipeContainer.classList.remove('recipe-hidden');
+//     recipeContainer.classList.add('recipe-visible');
+//     aside.classList.add('sidebar-hidden');
+//   }
+// });
 
 ['load', 'resize'].forEach(function (i) {
   window.addEventListener(i, function () {
