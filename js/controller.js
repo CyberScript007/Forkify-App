@@ -15,13 +15,11 @@ const showRecipe = async function () {
 
   // 4) Rendering recipe view to user interface
   RecipeView.render(recipeData);
-
-  // 5) Calling recipe handler to pass the recipe promise (fetchRecipe) as an argument
-  RecipeView.recipeHandler(recipeData);
 };
 
 // initialization function: get call when ever the page load
 const init = function () {
-  showRecipe();
+  // 1) Calling recipe handler to pass the recipe promise (fetchRecipe) as an argument
+  RecipeView.recipeHandler(recipeData);
 };
 init();
