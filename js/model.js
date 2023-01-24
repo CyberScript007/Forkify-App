@@ -17,7 +17,7 @@ export const state = {
 export const fetchRecipe = async function (id) {
   try {
     const res = await Promise.race([
-      fetch(`https://forkify-api.herokuapp.com/api/get?rId=${id}`),
+      fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${id}`),
       rejectPromise(30),
     ]);
 
