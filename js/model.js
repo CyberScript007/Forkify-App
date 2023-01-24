@@ -14,11 +14,11 @@ export const fetchRecipe = async function (id) {
       fetch(`https://forkify-api.herokuapp.com/api/get?rId=${id}`),
       rejectPromise(10),
     ]);
-    console.log(res);
+
     const data = await res.json();
     console.log(data);
-    const { recipe } = data;
-    console.log(recipe);
+    // const { recipe } = data;
+    // console.log(recipe);
   } catch (e) {
     console.log(e.message);
   }
