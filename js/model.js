@@ -4,8 +4,8 @@
 const rejectPromise = setTimeout(function (sec) {
   return new Promise(function (_, reject) {
     reject('The request take too long time 💥💥💥');
-  }, 1000 * sec);
-});
+  });
+}, 1000 * sec);
 
 // Consuming a recipe promise
 export const fetchRecipe = async function (id) {
