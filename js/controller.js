@@ -13,6 +13,7 @@ window.addEventListener('hashchange', function () {
 const showRecipe = async function () {
   // 1) getting value from url that contain hash
   const id = window.location.hash;
+  console.log(id);
 
   // 2) if the url does not contain hash return
   if (!id) return;
