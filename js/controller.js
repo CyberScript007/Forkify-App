@@ -5,7 +5,7 @@ import responsiveView from './views/responsiveView.js';
 // Rendering recipe view
 const showRecipe = async function () {
   // 1) getting value from url that contain hash
-  const id = window.location.hash;
+  const id = window.location.hash.slice(1);
   console.log(id);
 
   // 2) if the url does not contain hash return
