@@ -29,7 +29,7 @@ export const fetchRecipe = async function (id) {
 
     // renaming the data
     const recipeData = {
-      imageUrl: recipe.imgage_url,
+      imageUrl: recipe.image_url,
       ingredients: recipe.ingredients,
       publisher: recipe.publisher,
       publisherUrl: recipe.publisher_url,
