@@ -17,12 +17,16 @@ export const fetchRecipe = async function (id) {
       rejectPromise(30),
     ]);
 
-    console.log(res);
+    // rejecting the promise if response.ok is not true
     if (!res.ok) throw new Error(`${res.status} bad request 💥💥💥`);
+
+    // storing data
     const data = await res.json();
 
+    // destructing the data
     const { recipe } = data;
 
+    // renaming the data
     const recipeData = {
       imageUrl: recipe.imgage_url,
       ingredients: recipe.ingredients,
@@ -33,6 +37,7 @@ export const fetchRecipe = async function (id) {
       title: recipe.title,
     };
     console.log(recipeData);
+    return recipeData;
   } catch (e) {
     console.log(e.message);
   }

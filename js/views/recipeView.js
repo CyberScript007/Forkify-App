@@ -13,6 +13,7 @@ class RecipeView {
 
   recipeHandler(handler) {
     ['load', 'hashchange'].forEach(i => window.addEventListener(i, handler));
+    console.log('welcome');
   }
 
   #clear() {
