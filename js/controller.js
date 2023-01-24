@@ -20,6 +20,6 @@ const showRecipe = async function () {
 // initialization function: get call when ever the page load
 const init = function () {
   // 1) Calling recipe handler to pass the recipe promise (fetchRecipe) as an argument
-  // RecipeView.recipeHandler(showRecipe);
+  RecipeView.recipeHandler(showRecipe);
 };
 init();
