@@ -1,11 +1,11 @@
 // https://forkify-api.herokuapp.com/api/get?rId=47746
 
 // Building of a reject promise
-const rejectPromise = setTimeout(function (sec) {
+const rejectPromise = function (sec) {
   return new Promise(function (_, reject) {
-    reject('The request take too long time 💥💥💥');
+    setTimeout(reject('The request take too long time 💥💥💥'), sec);
   });
-}, 1000 * sec);
+};
 
 // Consuming a recipe promise
 export const fetchRecipe = async function (id) {
