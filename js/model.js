@@ -18,9 +18,20 @@ export const fetchRecipe = async function (id) {
     ]);
 
     console.log(res);
+    if (!res.ok) throw new Error(`${res.status} bad request 💥💥💥`);
     const data = await res.json();
-    console.log(data);
+
     const { recipe } = data;
+
+    recipe = {
+      imageUrl: recipe.imgage_url,
+      ingredients: recipe.ingredients,
+      publisher: recipe.publisher,
+      publisherUrl: recipe.publisher_url,
+      recipeId: recipe.recipe_id,
+      sourceUrl: recipe.source_url,
+      title: recipe.title,
+    };
     console.log(recipe);
   } catch (e) {
     console.log(e.message);
