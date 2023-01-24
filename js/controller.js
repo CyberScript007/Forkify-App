@@ -185,7 +185,7 @@ const fetchRecipe = async function (id = '47746') {
       </a>
     </div>
   </div>`;
-  recipeContainer.innerHTML = '';
+  recipeEl.innerHTML = '';
   const markUp = recipeEl.insertAdjacentHTML('afterend', html);
   return markUp;
 };
