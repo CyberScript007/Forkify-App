@@ -9,6 +9,10 @@ const rejectPromise = function (sec) {
   });
 };
 
+export const state = {
+  recipe: {},
+};
+
 // Consuming a recipe promise
 export const fetchRecipe = async function (id) {
   try {
@@ -25,10 +29,9 @@ export const fetchRecipe = async function (id) {
 
     // destructing the data
     const { recipe } = data;
-    console.log(recipe);
 
     // renaming the data
-    const recipeData = {
+    state.recipe = {
       imageUrl: recipe.image_url,
       ingredients: recipe.ingredients,
       publisher: recipe.publisher,
@@ -37,8 +40,7 @@ export const fetchRecipe = async function (id) {
       sourceUrl: recipe.source_url,
       title: recipe.title,
     };
-    console.log(recipeData);
-    return recipeData;
+    console.log(state.recipe);
   } catch (e) {
     console.log(e.message);
   }

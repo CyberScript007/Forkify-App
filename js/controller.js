@@ -1,5 +1,5 @@
 import RecipeView from './views/recipeView.js';
-import { fetchRecipe } from './model.js';
+import * as model from './model.js';
 import responsiveView from './views/responsiveView.js';
 
 // Rendering recipe view
@@ -11,15 +11,15 @@ const showRecipe = async function () {
   if (!id) return;
 
   // 3) passing hash value to the recipe promise (fetchRecipe)
-  const recipeData = await fetchRecipe(id);
+  await fetchRecipe(id);
 
   // 4) Rendering recipe view to user interface
-  RecipeView.render(recipeData);
+  RecipeView.render(model.state.recipe);
 };
 
 // initialization function: get call when ever the page load
 const init = function () {
   // 1) Calling recipe handler to pass the recipe promise (fetchRecipe) as an argument
-  RecipeView.recipeHandler(recipeData);
+  RecipeView.recipeHandler(showRecipe);
 };
 init();
