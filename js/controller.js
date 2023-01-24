@@ -11,7 +11,7 @@ const showRecipe = async function () {
   if (!id) return;
 
   // 3) passing hash value to the recipe promise (fetchRecipe)
-  await fetchRecipe(id);
+  await model.fetchRecipe(id);
 
   // 4) Rendering recipe view to user interface
   RecipeView.render(model.state.recipe);
