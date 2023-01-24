@@ -28,12 +28,12 @@ class RecipeView {
         <use xlink:href="${icon}#icon-arrow-left"></use>
       </svg>
     </button>
-    <img src= "${recipe.image_url}" alt="recipe image" class="recipe__img" />
+    <img src= "${this.#data.imageUrl}" alt="recipe image" class="recipe__img" />
     <div class="background-blend"></div>
     <figcaption class="recipe__caption">
       <h1 class="heading--1 recipe__title">
         <span class="recipe__title--skew">
-          ${recipe.title}
+          ${this.#data.title}
         </span>
       </h1>
     </figcaption>
@@ -91,12 +91,12 @@ class RecipeView {
     <h2 class="heading--2 recipe__heading-title">how to cook it</h2>
     <p class="recipe__cook-text">
       This recipe was carefully designed and tested by
-      <strong> ${recipe.publisher}</strong>. Please check out directions at
+      <strong> ${this.#data.publisher}</strong>. Please check out directions at
       their website.
     </p>
     <div class="recipe__cook-direction">
       <a
-        href="${recipe.source_url}"
+        href="${this.#data.sourceUrl}"
         target="_blank"
         class="btn btn--link btn--direction"
       >
