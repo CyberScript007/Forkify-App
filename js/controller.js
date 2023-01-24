@@ -19,10 +19,10 @@ const showRecipe = async function () {
   if (!id) return;
 
   // 3) passing hash value to the recipe promise (fetchRecipe)
-  await fetchRecipe(id);
+  const recipeData = await fetchRecipe(id);
 
   // 4) Calling recipe handler to pass the recipe promise (fetchRecipe) as an argument
-  RecipeView.recipeHandler(fetchRecipe(id));
+  RecipeView.recipeHandler(recipeData);
 };
 
 // initialization function: get call when ever the page load
