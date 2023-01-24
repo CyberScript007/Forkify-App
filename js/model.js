@@ -23,7 +23,7 @@ export const fetchRecipe = async function (id) {
 
     const { recipe } = data;
 
-    recipe = {
+    const recipeData = {
       imageUrl: recipe.imgage_url,
       ingredients: recipe.ingredients,
       publisher: recipe.publisher,
@@ -32,7 +32,7 @@ export const fetchRecipe = async function (id) {
       sourceUrl: recipe.source_url,
       title: recipe.title,
     };
-    console.log(recipe);
+    console.log(recipeData);
   } catch (e) {
     console.log(e.message);
   }
