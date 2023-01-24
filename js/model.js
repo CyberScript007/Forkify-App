@@ -3,7 +3,9 @@
 // Building of a reject promise
 const rejectPromise = function (sec) {
   return new Promise(function (_, reject) {
-    reject('The request take too long time 💥💥💥');
+    setTimeout(function () {
+      reject(new Error('The request took too long 💥💥💥'));
+    }, 1000 * sec);
   });
 };
 
@@ -14,9 +16,6 @@ export const fetchRecipe = async function (id) {
       fetch(`https://forkify-api.herokuapp.com/api/get?rId=${id}`),
       rejectPromise(),
     ]);
-    // const res = await fetch(
-    //   `https://forkify-api.herokuapp.com/api/get?rId=${id}`
-    // );
 
     console.log(res);
     const data = await res.json();
