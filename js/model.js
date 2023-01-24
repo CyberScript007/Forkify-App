@@ -26,10 +26,9 @@ export const fetchRecipe = async function (id) {
 
     // storing data
     const data = await res.json();
-    console.log(data);
 
     // destructing the data
-    const { recipe } = data;
+    const { recipe } = data.data;
     console.log(recipe);
 
     // renaming the data
