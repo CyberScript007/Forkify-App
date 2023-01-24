@@ -2,14 +2,7 @@ import RecipeView from './views/recipeView.js';
 import { fetchRecipe } from './model.js';
 import responsiveView from './views/responsiveView.js';
 
-window.addEventListener('hashchange', function () {
-  const id = window.location.hash.slice(1);
-  if (!id) return;
-
-  fetchRecipe(id);
-  console.log(id);
-});
-
+// Rendering recipe view
 const showRecipe = async function () {
   // 1) getting value from url that contain hash
   const id = window.location.hash;

@@ -16,6 +16,7 @@ export const fetchRecipe = async function (id) {
     ]);
     console.log(res);
     const data = await res.json();
+    console.log(data);
     const { recipe } = data;
     console.log(recipe);
   } catch (e) {
