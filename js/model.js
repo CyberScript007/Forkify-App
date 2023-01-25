@@ -42,7 +42,11 @@ export const fetchSearchRecipe = async function (query) {
     const data = await helperFetchSearchRecipe(query);
 
     const { recipes } = data.data;
-    console.log(recipes);
+
+    const recipesData = {
+      recipe: recipes.map(),
+    };
+    console.log(state.search.query);
   } catch (err) {
     throw err;
   }
