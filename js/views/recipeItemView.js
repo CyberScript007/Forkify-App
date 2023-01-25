@@ -5,7 +5,9 @@ class RecipeItemView extends View {
   _parentEl = document.querySelector('.recipe-item__list');
 
   _generateHtml() {
-    this._data.forEach(i => {
+    return `
+
+    ${this._data.forEach(i => {
       console.log(i);
       `
         <a href="#${i.id}" class="recipe-item__link link">
@@ -27,7 +29,8 @@ class RecipeItemView extends View {
             </li>
         </a>
         `;
-    });
+    })};
+     `;
   }
 }
 

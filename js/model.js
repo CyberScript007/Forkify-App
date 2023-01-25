@@ -47,7 +47,7 @@ export const fetchSearchRecipe = async function (query) {
     console.log(recipes);
 
     state.search.recipes = recipes.map(i => {
-      state.search.recipes = {
+      return {
         id: i.id,
         imageUrl: i.image_url,
         title: i.title,
