@@ -27,4 +27,4 @@ class SearchView extends View {
   }
 }
 
-export default SearchView();
+export default new SearchView();
