@@ -1,4 +1,5 @@
 import RecipeView from './views/recipeView.js';
+import SearchView from './views/searchView.js';
 import * as model from './model.js';
 import responsiveView from './views/responsiveView.js';
 
@@ -24,9 +25,19 @@ const showRecipe = async function () {
   }
 };
 
+// Rendering recipeItem view
+const showRecipeItem = async function (query) {
+  try {
+    await model.fetchSearchRecipe(query);
+  } catch (err) {
+    console.log(err.message);
+  }
+};
+
 // initialization function: get call when ever the page load
 const init = function () {
   // 1) Calling recipe handler to pass the recipe promise (fetchRecipe) as an argument
   RecipeView.recipeHandler(showRecipe);
+  SearchView.searchHandler(showRecipeItem);
 };
 init();

@@ -27,3 +27,21 @@ export const helperFetchRecipe = async function (id) {
     throw err;
   }
 };
+
+export const helperFetchSearchRecipe = async function (query) {
+  try {
+    const res = await Promise.race([
+      fetch(`${API_URL}?search=${query}`),
+      rejectPromise(API_TIME),
+    ]);
+
+    // rejecting the promise if response.ok is not true
+    if (!res.ok) throw new Error(`${res.status} bad request 💥💥💥`);
+
+    // storing data
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    throw err;
+  }
+};
