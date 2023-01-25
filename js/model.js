@@ -44,7 +44,7 @@ export const fetchSearchRecipe = async function (query) {
 
     const { recipes } = data.data;
 
-    state.search.recipes = recipes.map(i => {
+    state.search.recipes = recipes.forEach(i => {
       console.log('agba');
       return {
         id: i.id,
@@ -53,6 +53,7 @@ export const fetchSearchRecipe = async function (query) {
         publisher: i.publisher,
       };
     });
+    console.log(state.search.recipes);
   } catch (err) {
     throw err;
   }
