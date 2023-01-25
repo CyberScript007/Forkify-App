@@ -7,6 +7,7 @@ class RecipeItemView extends View {
   _generateHtml() {
     return `
     ${this._data.forEach(i => {
+      console.log(i);
       `
         <a href="#${i.id}" class="recipe-item__link link">
             <li class="recipe-item__details">
