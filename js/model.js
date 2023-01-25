@@ -13,7 +13,7 @@ export const state = {
   recipe: {},
 };
 
-// Consuming a recipe promise
+// Consuming a recipe view promise
 export const fetchRecipe = async function (id) {
   try {
     const res = await Promise.race([
