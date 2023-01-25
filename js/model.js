@@ -40,9 +40,9 @@ export const fetchSearchRecipe = async function (query) {
   try {
     state.search.query = query;
     const data = await helperFetchSearchRecipe(query);
-    console.log(data.data);
 
-    const { recipe } = data.data;
+    const { recipes } = data.data;
+    console.log(recipes);
   } catch (err) {
     throw err;
   }
