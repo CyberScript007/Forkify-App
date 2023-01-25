@@ -58,6 +58,7 @@ export const fetchSearchRecipe = async function (query) {
     state.search.recipes = recipes;
     console.log(state.search.query);
     console.log(state.search.recipes);
+    console.log(recipes);
   } catch (err) {
     throw err;
   }
