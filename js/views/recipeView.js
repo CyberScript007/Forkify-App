@@ -80,17 +80,9 @@ class RecipeView {
   <div class="recipe__ingredients">
     <h2 class="heading--2 recipe__heading-title">recipe ingredients</h2>
     <ul class="recipe__ingredients-list">
-    ${this.#data.ingredients}
-      <li class="recipe__ingredients-item">
-        <svg class="icon icon--red">
-          <use xlink:href="${icon}#icon-check"></use>
-        </svg>
-        <p class="recipe__ingredients-item__text">
-          <span class="recipe__ingredients-item__text--quantity">4</span>
-          <span class="recipe__ingredients-item__text--unit">cup</span>
-          <span class="recipe__ingredients-item__text--description">cream cheese room temperature</span>
-        </p>
-      </li>
+    ${this.#data.ingredients.map(i =>
+      this.#generateHtmlIngredients(i).join('')
+    )} 
     </ul>
   </div>
   <div class="recipe__cook">
@@ -113,6 +105,21 @@ class RecipeView {
       </a>
     </div>
   </div>`;
+  }
+
+  #generateHtmlIngredients(i) {
+    return `
+      <li class="recipe__ingredients-item">
+        <svg class="icon icon--red">
+          <use xlink:href="${icon}#icon-check"></use>
+        </svg>
+        <p class="recipe__ingredients-item__text">
+          <span class="recipe__ingredients-item__text--quantity">${i.quantity}</span>
+          <span class="recipe__ingredients-item__text--unit">${i.unit}</span>
+          <span class="recipe__ingredients-item__text--description">${i.description}</span>
+        </p>
+      </li>
+    `;
   }
 }
 
