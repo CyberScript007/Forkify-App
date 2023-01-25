@@ -1,13 +1,4 @@
-// https://forkify-api.herokuapp.com/api/get?rId=47746
-
-// Building of a reject promise
-const rejectPromise = function (sec) {
-  return new Promise(function (_, reject) {
-    setTimeout(function () {
-      reject(new Error('The request took too long 💥💥💥'));
-    }, 1000 * sec);
-  });
-};
+import { helperFetchRecipe } from './helper';
 
 export const state = {
   recipe: {},
@@ -16,21 +7,11 @@ export const state = {
 // Consuming a recipe view promise
 export const fetchRecipe = async function (id) {
   try {
-    const res = await Promise.race([
-      fetch(`https://forkify-api.herokuapp.com/api/v2/recipes/${id}`),
-      rejectPromise(30),
-    ]);
-
-    // rejecting the promise if response.ok is not true
-    if (!res.ok) throw new Error(`${res.status} bad request 💥💥💥`);
-
-    // storing data
-    const data = await res.json();
-    console.log(data);
+    // Eexecuting helper function for fetching api
+    const data = await helperFetchRecipe(id);
 
     // destructing the data
     const { recipe } = data.data;
-    console.log(recipe);
 
     // renaming the data
     state.recipe = {
@@ -44,7 +25,7 @@ export const fetchRecipe = async function (id) {
       title: recipe.title,
     };
     console.log(state.recipe);
-  } catch (e) {
-    console.log(e.message);
+  } catch (err) {
+    throw err;
   }
 };
