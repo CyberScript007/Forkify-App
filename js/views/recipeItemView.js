@@ -4,7 +4,7 @@ import icon from 'url:../../img/icons.svg';
 class RecipeItemView extends View {
   _parentEl = document.querySelector('.recipe-item__list');
 
-  #generateHtml() {
+  _generateHtml() {
     return `
         <a href="#${this._data.id}" class="recipe-item__link link">
             <li class="recipe-item__details">
