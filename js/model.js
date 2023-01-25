@@ -44,6 +44,8 @@ export const fetchSearchRecipe = async function (query) {
 
     const { recipes } = data.data;
 
+    console.log(recipes);
+
     state.search.recipes = recipes.forEach(i => {
       console.log('agba');
       return {
