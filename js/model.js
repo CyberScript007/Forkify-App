@@ -41,8 +41,11 @@ export const fetchSearchRecipe = async function (query) {
     state.search.query = query;
     const data = await helperFetchSearchRecipe(query);
 
+    const { recipe } = data.data;
+
+    console.log(recipe);
+
     console.log(data);
-    console.log(state.search.query);
   } catch (err) {
     throw err;
   }

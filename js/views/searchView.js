@@ -22,8 +22,6 @@ class SearchView extends View {
       document.querySelector('.search__input').textContent = '';
       //  removes keyboard focus from the form element
       document.querySelector('.search__input').blur();
-
-      console.log('agba');
     });
   }
 }
