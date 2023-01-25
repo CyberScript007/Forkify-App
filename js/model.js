@@ -53,10 +53,6 @@ export const fetchSearchRecipe = async function (query) {
         publisher: i.publisher,
       };
     });
-
-    console.log(state.search.query);
-    console.log(state.search.recipes);
-    console.log(recipes);
   } catch (err) {
     throw err;
   }

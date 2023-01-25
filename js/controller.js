@@ -1,5 +1,6 @@
 import RecipeView from './views/recipeView.js';
 import SearchView from './views/searchView.js';
+import RecipeItemView from './views/recipeItemView.js';
 import * as model from './model.js';
 import responsiveView from './views/responsiveView.js';
 
@@ -28,7 +29,14 @@ const showRecipe = async function () {
 // Rendering recipeItem view
 const showRecipeItem = async function (query) {
   try {
+    // 1) fetch the recipe item from an api
     await model.fetchSearchRecipe(query);
+
+    // 2) Rendering spinner
+    RecipeItemView.renderSpinner();
+
+    // 3) Rendering recipe item to user interface
+    RecipeItemView.render(model.state.search.recipes);
   } catch (err) {
     console.log(err.message);
   }

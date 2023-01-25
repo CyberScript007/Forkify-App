@@ -3,15 +3,14 @@ import icon from 'url:../../img/icons.svg';
 
 class RecipeItemView extends View {
   _parentEl = document.querySelector('.recipe-item__list');
-  _data;
 
   #generateHtml() {
     return `
-        <a href="#" class="recipe-item__link link">
+        <a href="#${this._data.id}" class="recipe-item__link link">
             <li class="recipe-item__details">
                 <figure class="recipe-item__container">
                 <img
-                    src="img/ronaldo.jpg"
+                    src="${this._data.imageUrl}"
                     alt="Recipe item image"
                     class="recipe-item__img"
                 />
@@ -20,8 +19,8 @@ class RecipeItemView extends View {
                 ></div>
                 </figure>
                 <div class="recipe-item__content">
-                <h4 class="heading--4 recipe-item__title">avocado egg salad</h4>
-                <p class="recipe-item__text">two peas and their pod</p>
+                <h4 class="heading--4 recipe-item__title">${this._data.title}</h4>
+                <p class="recipe-item__text">${this._data.publisher}</p>
                 </div>
             </li>
         </a>
