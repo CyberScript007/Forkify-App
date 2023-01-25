@@ -16,13 +16,11 @@ class RecipeView {
       <div class="spinner__container">
         <div class="spinner animate">
           <svg class="icon--red spinner__icon">
-            <use xlink:href="img/icons.svg#icon-spinner"></use>
+            <use xlink:href="img/${icon}.svg#icon-spinner"></use>
           </svg>
         </div>
       </div>
     `;
-
-    console.log('hello');
 
     this.#clear();
     this.#parentEl.insertAdjacentHTML('afterbegin', markUp);
