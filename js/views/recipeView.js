@@ -16,7 +16,7 @@ class RecipeView {
       <div class="spinner__container">
         <div class="spinner animate">
           <svg class="icon--red spinner__icon">
-            <use xlink:href="${icon}.svg#icon-spinner"></use>
+            <use xlink:href="${icon}#icon-spinner"></use>
           </svg>
         </div>
       </div>
