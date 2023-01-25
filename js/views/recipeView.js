@@ -114,9 +114,12 @@ class RecipeView {
           <use xlink:href="${icon}#icon-check"></use>
         </svg>
         <p class="recipe__ingredients-item__text">
-          <span class="recipe__ingredients-item__text--quantity">${i.quantity}</span>
+          <span class="recipe__ingredients-item__text--quantity">${(i.quantity =
+            i.quantity ? i.quantity : '')}</span>
           <span class="recipe__ingredients-item__text--unit">${i.unit}</span>
-          <span class="recipe__ingredients-item__text--description">${i.description}</span>
+          <span class="recipe__ingredients-item__text--description">${
+            i.description
+          }</span>
         </p>
       </li>
     `;
