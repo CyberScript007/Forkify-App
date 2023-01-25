@@ -29,8 +29,8 @@ export const fetchRecipe = async function (id) {
     console.log(data);
 
     // destructing the data
-    // const { recipe } = data.data;
-    // console.log(recipe);
+    const { recipe } = data.data;
+    console.log(recipe);
 
     // renaming the data
     // state.recipe = {
