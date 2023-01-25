@@ -43,8 +43,6 @@ export const fetchSearchRecipe = async function (query) {
 
     const { recipe } = data.data;
 
-    console.log(recipe);
-
     console.log(data);
   } catch (err) {
     throw err;
