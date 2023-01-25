@@ -47,6 +47,7 @@ export const fetchSearchRecipe = async function (query) {
     //   recipe: recipes.map(),
     // };
     console.log(state.search.query);
+    console.log(recipes);
   } catch (err) {
     throw err;
   }
