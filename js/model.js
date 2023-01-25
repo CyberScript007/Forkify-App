@@ -45,6 +45,10 @@ export const fetchSearchRecipe = async function (query) {
     const { recipes } = data.data;
 
     state.search.recipes = recipes;
+
+    state.search.recipes.forEach(i => {
+      console.log({ tit: i.title });
+    });
     console.log(state.search.query);
     console.log(state.search.recipes);
   } catch (err) {
