@@ -6,11 +6,13 @@ class RecipeItemView extends View {
 
   _generateHtml() {
     return `
-        <a href="#${this._data.id}" class="recipe-item__link link">
+    ${this_data.forEach(i => {
+      `
+        <a href="#${i.id}" class="recipe-item__link link">
             <li class="recipe-item__details">
                 <figure class="recipe-item__container">
                 <img
-                    src="${this._data.imageUrl}"
+                    src="${i.imageUrl}"
                     alt="Recipe item image"
                     class="recipe-item__img"
                 />
@@ -19,11 +21,13 @@ class RecipeItemView extends View {
                 ></div>
                 </figure>
                 <div class="recipe-item__content">
-                <h4 class="heading--4 recipe-item__title">${this._data.title}</h4>
-                <p class="recipe-item__text">${this._data.publisher}</p>
+                <h4 class="heading--4 recipe-item__title">${i.title}</h4>
+                <p class="recipe-item__text">${i.publisher}</p>
                 </div>
             </li>
         </a>
+        `;
+    })}
     
     `;
   }

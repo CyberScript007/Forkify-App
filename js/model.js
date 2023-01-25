@@ -5,7 +5,7 @@ export const state = {
   recipe: {},
   search: {
     query: '',
-    recipes: {},
+    recipes: [],
   },
 };
 
@@ -46,7 +46,7 @@ export const fetchSearchRecipe = async function (query) {
 
     console.log(recipes);
 
-    recipes.forEach(i => {
+    state.search.recipes = recipes.map(i => {
       state.search.recipes = {
         id: i.id,
         imageUrl: i.image_url,
