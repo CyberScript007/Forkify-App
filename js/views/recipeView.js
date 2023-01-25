@@ -11,6 +11,21 @@ class RecipeView {
     this.#parentEl.insertAdjacentHTML('afterbegin', markUp);
   }
 
+  renderSpinner() {
+    const markUp = `
+      <div class="spinner__container">
+        <div class="spinner animate">
+          <svg class="icon--red spinner__icon">
+            <use xlink:href="img/icons.svg#icon-spinner"></use>
+          </svg>
+        </div>
+      </div>
+    `;
+
+    this.#clear();
+    this.#parentEl.insertAdjacentHTML('afterbegin', markUp);
+  }
+
   recipeHandler(handler) {
     ['load', 'hashchange'].forEach(i => window.addEventListener(i, handler));
   }

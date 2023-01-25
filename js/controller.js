@@ -10,10 +10,13 @@ const showRecipe = async function () {
   // 2) if the url does not contain hash return
   if (!id) return;
 
-  // 3) passing hash value to the recipe promise (fetchRecipe)
+  // 3) Rendering spinner to the user interface
+  RecipeView.renderSpinner();
+
+  // 4) passing hash value to the recipe promise (fetchRecipe)
   await model.fetchRecipe(id);
 
-  // 4) Rendering recipe view to user interface
+  // 5) Rendering recipe view to user interface
   RecipeView.render(model.state.recipe);
 };
 
