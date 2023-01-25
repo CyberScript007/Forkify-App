@@ -47,12 +47,12 @@ export const fetchSearchRecipe = async function (query) {
     console.log(recipes);
 
     recipes.forEach(i => {
-      state.search.recipes.push({
+      state.search.recipes = {
         id: i.id,
         imageUrl: i.image_url,
         title: i.title,
         publisher: i.publisher,
-      });
+      };
     });
     console.log(state.search.recipes);
   } catch (err) {
