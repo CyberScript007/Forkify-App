@@ -11,6 +11,7 @@ class SearchView extends View {
       // getting user input from search__input class
       let query = document.querySelector('.search__input').value;
 
+      console.log(query);
       // if the query is  false retunr
       if (!query) return;
 
@@ -18,7 +19,7 @@ class SearchView extends View {
       handler(query);
 
       // set the input field to empty when the form have been submit
-      query.textContent = '';
+      // query.textContent = '';
       //  removes keyboard focus from the form element
       query.blur();
 
