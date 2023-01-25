@@ -17,7 +17,7 @@ const showRecipe = async function () {
   await model.fetchRecipe(id);
 
   // 5) Rendering recipe view to user interface
-  RecipeView.render(model.state.recipe);
+  // RecipeView.render(model.state.recipe);
 };
 
 // initialization function: get call when ever the page load
