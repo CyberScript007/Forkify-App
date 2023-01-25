@@ -1,19 +1,20 @@
 import icon from 'url:../../img/icons.svg';
 
 export default class View {
-  #parentEl;
-  #data;
-  #message = 'Start by searching for a recipe or an ingredient. Have fun!';
-  #errorMessage = 'No recipes found for your query! Please try again ;)';
+  _parentEl;
+  _data;
+  _message = 'Start by searching for a recipe or an ingredient. Have fun!';
+  _errorMessage = 'No recipes found for your query! Please try again ;)';
+
   render(data) {
-    this.#data = data;
-    const markUp = this.#generateHtml();
-    this.#clear();
-    this.#parentEl.insertAdjacentHTML('afterbegin', markUp);
+    this._data = data;
+    const markUp = this._generateHtml();
+    this._clear();
+    this._parentEl.insertAdjacentHTML('afterbegin', markUp);
   }
 
-  #clear() {
-    this.#parentEl.innerHTML = '';
+  _clear() {
+    this._parentEl.innerHTML = '';
   }
 
   renderSpinner() {
@@ -27,11 +28,11 @@ export default class View {
       </div>
     `;
 
-    this.#clear();
-    this.#parentEl.insertAdjacentHTML('afterbegin', markUp);
+    this._clear();
+    this._parentEl.insertAdjacentHTML('afterbegin', markUp);
   }
 
-  renderMessage(message = this.#message) {
+  renderMessage(message = this._message) {
     const markUp = `
         <div class="message__container">
             <div class="message">
@@ -44,11 +45,11 @@ export default class View {
             </div>
         </div>
     `;
-    this.#parentEl.innerHTML = '';
-    this.#parentEl.insertAdjacentHTML('afterbegin', markUp);
+    this._parentEl.innerHTML = '';
+    this._parentEl.insertAdjacentHTML('afterbegin', markUp);
   }
 
-  renderErrorMessage(errorMessage = this.#errorMessage) {
+  renderErrorMessage(errorMessage = this._errorMessage) {
     const markUp = `
         <div class="error-message__container">
             <div class="error-message">

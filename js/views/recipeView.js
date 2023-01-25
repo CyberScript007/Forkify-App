@@ -2,14 +2,14 @@ import icon from 'url:../../img/icons.svg';
 import View from './view';
 
 class RecipeView extends View {
-  #parentEl = document.querySelector('.recipe');
-  #data;
+  _parentEl = document.querySelector('.recipe');
+  _data;
 
   recipeHandler(handler) {
     ['load', 'hashchange'].forEach(i => window.addEventListener(i, handler));
   }
 
-  #generateHtml() {
+  _generateHtml() {
     return ` 
   <figure class="recipe__container-img">
     <button class="back-arrow">
@@ -17,12 +17,12 @@ class RecipeView extends View {
         <use xlink:href="${icon}#icon-arrow-left"></use>
       </svg>
     </button>
-    <img src= "${this.#data.imageUrl}" alt="recipe image" class="recipe__img" />
+    <img src= "${this._data.imageUrl}" alt="recipe image" class="recipe__img" />
     <div class="background-blend"></div>
     <figcaption class="recipe__caption">
       <h1 class="heading--1 recipe__title">
         <span class="recipe__title--skew">
-          ${this.#data.title}
+          ${this._data.title}
         </span>
       </h1>
     </figcaption>
@@ -33,7 +33,7 @@ class RecipeView extends View {
         <use xlink:href="${icon}#icon-clock"></use>
       </svg>
       <p class="recipe__text"><strong>${
-        this.#data.cookingTime
+        this._data.cookingTime
       }</strong> minutes</p>
     </div>
     <div class="recipe__update">
@@ -43,7 +43,7 @@ class RecipeView extends View {
         </svg>
         <p class="recipe__text">
           <strong><span class="recipe__servings">${
-            this.#data.servings
+            this._data.servings
           }</span></strong>
           servings
         </p>
@@ -70,8 +70,8 @@ class RecipeView extends View {
   <div class="recipe__ingredients">
     <h2 class="heading--2 recipe__heading-title">recipe ingredients</h2>
     <ul class="recipe__ingredients-list">
-    ${this.#data.ingredients
-      .map(i => this.#generateHtmlIngredients(i))
+    ${this._data.ingredients
+      .map(i => this._generateHtmlIngredients(i))
       .join('')} 
     </ul>
   </div>
@@ -79,12 +79,12 @@ class RecipeView extends View {
     <h2 class="heading--2 recipe__heading-title">how to cook it</h2>
     <p class="recipe__cook-text">
       This recipe was carefully designed and tested by
-      <strong> ${this.#data.publisher}</strong>. Please check out directions at
+      <strong> ${this._data.publisher}</strong>. Please check out directions at
       their website.
     </p>
     <div class="recipe__cook-direction">
       <a
-        href="${this.#data.sourceUrl}"
+        href="${this._data.sourceUrl}"
         target="_blank"
         class="btn btn--link btn--direction"
       >
@@ -97,7 +97,7 @@ class RecipeView extends View {
   </div>`;
   }
 
-  #generateHtmlIngredients(i) {
+  _generateHtmlIngredients(i) {
     return `
       <li class="recipe__ingredients-item">
         <svg class="icon icon--red">
