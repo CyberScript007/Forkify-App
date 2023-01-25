@@ -9,7 +9,7 @@ class SearchView extends View {
       e.preventDefault();
 
       // getting user input from search__input class
-      let query = document.querySelector('.search__input').value;
+      const query = document.querySelector('.search__input').value;
 
       console.log(query);
       // if the query is  false retunr
@@ -19,9 +19,9 @@ class SearchView extends View {
       handler(query);
 
       // set the input field to empty when the form have been submit
-      query.textContent = '';
+      document.querySelector('.search__input').textContent = '';
       //  removes keyboard focus from the form element
-      query.blur();
+      document.querySelector('.search__input').blur();
 
       console.log('agba');
     });
