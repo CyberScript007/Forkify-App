@@ -5,6 +5,7 @@ export const state = {
   recipe: {},
   search: {
     query: '',
+    recipes: [],
   },
 };
 
@@ -42,10 +43,9 @@ export const fetchSearchRecipe = async function (query) {
     const data = await helperFetchSearchRecipe(query);
 
     const { recipes } = data.data;
-
-    // const recipesData = {
-    //   recipe: recipes.map(),
-    // };
+    recipes.map(i => {
+      console.log(i);
+    });
     console.log(state.search.query);
     console.log(recipes);
   } catch (err) {
