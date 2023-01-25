@@ -80,9 +80,9 @@ class RecipeView {
   <div class="recipe__ingredients">
     <h2 class="heading--2 recipe__heading-title">recipe ingredients</h2>
     <ul class="recipe__ingredients-list">
-    ${this.#data.ingredients.map(i =>
-      this.#generateHtmlIngredients(i).join('')
-    )} 
+    ${this.#data.ingredients
+      .map(i => this.#generateHtmlIngredients(i))
+      .join('')} 
     </ul>
   </div>
   <div class="recipe__cook">
