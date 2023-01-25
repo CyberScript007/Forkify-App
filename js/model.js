@@ -5,7 +5,7 @@ export const state = {
   recipe: {},
   search: {
     query: '',
-    recipes: {},
+    recipes: [],
   },
 };
 
