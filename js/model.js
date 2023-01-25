@@ -44,9 +44,7 @@ export const fetchSearchRecipe = async function (query) {
 
     const { recipes } = data.data;
 
-    state.search.recipes = recipes;
-
-    state.search.recipes.map(i => {
+    state.search.recipes = recipes.map(i => {
       console.log('agba');
       return {
         id: i.id,
