@@ -47,6 +47,7 @@ export const fetchSearchRecipe = async function (query) {
     state.search.recipes = recipes;
 
     state.search.recipes.map(i => {
+      console.log('agba');
       return {
         id: i.id,
         imageUrl: i.image_url,
