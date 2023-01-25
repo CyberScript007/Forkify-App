@@ -80,6 +80,7 @@ class RecipeView {
   <div class="recipe__ingredients">
     <h2 class="heading--2 recipe__heading-title">recipe ingredients</h2>
     <ul class="recipe__ingredients-list">
+    ${this.#data.ingredients}
       <li class="recipe__ingredients-item">
         <svg class="icon icon--red">
           <use xlink:href="${icon}#icon-check"></use>
