@@ -18,7 +18,7 @@ class SearchView extends View {
       handler(query);
 
       // set the input field to empty when the form have been submit
-      document.querySelector('.search__input').textContent = 'hello';
+      document.querySelector('.search__input').textContent = '';
 
       //  removes keyboard focus from the form element
       document.querySelector('.search__input').blur();
