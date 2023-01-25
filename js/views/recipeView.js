@@ -13,7 +13,6 @@ class RecipeView {
 
   recipeHandler(handler) {
     ['load', 'hashchange'].forEach(i => window.addEventListener(i, handler));
-    console.log('welcome');
   }
 
   #clear() {
@@ -43,7 +42,9 @@ class RecipeView {
       <svg class="icon icon--red">
         <use xlink:href="${icon}#icon-clock"></use>
       </svg>
-      <p class="recipe__text"><strong>75</strong> minutes</p>
+      <p class="recipe__text"><strong>${
+        this.#data.cookingTime
+      }</strong> minutes</p>
     </div>
     <div class="recipe__update">
       <div class="recipe__time">
@@ -51,7 +52,9 @@ class RecipeView {
           <use xlink:href="${icon}#icon-users"></use>
         </svg>
         <p class="recipe__text">
-          <strong><span class="recipe__servings">4</span></strong>
+          <strong><span class="recipe__servings">${
+            this.#data.servings
+          }</span></strong>
           servings
         </p>
       </div>

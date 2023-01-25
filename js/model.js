@@ -33,15 +33,16 @@ export const fetchRecipe = async function (id) {
     console.log(recipe);
 
     // renaming the data
-    // state.recipe = {
-    //   imageUrl: recipe.image_url,
-    //   ingredients: recipe.ingredients,
-    //   publisher: recipe.publisher,
-    //   publisherUrl: recipe.publisher_url,
-    //   recipeId: recipe.recipe_id,
-    //   sourceUrl: recipe.source_url,
-    //   title: recipe.title,
-    // };
+    state.recipe = {
+      imageUrl: recipe.image_url,
+      ingredients: recipe.ingredients,
+      cookingTime: recipe.cooking_time,
+      publisher: recipe.publisher,
+      servings: recipe.servings,
+      recipeId: recipe.id,
+      sourceUrl: recipe.source_url,
+      title: recipe.title,
+    };
     // console.log(state.recipe);
   } catch (e) {
     console.log(e.message);
