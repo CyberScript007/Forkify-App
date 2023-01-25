@@ -86,8 +86,8 @@ class RecipeView {
         </svg>
         <p class="recipe__ingredients-item__text">
           <span class="recipe__ingredients-item__text--quantity">4</span>
-          span class="recipe__ingredients-item__text--unit">cup</span>
-          span class="recipe__ingredients-item__text--description">cream cheese room temperature</span>
+          <span class="recipe__ingredients-item__text--unit">cup</span>
+          <span class="recipe__ingredients-item__text--description">cream cheese room temperature</span>
         </p>
       </li>
     </ul>
