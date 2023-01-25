@@ -12,7 +12,7 @@ export const state = {
 export const fetchRecipe = async function (id) {
   try {
     // Eexecuting helper function for fetching api
-    const data = await helperFetchRecipe();
+    const data = await helperFetchRecipe(id);
 
     // destructing the data
     const { recipe } = data.data;
