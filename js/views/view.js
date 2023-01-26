@@ -1,4 +1,5 @@
 import icon from 'url:../../img/icons.svg';
+import { Fraction } from 'fractional';
 
 export default class View {
   _parentEl;
