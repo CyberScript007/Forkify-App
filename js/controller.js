@@ -47,10 +47,18 @@ const showRecipeItem = async function (query) {
   }
 };
 
+// Rendering pagination view
+const paginationView = function () {
+  PaginationView.render(model.state.search.recipes);
+};
+
 // initialization function: get call when ever the page load
 const init = function () {
   // 1) Calling recipe handler to pass the recipe promise (fetchRecipe) as an argument
   RecipeView.recipeHandler(showRecipe);
+  // 2) Calling search handler to get user input
   SearchView.searchHandler(showRecipeItem);
+  // 3)
+  paginationView();
 };
 init();

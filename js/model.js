@@ -7,7 +7,8 @@ export const state = {
   search: {
     query: '',
     recipes: [],
-    page: '',
+    page: 1,
+    numPage: NUM_PAGE,
   },
 };
 
