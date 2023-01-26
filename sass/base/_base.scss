@@ -42,13 +42,12 @@ body {
 .error-message,
 .message {
   width: 30rem;
-  display: grid;
-  grid-template-columns: max-content 1fr;
   gap: 1.5rem;
   &__container,
   &__container {
     margin: 6rem;
-    display: flex;
+    display: grid;
+    grid-template-columns: max-content 1fr;
     justify-content: center;
 
     // 953px / 16px = 59.5625em to convert 953px to em
