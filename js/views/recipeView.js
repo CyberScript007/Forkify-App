@@ -105,7 +105,7 @@ class RecipeView extends View {
           <use xlink:href="${icon}#icon-check"></use>
         </svg>
         <p class="recipe__ingredients-item__text">
-          <span class="recipe__ingredients-item__text--quantity">${new Fraction(
+          <span class="recipe__ingredients-item__text--quantity">${new Fraction.Fraction(
             (i.quantity = i.quantity === null ? '' : i.quantity)
           ).toString()}</span>
           <span class="recipe__ingredients-item__text--unit">${i.unit}</span>
