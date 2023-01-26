@@ -106,7 +106,7 @@ class RecipeView extends View {
         </svg>
         <p class="recipe__ingredients-item__text">
           <span class="recipe__ingredients-item__text--quantity">${
-            i.quantity ? new Fraction(i.quantity) : ''
+            i.quantity ? new Fraction(i.quantity).toString() : ''
           }</span>
           <span class="recipe__ingredients-item__text--unit">${i.unit}</span>
           <span class="recipe__ingredients-item__text--description">${
