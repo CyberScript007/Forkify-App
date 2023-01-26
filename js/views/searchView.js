@@ -4,6 +4,7 @@ class SearchView extends View {
   _parentEl = document.querySelector('.search');
 
   constructor() {
+    super();
     this._clearInput();
   }
 
