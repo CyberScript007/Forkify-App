@@ -29,11 +29,11 @@ const showRecipe = async function () {
 // Rendering recipeItem view
 const showRecipeItem = async function (query) {
   try {
-    // 1) fetch the recipe item from an api
-    await model.fetchSearchRecipe(query);
-
-    // 2) Rendering spinner
+    // 1) Rendering spinner
     RecipeItemView.renderSpinner();
+
+    // 2) fetch the recipe item from an api
+    await model.fetchSearchRecipe(query);
 
     // 3) Rendering recipe item to user interface
     RecipeItemView.render(model.state.search.recipes);
