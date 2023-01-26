@@ -7,7 +7,8 @@ class PaginationView extends View {
 
   _generateHtml() {
     const pageLength = Math.round(this._data.length / NUM_PAGE);
-
+    console.log(this._data);
+    console.log(pageLength);
     if (pageLength > this._data.length) {
       return `
         <button class="btn pagination__prev btn--change btn--pagination">
