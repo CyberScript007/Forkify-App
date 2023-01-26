@@ -12,25 +12,26 @@ class RecipeItemView extends View {
 
   _generateRecipeItemMarkup(i) {
     return `
-            <a href="#${i.id}" class="recipe-item__link link">
-                <li class="recipe-item__details">
-                    <figure class="recipe-item__container">
-                    <img
-                        src="${i.imageUrl}"
-                        alt="Recipe item image"
-                        class="recipe-item__img"
-                    />
-                    <div
-                        class="background-blend recipe-item__background-blend"
-                    ></div>
-                    </figure>
-                    <div class="recipe-item__content">
-                    <h4 class="heading--4 recipe-item__title">${i.title}</h4>
-                    <p class="recipe-item__text">${i.publisher}</p>
-                    </div>
-                </li>
-            </a>
-            `;
+        <a href="#${i.id}" class="recipe-item__link link">
+            <li class="recipe-item__details">
+                <figure class="recipe-item__container">
+                <img
+                    src="${i.imageUrl}"
+                    alt="Recipe item image"
+                    class="recipe-item__img"
+                />
+                <div
+                    class="background-blend recipe-item__background-blend"
+                ></div>
+                </figure>
+                <div class="recipe-item__content">
+                <h4 class="heading--4 recipe-item__title">${(i.title =
+                  i.title > 23 ? `${i.title.slice(0, 24)}...` : i.title)} </h4>
+                <p class="recipe-item__text">${i.publisher}</p>
+                </div>
+            </li>
+        </a>
+        `;
   }
 }
 
