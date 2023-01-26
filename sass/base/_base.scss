@@ -43,11 +43,11 @@ body {
 .message {
   width: 30rem;
   gap: 1.5rem;
-  &__container,
+  display: grid;
+  grid-template-columns: max-content 1fr;
   &__container {
     margin: 6rem;
-    display: grid;
-    grid-template-columns: max-content 1fr;
+    display: flex;
     justify-content: center;
 
     // 953px / 16px = 59.5625em to convert 953px to em
@@ -56,7 +56,6 @@ body {
     }
   }
 
-  &__icon,
   &__icon {
     transform: translateY(-1.4rem);
   }
