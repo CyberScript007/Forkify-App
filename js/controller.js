@@ -13,7 +13,7 @@ import 'regenerator-runtime/runtime';
 const showRecipe = async function () {
   try {
     // 1) getting value from url that contain hash
-    const id = window.location.hash.slice(2);
+    const id = window.location.hash.slice(1);
 
     // 2) if the url does not contain hash return
     if (!id) return;
@@ -41,7 +41,7 @@ const showRecipeItem = async function (query) {
     await model.fetchSearchRecipe(query);
 
     // 3) Rendering recipe item to user interface
-    RecipeItemView.render(model.paginationPage(1));
+    RecipeItemView.render(model.paginationPage(2));
   } catch (err) {
     console.log(err.message);
   }
