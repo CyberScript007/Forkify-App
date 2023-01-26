@@ -47,7 +47,7 @@ body {
   grid-template-columns: max-content 1fr;
   &__container,
   &__container {
-    // margin: 6rem;
+    margin: 6rem;
     display: flex;
     justify-content: center;
 
@@ -59,9 +59,9 @@ body {
 
   &__icon,
   &__icon {
-    width: 5rem;
-    height: 5rem;
-    transform: translateY(-0.8rem);
+    width: 6rem;
+    height: 6rem;
+    transform: translateY(-0.5rem);
   }
 }
 
