@@ -1,5 +1,4 @@
 import icon from 'url:../../img/icons.svg';
-console.log(icon);
 import View from './view';
 
 // import { Fraction } from 'fractional';

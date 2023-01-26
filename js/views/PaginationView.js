@@ -1,4 +1,4 @@
-import icon from 'url: ../../img.icons.svg';
+import icon from 'url:../../img/icons.svg';
 import { NUM_PAGE } from '../config';
 import View from './view';
 
