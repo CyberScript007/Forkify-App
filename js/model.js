@@ -29,7 +29,6 @@ export const fetchRecipe = async function (id) {
       sourceUrl: recipe.source_url,
       title: recipe.title,
     };
-    console.log(state.recipe);
   } catch (err) {
     throw err;
   }
