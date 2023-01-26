@@ -26,7 +26,9 @@ class RecipeItemView extends View {
                 </figure>
                 <div class="recipe-item__content">
                 <h4 class="heading--4 recipe-item__title">${(i.title =
-                  i.title > 23 ? `${i.title.slice(0, 24)}...` : i.title)} </h4>
+                  i.title.length > 23
+                    ? `${i.title.slice(0, 24)}...`
+                    : i.title)} </h4>
                 <p class="recipe-item__text">${i.publisher}</p>
                 </div>
             </li>
