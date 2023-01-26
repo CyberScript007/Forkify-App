@@ -1,6 +1,6 @@
 import icon from 'url:../../img/icons.svg';
 import View from './view';
-import { Fraction } from 'fractional';
+import { Fraction } from 'fractional.Fraction';
 
 class RecipeView extends View {
   _parentEl = document.querySelector('.recipe');
@@ -105,7 +105,7 @@ class RecipeView extends View {
           <use xlink:href="${icon}#icon-check"></use>
         </svg>
         <p class="recipe__ingredients-item__text">
-          <span class="recipe__ingredients-item__text--quantity">${new Fraction.Fraction(
+          <span class="recipe__ingredients-item__text--quantity">${new Fraction(
             (i.quantity = i.quantity === null ? '' : i.quantity)
           ).toString()}</span>
           <span class="recipe__ingredients-item__text--unit">${i.unit}</span>
