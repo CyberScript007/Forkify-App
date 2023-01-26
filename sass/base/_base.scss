@@ -42,7 +42,8 @@ body {
 .error-message,
 .message {
   width: 30rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: max-content 1fr;
   gap: 1.5rem;
   &__container,
   &__container {
@@ -59,8 +60,6 @@ body {
   &__icon,
   &__icon {
     transform: translateY(-1.4rem);
-    width: 5rem;
-    height: 5rem;
   }
 }
 

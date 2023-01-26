@@ -37,7 +37,7 @@ export default class View {
     const markUp = `
         <div class="message__container">
             <div class="message">
-            <svg class="icon--red message__icon">
+            <svg class="icon--red message__icon icon">
                 <use xlink:href="${icon}#icon-smile"></use>
             </svg>
             <p class="paragraphy">
@@ -54,7 +54,7 @@ export default class View {
     const markUp = `
         <div class="error-message__container">
             <div class="error-message">
-            <svg class="icon--red error-message__icon">
+            <svg class="icon--red error-message__icon icon">
                 <use xlink:href="${icon}#icon-alert-triangle"></use>
             </svg>
             <p class="paragraphy">
