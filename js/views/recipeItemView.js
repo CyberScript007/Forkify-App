@@ -10,6 +10,7 @@ class RecipeItemView extends View {
     ${this._data
       .map(i => {
         `
+        ${console.log(i)}
         <a href="#${i.id}" class="recipe-item__link link">
             <li class="recipe-item__details">
                 <figure class="recipe-item__container">

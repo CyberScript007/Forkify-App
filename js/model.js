@@ -44,8 +44,6 @@ export const fetchSearchRecipe = async function (query) {
 
     const { recipes } = data.data;
 
-    console.log(recipes);
-
     state.search.recipes = recipes.map(i => {
       return {
         id: i.id,
@@ -54,7 +52,6 @@ export const fetchSearchRecipe = async function (query) {
         publisher: i.publisher,
       };
     });
-    console.log(state.search.recipes);
   } catch (err) {
     throw err;
   }
