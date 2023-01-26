@@ -42,15 +42,18 @@ const showRecipeItem = async function (query) {
 
     // 3) Rendering recipe item to user interface
     RecipeItemView.render(model.paginationPage(2));
+
+    // 4)
+    PaginationView.render(model.state.search.recipes);
   } catch (err) {
     console.log(err.message);
   }
 };
 
-// Rendering pagination view
-const paginationView = function () {
-  PaginationView.render(model.state.search.recipes);
-};
+// // Rendering pagination view
+// const paginationView = function () {
+
+// };
 
 // initialization function: get call when ever the page load
 const init = function () {
@@ -58,7 +61,5 @@ const init = function () {
   RecipeView.recipeHandler(showRecipe);
   // 2) Calling search handler to get user input
   SearchView.searchHandler(showRecipeItem);
-  // 3)
-  paginationView();
 };
 init();
