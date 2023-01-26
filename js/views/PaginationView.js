@@ -9,7 +9,7 @@ class PaginationView extends View {
     const pageLength = Math.round(this._data.length / NUM_PAGE);
     console.log(this._data);
     console.log(pageLength);
-    if (pageLength > this._data.length) {
+    if (pageLength < this._data.length) {
       return `
         <button class="btn pagination__prev btn--change btn--pagination">
             <svg class="icon icon--red">
@@ -17,7 +17,6 @@ class PaginationView extends View {
             </svg>
             page &nbsp; <span class="btn-count">1</span>
         </button>
-        
         `;
     }
   }
