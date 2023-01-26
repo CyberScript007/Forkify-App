@@ -3,6 +3,10 @@ import View from './view';
 class SearchView extends View {
   _parentEl = document.querySelector('.search');
 
+  constructor() {
+    this._clearInput();
+  }
+
   searchHandler(handler) {
     this._parentEl.addEventListener('submit', function (e) {
       // preventing form from reloading page
@@ -16,13 +20,14 @@ class SearchView extends View {
 
       // passing an event handler to store the query to our model
       handler(query);
-
-      // set the input field to empty when the form have been submit
-      document.querySelector('.search__input').textContent = '';
-
-      //  removes keyboard focus from the form element
-      document.querySelector('.search__input').blur();
     });
+  }
+  _clearInput() {
+    // set the input field to empty when the form have been submit
+    document.querySelector('.search__input').textContent = '';
+
+    //  removes keyboard focus from the form element
+    document.querySelector('.search__input').blur();
   }
 }
 
