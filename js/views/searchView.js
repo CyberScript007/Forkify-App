@@ -11,7 +11,7 @@ class SearchView extends View {
       // getting user input from search__input class
       const query = document.querySelector('.search__input').value;
 
-      // if the query is  false retunr
+      // if the query is  false return
       if (!query) return;
 
       // passing an event handler to store the query to our model

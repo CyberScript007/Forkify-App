@@ -39,7 +39,7 @@ const showRecipeItem = async function (query) {
     await model.fetchSearchRecipe(query);
 
     // 3) Rendering recipe item to user interface
-    RecipeItemView.render(model.state.search.recipes);
+    RecipeItemView.render(model.paginationPage(1));
   } catch (err) {
     console.log(err.message);
   }
