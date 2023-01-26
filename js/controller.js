@@ -4,6 +4,9 @@ import RecipeItemView from './views/recipeItemView.js';
 import * as model from './model.js';
 import responsiveView from './views/responsiveView.js';
 
+import 'core-js/stable';
+import 'regenerator-runtime/runtime';
+
 // Rendering recipe view
 const showRecipe = async function () {
   try {
