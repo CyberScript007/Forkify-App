@@ -6,7 +6,7 @@ class RecipeItemView extends View {
 
   _generateHtml() {
     return `
-        ${this._data.map(i => this._generateRecipeItemMarkup).join('')}
+        ${this._data.map(i => this._generateRecipeItemMarkup(i)).join('')}
     `;
   }
 
