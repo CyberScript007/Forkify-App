@@ -45,6 +45,7 @@ body {
   gap: 1.5rem;
   display: grid;
   grid-template-columns: max-content 1fr;
+  &__container,
   &__container {
     // margin: 6rem;
     display: flex;
@@ -56,6 +57,7 @@ body {
     }
   }
 
+  &__icon,
   &__icon {
     width: 4rem;
     height: 4rem;
