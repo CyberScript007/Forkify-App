@@ -1,4 +1,4 @@
-import { API_TIMEOUT, API_URL } from './config';
+import { API_URL } from './config';
 import { API_TIMEOUT } from './config';
 
 // Building of a reject promise
