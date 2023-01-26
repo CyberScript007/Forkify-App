@@ -1,5 +1,5 @@
-import { API_URL } from './config';
-import { API_TIME } from './config';
+import { API_TIMEOUT, API_URL } from './config';
+import { API_TIMEOUT } from './config';
 
 // Building of a reject promise
 const rejectPromise = function (sec) {
@@ -14,7 +14,7 @@ export const helperFetchRecipe = async function (id) {
   try {
     const res = await Promise.race([
       fetch(`${API_URL}${id}`),
-      rejectPromise(API_TIME),
+      rejectPromise(API_TIMEOUT),
     ]);
 
     // rejecting the promise if response.ok is not true
@@ -32,7 +32,7 @@ export const helperFetchSearchRecipe = async function (query) {
   try {
     const res = await Promise.race([
       fetch(`${API_URL}?search=${query}`),
-      rejectPromise(API_TIME),
+      rejectPromise(API_TIMEOUT),
     ]);
 
     // rejecting the promise if response.ok is not true

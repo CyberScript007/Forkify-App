@@ -1,5 +1,6 @@
 import { helperFetchRecipe } from './helper';
 import { helperFetchSearchRecipe } from './helper';
+import { NUM_PAGE } from './config';
 
 export const state = {
   recipe: {},
@@ -60,8 +61,8 @@ export const fetchSearchRecipe = async function (query) {
 // pagination page
 export const paginationPage = function (page) {
   state.search.page = page;
-  const start = (page - 1) * 10;
-  const end = page * 10;
+  const start = (page - 1) * NUM_PAGE;
+  const end = page * NUM_PAGE;
 
   return state.search.recipes.slice(start, end);
 };

@@ -1,7 +1,9 @@
+import * as model from './model.js';
+
 import RecipeView from './views/recipeView.js';
 import SearchView from './views/searchView.js';
 import RecipeItemView from './views/recipeItemView.js';
-import * as model from './model.js';
+import PaginationView from './views/PaginationView.js';
 import responsiveView from './views/responsiveView.js';
 
 import 'core-js/stable';
@@ -11,7 +13,7 @@ import 'regenerator-runtime/runtime';
 const showRecipe = async function () {
   try {
     // 1) getting value from url that contain hash
-    const id = window.location.hash.slice(1);
+    const id = window.location.hash.slice(2);
 
     // 2) if the url does not contain hash return
     if (!id) return;
