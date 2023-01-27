@@ -52,7 +52,11 @@ const showRecipeItem = async function (query) {
 
 // Rendering pagination view
 const showPaginationView = function () {
+  // 1) Rendering recipe item when event happens
   RecipeItemView.render(model.getSearchResultPage(4));
+
+  // 2) Rendering pagination button
+  PaginationView.render(model.state.search);
 };
 
 // initialization function: get call when ever the page load
