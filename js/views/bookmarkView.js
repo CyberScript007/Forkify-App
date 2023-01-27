@@ -1,4 +1,4 @@
-class BookmarkRecipe {
+class BookmarkRecipeView {
   _parentEl = document.querySelector('.recipe__bookmark');
 
   bookmarkHandler(handler) {
@@ -9,4 +9,4 @@ class BookmarkRecipe {
   }
 }
 
-export default new BookmarkRecipe();
+export default new BookmarkRecipeView();
