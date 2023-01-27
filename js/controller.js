@@ -3,8 +3,8 @@ import * as model from './model.js';
 import RecipeView from './views/recipeView.js';
 import SearchView from './views/searchView.js';
 import RecipeItemView from './views/recipeItemView.js';
-import PaginationView from './views/paginationView.js';
 import BookmarkRecipeView from './views/bookmarkView.js';
+import PaginationView from './views/paginationView.js';
 import responsiveView from './views/responsiveView.js';
 
 import 'core-js/stable';
