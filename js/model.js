@@ -1,6 +1,5 @@
-import { helperFetchRecipe } from './helper';
-import { helperFetchSearchRecipe } from './helper';
-import { NUM_PAGE } from './config';
+import helperFetchApi from './helper';
+import { API_URL, RES_PER_PAGE } from './config';
 
 export const state = {
   recipe: {},
@@ -8,7 +7,7 @@ export const state = {
     query: '',
     recipes: [],
     page: 1,
-    numPage: NUM_PAGE,
+    resultsPerPage: RES_PER_PAGE,
   },
 };
 
@@ -16,7 +15,7 @@ export const state = {
 export const fetchRecipe = async function (id) {
   try {
     // Eexecuting helper function for fetching api
-    const data = await helperFetchRecipe(id);
+    const data = await helperFetchApi(`${API_URL}${id}`);
 
     // destructing the data
     const { recipe } = data.data;
@@ -42,7 +41,7 @@ export const fetchRecipe = async function (id) {
 export const fetchSearchRecipe = async function (query) {
   try {
     state.search.query = query;
-    const data = await helperFetchSearchRecipe(query);
+    const data = await helperFetchApi(`${API_URL}?search=${query}`);
 
     const { recipes } = data.data;
 
@@ -60,10 +59,10 @@ export const fetchSearchRecipe = async function (query) {
 };
 
 // pagination page
-export const paginationPage = function (page) {
+export const getSearchResultPage = function (page = state.search.page) {
   state.search.page = page;
-  const start = (page - 1) * NUM_PAGE;
-  const end = page * NUM_PAGE;
+  const start = (page - 1) * RES_PER_PAGE;
+  const end = page * RES_PER_PAGE;
 
   return state.search.recipes.slice(start, end);
 };

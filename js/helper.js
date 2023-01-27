@@ -1,4 +1,3 @@
-import { API_URL } from './config';
 import { API_TIMEOUT } from './config';
 
 // Building of a reject promise
@@ -10,30 +9,9 @@ const rejectPromise = function (sec) {
   });
 };
 
-export const helperFetchRecipe = async function (id) {
+export const helperFetchApi = async function (url) {
   try {
-    const res = await Promise.race([
-      fetch(`${API_URL}${id}`),
-      rejectPromise(API_TIMEOUT),
-    ]);
-
-    // rejecting the promise if response.ok is not true
-    if (!res.ok) throw new Error(`${res.status} bad request 💥💥💥`);
-
-    // storing data
-    const data = await res.json();
-    return data;
-  } catch (err) {
-    throw err;
-  }
-};
-
-export const helperFetchSearchRecipe = async function (query) {
-  try {
-    const res = await Promise.race([
-      fetch(`${API_URL}?search=${query}`),
-      rejectPromise(API_TIMEOUT),
-    ]);
+    const res = await Promise.race([fetch(url), rejectPromise(API_TIMEOUT)]);
 
     // rejecting the promise if response.ok is not true
     if (!res.ok) throw new Error(`${res.status} bad request 💥💥💥`);

@@ -1,24 +1,58 @@
 import icon from 'url:../../img/icons.svg';
-import { NUM_PAGE } from '../config';
 import View from './view';
 
 class PaginationView extends View {
   _parentEl = document.querySelector('.pagination');
 
   _generateHtml() {
-    const pageLength = Math.round(this._data.length / NUM_PAGE);
+    const numPages = Math.ceil(
+      this._data.recipes.length / this._data.resultsPerPage
+    );
+    const curPage = this._data.page;
     console.log(this._data);
-    console.log(pageLength);
-    if (pageLength < this._data.length) {
+    console.log(numPages);
+
+    // 1) if page is 1 and there is other page
+    if (curPage === 1 && numPages > 1) {
       return `
-            <button class="btn pagination__next btn--change btn--pagination">
-                page &nbsp; <span class="btn-count">2</span>
-                <svg class="icon icon--red">
-                    <use xlink:href="${icon}#icon-arrow-right"></use>
-                </svg>
-            </button>
-        `;
+        <button class="btn pagination__next btn--change btn--pagination">
+          page &nbsp; <span class="btn-count">${curPage + 1}</span>
+          <svg class="icon icon--red">
+            <use xlink:href="${icon}#icon-arrow-right"></use>
+          </svg>
+        </button>>
+      `;
     }
+    // 2) if there is other page
+    if (curPage < numPages) {
+      return `
+        <button class="btn pagination__prev btn--change btn--pagination">
+          <svg class="icon icon--red">
+            <use xlink:href="${icon}#icon-arrow-left"></use>
+          </svg>
+          page &nbsp; <span class="btn-count">${curPage - 1}</span>
+        </button>
+        <button class="btn pagination__next btn--change btn--pagination">
+          page &nbsp; <span class="btn-count">${curPage + 1}</span>
+          <svg class="icon icon--red">
+            <use xlink:href="${icon}#icon-arrow-right"></use>
+          </svg>
+        </button>
+      `;
+    }
+    // 3) if we are on the last page
+    if (curPage === numPages) {
+      return `
+        <button class="btn pagination__prev btn--change btn--pagination">
+          <svg class="icon icon--red">
+            <use xlink:href="${icon}#icon-arrow-left"></use>
+          </svg>
+          page &nbsp; <span class="btn-count">${curPage - 1}</span>
+        </button>
+      `;
+    }
+    // 4) if page is 1 and there is no other page
+    return '';
   }
 }
 
