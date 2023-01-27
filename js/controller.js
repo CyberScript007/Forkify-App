@@ -46,6 +46,9 @@ const showRecipeItem = async function (query) {
 
     // 4) Rendring pagination button to user interface
     PaginationView.render(model.state.search);
+
+    // 5)
+    BookmarkRecipeView.render(model.addBookmark(model.state.recipe));
   } catch (err) {
     console.log(err.message);
   }
@@ -61,9 +64,8 @@ const showPaginationView = function (goTopage) {
 };
 
 // Rendering bookmark recipe
-const showBookmarkRecipe = function (recipe) {
-  BookmarkRecipeView.render(model.addBookmark(model.state.recipe));
-};
+// const showBookmarkRecipe = function (recipe) {
+// };
 
 // initialization function: get call when ever the page load
 const init = function () {
@@ -73,7 +75,7 @@ const init = function () {
   SearchView.searchHandler(showRecipeItem);
   // 3) Executing pagination handler to render the extract recipe item and changing pagination button
   PaginationView.paginationHandler(showPaginationView);
-  // 4)
-  BookmarkRecipeView.bookmarkHandler(showBookmarkRecipe);
+  // // 4)
+  // BookmarkRecipeView.bookmarkHandler(showBookmarkRecipe);
 };
 init();
