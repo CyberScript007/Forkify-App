@@ -16,10 +16,12 @@ class RecipeView extends View {
     this._parentEl.addEventListener('click', function (e) {
       const btnServings = e.target.closest('.btn--recipe');
       console.log(btnServings);
+
       if (!btnServings) return;
-      const updateTo = dataset.updateTo;
-      console.log(updateTo);
-      handler(updateTo);
+
+      const { updateTo } = btnServings.dataset;
+      console.log(+updateTo);
+      handler(+updateTo);
     });
   }
 
