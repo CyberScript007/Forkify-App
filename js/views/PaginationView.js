@@ -41,7 +41,7 @@ class PaginationView extends View {
       `;
     }
     // 3) if we are in the last page
-    if (curPage === numPages) {
+    if (curPage === numPages && numPages > 1) {
       return `
         <button class="btn pagination__prev btn--change btn--pagination">
             <svg class="icon icon--red">
