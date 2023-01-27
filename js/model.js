@@ -1,4 +1,4 @@
-import helperFetchApi from './helper';
+import { helperFetchApi } from './helper';
 import { API_URL } from './config';
 import { RES_PER_PAGE } from './config';
 
