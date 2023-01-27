@@ -70,4 +70,9 @@ export const getSearchResultPage = function (page = state.search.page) {
   return state.search.recipes.slice(start, end);
 };
 
-// bookmark recipe
+// Add recipe when bookmark
+export const addBookmark = function (recipe) {
+  console.log(state.recipe);
+  state.bookmark.push(recipe);
+  if (state.bookmark.length > 0) state.recipe.bookmarked = true;
+};

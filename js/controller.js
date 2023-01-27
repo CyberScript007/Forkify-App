@@ -61,8 +61,8 @@ const showPaginationView = function (goTopage) {
 };
 
 // Rendering bookmark recipe
-const showBookmarkRecipe = function () {
-  console.log('hello');
+const showBookmarkRecipe = function (recipe) {
+  BookmarkRecipeView.render(model.addBookmark(model.state.recipe));
 };
 
 // initialization function: get call when ever the page load
