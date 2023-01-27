@@ -5,22 +5,27 @@ class PaginationView extends View {
   _parentEl = document.querySelector('.pagination');
 
   paginationHandler(handler) {
+    // add event handler on the parent element
     this._parentEl.addEventListener('click', function (e) {
+      // using an event delegation to select child element from parent element
       const btn = e.target.closest('.btn--pagination');
-      console.log(btn);
+      // if btn is a falsy value return
       if (!btn) return;
+      // get values from dataset attributes and converting it to number
       const goTopage = +btn.dataset.goTo;
+      // passing the values as an argument to function
       handler(goTopage);
     });
   }
 
   _generateHtml() {
+    // getting the number of pages
     const numPages = Math.ceil(
       this._data.recipes.length / this._data.resultsPerPage
     );
+
+    // storing the current page
     const curPage = this._data.page;
-    console.log(this._data);
-    console.log(numPages);
 
     // 1) if page is 1 and there is other pages
     if (curPage === 1 && numPages > 1) {

@@ -3,7 +3,8 @@ import * as model from './model.js';
 import RecipeView from './views/recipeView.js';
 import SearchView from './views/searchView.js';
 import RecipeItemView from './views/recipeItemView.js';
-import PaginationView from './views/PaginationView.js';
+import PaginationView from './views/paginationView.js';
+import BookmarkRecipe from './views/bookmarkView.js';
 import responsiveView from './views/responsiveView.js';
 
 import 'core-js/stable';
@@ -55,9 +56,12 @@ const showPaginationView = function (goTopage) {
   // 1) Rendering recipe item when event happens
   RecipeItemView.render(model.getSearchResultPage(goTopage));
 
-  // 2) Rendering pagination button
+  // 2) Re-rendering pagination button
   PaginationView.render(model.state.search);
 };
+
+// Rendering bookmark recipe
+const showBoomarkRecipe = function () {};
 
 // initialization function: get call when ever the page load
 const init = function () {
@@ -65,7 +69,9 @@ const init = function () {
   RecipeView.recipeHandler(showRecipe);
   // 2) Calling search handler to get user input
   SearchView.searchHandler(showRecipeItem);
-  // 3)
+  // 3) Executing pagination handler to render the extract recipe item and changing pagination button
   PaginationView.paginationHandler(showPaginationView);
+  // 4)
+  BookmarkRecipe.bookmarkHandler(showBoomarkRecipe);
 };
 init();

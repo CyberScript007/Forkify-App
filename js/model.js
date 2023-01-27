@@ -10,6 +10,7 @@ export const state = {
     page: 1,
     resultsPerPage: RES_PER_PAGE,
   },
+  bookmark: [],
 };
 
 // Consuming a recipe view promise
@@ -68,3 +69,5 @@ export const getSearchResultPage = function (page = state.search.page) {
 
   return state.search.recipes.slice(start, end);
 };
+
+// bookmark recipe
