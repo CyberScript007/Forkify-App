@@ -75,10 +75,9 @@ export const updateServings = function (newServings) {
   state.recipe.ingredients.forEach(ing => {
     ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
     // newQty = oldQty * newServings / oldServings
-
     console.log(ing.quantity);
-    state.recipe.servings = newServings;
   });
+  state.recipe.servings = newServings;
 };
 
 // Add recipe when bookmark
