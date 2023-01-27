@@ -12,7 +12,7 @@ class PaginationView extends View {
     console.log(this._data);
     console.log(numPages);
 
-    // 1) if page is 1 and there is other page
+    // 1) if page is 1 and there is other pages
     if (curPage === 1 && numPages > 1) {
       return `
         <button class="btn pagination__next btn--change btn--pagination">
@@ -20,7 +20,7 @@ class PaginationView extends View {
           <svg class="icon icon--red">
             <use xlink:href="${icon}#icon-arrow-right"></use>
           </svg>
-        </button>>
+        </button>
       `;
     }
     // 2) if there is other page
@@ -40,18 +40,18 @@ class PaginationView extends View {
         </button>
       `;
     }
-    // 3) if we are on the last page
+    // 3) if we are in the last page
     if (curPage === numPages) {
       return `
         <button class="btn pagination__prev btn--change btn--pagination">
-          <svg class="icon icon--red">
-            <use xlink:href="${icon}#icon-arrow-left"></use>
-          </svg>
-          page &nbsp; <span class="btn-count">${curPage - 1}</span>
+            <svg class="icon icon--red">
+              <use xlink:href="${icon}#icon-arrow-left"></use>
+            </svg>
+            page &nbsp; <span class="btn-count">${curPage - 1}</span>
         </button>
       `;
     }
-    // 4) if page is 1 and there is no other page
+    // 4) if we are in page 1 there is no other page
     return '';
   }
 }
