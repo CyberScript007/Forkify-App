@@ -41,7 +41,7 @@ const showRecipeItem = async function (query) {
     await model.fetchSearchRecipe(query);
 
     // 3) Rendering recipe item to user interface
-    RecipeItemView.render(model.getSearchResultPage(2));
+    RecipeItemView.render(model.getSearchResultPage());
 
     // 4) Rendring pagination button to user interface
     PaginationView.render(model.state.search);
@@ -50,10 +50,10 @@ const showRecipeItem = async function (query) {
   }
 };
 
-// // Rendering pagination view
-// const paginationView = function () {
-
-// };
+// Rendering pagination view
+const showPaginationView = function () {
+  RecipeItemView.render(model.getSearchResultPage(2));
+};
 
 // initialization function: get call when ever the page load
 const init = function () {
@@ -61,5 +61,6 @@ const init = function () {
   RecipeView.recipeHandler(showRecipe);
   // 2) Calling search handler to get user input
   SearchView.searchHandler(showRecipeItem);
+  PaginationView.paginationHandler(showPaginationView);
 };
 init();

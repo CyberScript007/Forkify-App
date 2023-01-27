@@ -4,6 +4,14 @@ import View from './view';
 class PaginationView extends View {
   _parentEl = document.querySelector('.pagination');
 
+  paginationHandler(handler) {
+    this._parentEl.addEventListener('click', function (e) {
+      const btn = this.closest('.btn--pagination');
+      console.log(btn);
+      handler();
+    });
+  }
+
   _generateHtml() {
     const numPages = Math.ceil(
       this._data.recipes.length / this._data.resultsPerPage
