@@ -84,6 +84,7 @@ const init = function () {
   PaginationView.paginationHandler(showPaginationView);
   // 4)
   RecipeView.updateServingHandler(showUpdateServings);
+
   // // 4)
   // BookmarkRecipeView.bookmarkHandler(showBookmarkRecipe);
 };
