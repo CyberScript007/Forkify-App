@@ -1,5 +1,6 @@
 import helperFetchApi from './helper';
-import { API_URL, RES_PER_PAGE } from './config';
+import { API_URL } from './config';
+import { RES_PER_PAGE } from './config';
 
 export const state = {
   recipe: {},
