@@ -6,7 +6,7 @@ class PaginationView extends View {
 
   paginationHandler(handler) {
     this._parentEl.addEventListener('click', function (e) {
-      const btn = this.closest('.btn--pagination');
+      const btn = e.target.closest('.btn--pagination');
       console.log(btn);
       handler();
     });
