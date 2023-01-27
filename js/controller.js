@@ -83,8 +83,8 @@ const init = function () {
   // 3) Executing pagination handler to render the extract recipe item and changing pagination button
   PaginationView.paginationHandler(showPaginationView);
   // 4)
-  // RecipeView.updateServingHandler(showUpdateServings);
+  RecipeView.updateServingHandler(showUpdateServings);
   // // 4)
-  BookmarkRecipeView.bookmarkHandler(showBookmarkRecipe);
+  // BookmarkRecipeView.bookmarkHandler(showBookmarkRecipe);
 };
 init();
