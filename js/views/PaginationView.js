@@ -8,6 +8,9 @@ class PaginationView extends View {
     this._parentEl.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--pagination');
       console.log(btn);
+      if (!btn) return;
+      const goTopage = btn.dataset.goTopage;
+      console.log(goTopage);
       handler();
     });
   }
@@ -23,7 +26,9 @@ class PaginationView extends View {
     // 1) if page is 1 and there is other pages
     if (curPage === 1 && numPages > 1) {
       return `
-        <button class="btn pagination__next btn--change btn--pagination">
+        <button data-go-to=${
+          curPage + 1
+        } class="btn pagination__next btn--change btn--pagination">
           page &nbsp; <span class="btn-count">${curPage + 1}</span>
           <svg class="icon icon--red">
             <use xlink:href="${icon}#icon-arrow-right"></use>
@@ -34,13 +39,17 @@ class PaginationView extends View {
     // 2) if there is other page
     if (curPage < numPages) {
       return `
-        <button class="btn pagination__prev btn--change btn--pagination">
+        <button data-go-to=${
+          curPage - 1
+        } class="btn pagination__prev btn--change btn--pagination">
           <svg class="icon icon--red">
             <use xlink:href="${icon}#icon-arrow-left"></use>
           </svg>
           page &nbsp; <span class="btn-count">${curPage - 1}</span>
         </button>
-        <button class="btn pagination__next btn--change btn--pagination">
+        <button data-go-to=${
+          curPage + 1
+        } class="btn pagination__next btn--change btn--pagination">
           page &nbsp; <span class="btn-count">${curPage + 1}</span>
           <svg class="icon icon--red">
             <use xlink:href="${icon}#icon-arrow-right"></use>
@@ -51,7 +60,9 @@ class PaginationView extends View {
     // 3) if we are in the last page
     if (curPage === numPages && numPages > 1) {
       return `
-        <button class="btn pagination__prev btn--change btn--pagination">
+        <button data-go-to=${
+          curPage - 1
+        } class="btn pagination__prev btn--change btn--pagination">
             <svg class="icon icon--red">
               <use xlink:href="${icon}#icon-arrow-left"></use>
             </svg>
