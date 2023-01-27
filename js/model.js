@@ -78,7 +78,7 @@ export const updateServings = function (newServings) {
 
     console.log(ing.quantity);
     state.recipe.servings = newServings;
-    console.log(state.recipe.servings);
+    console.log(state.recipe);
   });
 };
 
