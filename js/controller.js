@@ -4,7 +4,7 @@ import RecipeView from './views/recipeView.js';
 import SearchView from './views/searchView.js';
 import RecipeItemView from './views/recipeItemView.js';
 import PaginationView from './views/PaginationView.js';
-// import BookmarkRecipeView from './views/bookmarkView.js';
+import BookmarkRecipeView from './views/bookmarkView.js';
 import responsiveView from './views/responsiveView.js';
 
 import 'core-js/stable';
@@ -61,9 +61,9 @@ const showPaginationView = function (goTopage) {
 };
 
 // Rendering bookmark recipe
-// const showBookmarkRecipe = function () {
-//   console.log('hello');
-// };
+const showBookmarkRecipe = function () {
+  console.log('hello');
+};
 
 // initialization function: get call when ever the page load
 const init = function () {
@@ -74,6 +74,6 @@ const init = function () {
   // 3) Executing pagination handler to render the extract recipe item and changing pagination button
   PaginationView.paginationHandler(showPaginationView);
   // 4)
-  // BookmarkRecipeView.bookmarkHandler(showBookmarkRecipe);
+  BookmarkRecipeView.bookmarkHandler(showBookmarkRecipe);
 };
 init();
