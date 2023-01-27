@@ -9,9 +9,8 @@ class PaginationView extends View {
       const btn = e.target.closest('.btn--pagination');
       console.log(btn);
       if (!btn) return;
-      const goTopage = btn.dataset.goTo;
-      console.log(goTopage);
-      handler();
+      const goTopage = +btn.dataset.goTo;
+      handler(goTopage);
     });
   }
 
