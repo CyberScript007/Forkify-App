@@ -12,18 +12,6 @@ class RecipeView extends View {
     ['load', 'hashchange'].forEach(i => window.addEventListener(i, handler));
   }
 
-  updateServingHandler(handler) {
-    this._parentEl.addEventListener('click', function (e) {
-      const btnServings = e.target.closest('.btn--recipe');
-
-      if (!btnServings) return;
-
-      const { updateTo } = btnServings.dataset;
-
-      if (+updateTo > 0) handler(+updateTo);
-    });
-  }
-
   _generateHtml() {
     return ` 
   <figure class="recipe__container-img">

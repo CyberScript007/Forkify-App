@@ -64,15 +64,6 @@ const showPaginationView = function (goTopage) {
 };
 
 // Updating servings
-const showUpdateServings = function (numServings) {
-  model.updateServings(numServings);
-
-  RecipeView.render(model.state.recipe);
-};
-
-// Rendering bookmark recipe
-// const showBookmarkRecipe = function (recipe) {
-// };
 
 // initialization function: get call when ever the page load
 const init = function () {
@@ -82,10 +73,5 @@ const init = function () {
   SearchView.searchHandler(showRecipeItem);
   // 3) Executing pagination handler to render the extract recipe item and changing pagination button
   PaginationView.paginationHandler(showPaginationView);
-  // 4)
-  RecipeView.updateServingHandler(showUpdateServings);
-
-  // // 4)
-  // BookmarkRecipeView.bookmarkHandler(showBookmarkRecipe);
 };
 init();

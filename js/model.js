@@ -71,18 +71,3 @@ export const getSearchResultPage = function (page = state.search.page) {
 };
 
 // Update recipe servings
-export const updateServings = function (newServings) {
-  state.recipe.ingredients.forEach(ing => {
-    ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
-    // newQty = oldQty * newServings / oldServings
-    console.log(ing.quantity);
-  });
-  state.recipe.servings = newServings;
-};
-
-// Add recipe when bookmark
-// export const addBookmark = function (recipe) {
-//   console.log(state.recipe);
-//   state.bookmark.push(recipe);
-//   if (state.bookmark.length > 0) state.recipe.bookmarked = true;
-// };
