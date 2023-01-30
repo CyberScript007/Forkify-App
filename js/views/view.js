@@ -17,7 +17,15 @@ export default class View {
     this._data = data;
     const markUp = this._generateHtml();
     const newDom = document.createRange().createContextualFragment(markUp);
-    console.log(newDom);
+    const newElArr = Aray.from(document.querySelectorAll('*'));
+    const curElArr = Aray.from(document.querySelectorAll('*'));
+
+    newElArr.forEach((newEl, i) => {
+      const curEl = curElArr[i];
+      if (!newEl.isEqualNode(curEl)) {
+        curEl.textContent = newEl.textContent;
+      }
+    });
   }
 
   _clear() {
