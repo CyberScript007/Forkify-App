@@ -68,6 +68,8 @@ const showPaginationView = function (goTopage) {
 // Updating servings
 const showUpdateRecipe = function () {
   model.updateServings(6);
+
+  RecipeView.render(model.state.recipe);
 };
 
 // initialization function: get call when ever the page load
