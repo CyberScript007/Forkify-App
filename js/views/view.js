@@ -17,8 +17,9 @@ export default class View {
     this._data = data;
     const markUp = this._generateHtml();
     const newDom = document.createRange().createContextualFragment(markUp);
-    const newElArr = Aray.from(document.querySelectorAll('*'));
-    const curElArr = Aray.from(document.querySelectorAll('*'));
+
+    const newElArr = Aray.from(newDom.querySelectorAll('*'));
+    const curElArr = Aray.from(this._parentEl.querySelectorAll('*'));
 
     newElArr.forEach((newEl, i) => {
       const curEl = curElArr[i];
