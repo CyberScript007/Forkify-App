@@ -12,7 +12,6 @@ const rejectPromise = function (sec) {
 export const helperFetchApi = async function (url) {
   try {
     const res = await Promise.race([fetch(url), rejectPromise(API_TIMEOUT)]);
-    console.log(res);
 
     // rejecting the promise if response.ok is not true
     if (!res.ok) throw new Error(` ${res.status} bad request 💥💥💥`);
