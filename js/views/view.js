@@ -13,6 +13,13 @@ export default class View {
     this._parentEl.insertAdjacentHTML('afterbegin', markUp);
   }
 
+  update(data) {
+    this._data = data;
+    const markUp = this._generateHtml();
+    const newDom = document.createRange().createContextualFragment(markUp);
+    console.log(newDom);
+  }
+
   _clear() {
     this._parentEl.innerHTML = '';
   }

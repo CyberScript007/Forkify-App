@@ -68,7 +68,7 @@ const showUpdateRecipe = function (updateNum) {
   // 1) Updating serving
   model.updateServings(updateNum);
   // 2) Re-rendering recipe view
-  RecipeView.render(model.state.recipe);
+  RecipeView.update(model.state.recipe);
 };
 
 // initialization function: get call when ever the page load
