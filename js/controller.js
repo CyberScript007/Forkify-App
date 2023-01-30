@@ -67,6 +67,7 @@ const showPaginationView = function (goTopage) {
 
 // Updating servings
 const showUpdateRecipe = function (updateNum) {
+  console.log(updateNum);
   // 1) Updating serving
   model.updateServings(updateNum);
   // 2) Re-rendering recipe view
