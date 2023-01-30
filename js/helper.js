@@ -15,8 +15,7 @@ export const helperFetchApi = async function (url) {
     console.log(res);
 
     // rejecting the promise if response.ok is not true
-    if (!res.ok)
-      throw new Error(`${data.message} ${res.status} bad request 💥💥💥`);
+    if (!res.ok) throw new Error(` ${res.status} bad request 💥💥💥`);
 
     // storing data
     const data = await res.json();
