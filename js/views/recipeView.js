@@ -13,6 +13,14 @@ class RecipeView extends View {
     ['load', 'hashchange'].forEach(i => window.addEventListener(i, handler));
   }
 
+  updateServingsHandler(handler) {
+    this._parentEl.addEventListener('click', function (e) {
+      const btn = e.target.closest('.recipe__counter');
+      console.log(btn);
+      handler();
+    });
+  }
+
   _generateHtml() {
     return ` 
   <figure class="recipe__container-img">
