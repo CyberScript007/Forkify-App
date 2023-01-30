@@ -28,7 +28,7 @@ const showRecipe = async function () {
     // 5) Rendering recipe view to user interface
     RecipeView.render(model.state.recipe);
   } catch (e) {
-    RecipeView.renderErrorMessage(e.message);
+    RecipeView.renderErrorMessage();
   }
 };
 

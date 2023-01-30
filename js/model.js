@@ -19,6 +19,7 @@ export const fetchRecipe = async function (id) {
     // Eexecuting helper function for fetching api
     const data = await helperFetchApi(`${API_URL}${id}`);
 
+
     // destructing the data
     const { recipe } = data.data;
 
