@@ -66,9 +66,9 @@ const showPaginationView = function (goTopage) {
 };
 
 // Updating servings
-const showUpdateRecipe = function () {
+const showUpdateRecipe = function (updateNum) {
   // Updating serving
-  model.updateServings(6);
+  model.updateServings(updateNum);
   // Re-rendering recipe view
   RecipeView.render(model.state.recipe);
 };
