@@ -7,7 +7,8 @@ import View from './view';
 class RecipeView extends View {
   _parentEl = document.querySelector('.recipe');
   _data;
-  _errorMessage = 'No recipe found, use a correct recipe Id';
+  _errorMessage = 'No recipe found, use a correct recipe Id :) 💥💥💥';
+
   recipeHandler(handler) {
     ['load', 'hashchange'].forEach(i => window.addEventListener(i, handler));
   }

@@ -14,7 +14,8 @@ export const helperFetchApi = async function (url) {
     const res = await Promise.race([fetch(url), rejectPromise(API_TIMEOUT)]);
 
     // rejecting the promise if response.ok is not true
-    if (!res.ok) throw new Error(`${res.status} bad request 💥💥💥`);
+    if (!res.ok)
+      throw new Error(`${data.message} ${res.status} bad request 💥💥💥`);
 
     // storing data
     const data = await res.json();
