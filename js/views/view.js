@@ -62,5 +62,7 @@ export default class View {
             </div>
         </div>
     `;
+    this._parentEl.innerHTML = '';
+    this._parentEl.insertAdjacentHTML('afterbegin', markUp);
   }
 }
