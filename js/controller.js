@@ -27,8 +27,6 @@ const showRecipe = async function () {
 
     // 5) Rendering recipe view to user interface
     RecipeView.render(model.state.recipe);
-
-    showUpdateRecipe();
   } catch (err) {
     RecipeView.renderErrorMessage();
   }
@@ -78,12 +76,13 @@ const init = function () {
   // 1) Calling recipe handler to pass the recipe promise (fetchRecipe) as an argument
   RecipeView.recipeHandler(showRecipe);
 
+  // 2) Executing update serving handler to be able to increase or decrease the update serving and ingredients quantity
+  RecipeView.updateServingsHandler(showUpdateRecipe);
+
   // 3) Calling search handler to get user input
   SearchView.searchHandler(showRecipeItem);
 
   // 4) Executing pagination handler to render the extract recipe item and changing pagination button
   PaginationView.paginationHandler(showPaginationView);
-  // 2) Executing update serving handler to be able to increase or decrease the update serving and ingredients quantity
-  RecipeView.updateServingsHandler(showUpdateRecipe);
 };
 init();
