@@ -27,6 +27,8 @@ const showRecipe = async function () {
 
     // 5) Rendering recipe view to user interface
     RecipeView.render(model.state.recipe);
+
+    showUpdateRecipe();
   } catch (err) {
     RecipeView.renderErrorMessage();
   }
@@ -64,6 +66,9 @@ const showPaginationView = function (goTopage) {
 };
 
 // Updating servings
+const showUpdateRecipe = function () {
+  model.updateServings(6);
+};
 
 // initialization function: get call when ever the page load
 const init = function () {
