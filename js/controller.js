@@ -66,10 +66,9 @@ const showPaginationView = function (goTopage) {
 };
 
 // Updating servings
-const showUpdateRecipe = function (updateNum) {
-  console.log(updateNum);
+const showUpdateRecipe = function (newServings) {
   // 1) Updating serving
-  model.updateServings(updateNum);
+  model.updateServings(newServings);
   // 2) Re-rendering recipe view
   RecipeView.render(model.state.recipe);
 };
@@ -78,10 +77,13 @@ const showUpdateRecipe = function (updateNum) {
 const init = function () {
   // 1) Calling recipe handler to pass the recipe promise (fetchRecipe) as an argument
   RecipeView.recipeHandler(showRecipe);
+
   // 2) Executing update serving handler to be able to increase or decrease the update serving and ingredients quantity
   RecipeView.updateServingsHandler(showUpdateRecipe);
+
   // 3) Calling search handler to get user input
   SearchView.searchHandler(showRecipeItem);
+
   // 4) Executing pagination handler to render the extract recipe item and changing pagination button
   PaginationView.paginationHandler(showPaginationView);
 };
