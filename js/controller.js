@@ -91,7 +91,8 @@ const showBookmarkRecipe = function () {
 
 // show bookmark recipe from local storage
 const bookmarkLocalStorageRecipe = function () {
-  model.state.bookmark;
+  // 1) render bookmark recipe to view
+  BookmarkView.render(model.state.bookmark);
 };
 
 // initialization function: get call when ever the page load
