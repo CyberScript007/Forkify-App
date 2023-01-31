@@ -70,8 +70,7 @@ export const fetchSearchRecipe = async function (query) {
 };
 
 // pagination page
-export const getSearchResultPage = function (page = state.search.page) {
-  console.log(state.search.page);
+export const getSearchResultPage = function (page = 1) {
   state.search.page = page;
   const start = (page - 1) * RES_PER_PAGE;
   const end = page * RES_PER_PAGE;
@@ -89,8 +88,9 @@ export const updateServings = function (newServings) {
   state.recipe.servings = newServings;
 };
 
-// add bookmark to the view
+// storing recipe data to local recipe
 
+// add bookmark to the view
 export const addBookmark = function (recipe) {
   // 1) storing recipe we received to bookmark array
   state.bookmark.push(recipe);
