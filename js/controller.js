@@ -4,6 +4,7 @@ import RecipeView from './views/recipeView.js';
 import SearchView from './views/searchView.js';
 import RecipeItemView from './views/recipeItemView.js';
 import PaginationView from './views/PaginationView.js';
+import BookmarkView from './views/bookmarkView.js';
 import responsiveView from './views/responsiveView.js';
 
 import 'core-js/stable';
@@ -76,6 +77,9 @@ const showBookmarkRecipe = function () {
   console.log(model.state.recipe);
   // 2) updating recipe view
   RecipeView.update(model.state.recipe);
+
+  // 3) render bookmark recipe to view
+  BookmarkView.render(model.state.bookmark);
 };
 
 // initialization function: get call when ever the page load
