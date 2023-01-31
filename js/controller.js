@@ -27,6 +27,9 @@ const showRecipe = async function () {
 
     // 5) Rendering recipe view to user interface
     RecipeView.render(model.state.recipe);
+
+    // 6) updating bookmark recipe
+    BookmarkView.update(model.state.bookmark);
   } catch (err) {
     RecipeView.renderErrorMessage();
   }
