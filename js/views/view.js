@@ -33,8 +33,9 @@ export default class View {
       }
 
       if (!newEl.isEqualNode(curEl)) {
-        newEl.attributes;
-        console.log(newEl.attributes);
+        Array.from(newEl.attributes).forEach(el =>
+          curEl.setAttribute(el.name, el.value)
+        );
       }
     });
   }
