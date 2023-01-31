@@ -34,13 +34,17 @@ export const fetchRecipe = async function (id) {
     };
 
     // setting bookmarked to true or false when the recipe data is been fetch
-    if (state.bookmark.some(el => el.id === id)) {
-      console.log('heelo');
-      state.recipe.bookmarked = true;
-    } else {
-      state.recipe.bookmarked = false;
-      console.log('fasle');
-    }
+    state.bookmark.some(el => el.id === id)
+      ? (state.recipe.bookmarked = true)
+      : (state.recipe.bookmarked = false);
+
+    // if (state.bookmark.some(el => el.id === id)) {
+    //   console.log('heelo');
+    //   state.recipe.bookmarked = true;
+    // } else {
+    //   state.recipe.bookmarked = false;
+    //   console.log('fasle');
+    // }
 
     console.log(state.recipe);
   } catch (err) {
