@@ -12,7 +12,7 @@ class BookmarkView extends View {
 
   _generateRecipeItemMarkup(i) {
     return `
-        <a href="#${i.id}" class="recipe-item__link link">
+        <a href="#${i.recipeId}" class="recipe-item__link link">
             <li class="recipe-item__details">
                 <figure class="recipe-item__container">
                 <img
