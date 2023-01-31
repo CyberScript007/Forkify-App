@@ -89,6 +89,11 @@ const showBookmarkRecipe = function () {
   BookmarkView.render(model.state.bookmark);
 };
 
+// show bookmark recipe from local storage
+const bookmarkLocalStorageRecipe = function () {
+  model.state.bookmark;
+};
+
 // initialization function: get call when ever the page load
 const init = function () {
   // 1) Calling recipe handler to pass the recipe promise (fetchRecipe) as an argument
@@ -107,6 +112,6 @@ const init = function () {
   PaginationView.paginationHandler(showRecipe);
 
   // 6) Executing bookmarkLocalStorageHandler to render recipe data from local storage
-  BookmarkView.bookmarkLocalStorageHandler(showBookmarkRecipe);
+  BookmarkView.bookmarkLocalStorageHandler(bookmarkLocalStorageRecipe);
 };
 init();
