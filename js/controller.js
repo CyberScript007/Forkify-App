@@ -82,6 +82,9 @@ const init = function () {
   // 2) Executing update serving handler to be able to increase or decrease the update serving and ingredients quantity
   RecipeView.updateServingsHandler(showUpdateRecipe);
 
+  // 3) Executing bookmark handler to bookmark recipe
+  RecipeView.bookmarkHandler();
+
   // 3) Calling search handler to get user input
   SearchView.searchHandler(showRecipeItem);
 
