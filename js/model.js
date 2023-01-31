@@ -117,3 +117,11 @@ export const deleteBookmark = function (id) {
   // 3) exceuting storeAndRemoveRecipe
   storeAndRemoveRecipe();
 };
+
+const init = function () {
+  const storageData = localStorage.getItem('bookmark');
+
+  state.bookmark = JSON.parse(storageData);
+};
+
+init();

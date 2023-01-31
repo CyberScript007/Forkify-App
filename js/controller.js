@@ -99,10 +99,13 @@ const init = function () {
   // 3) Executing bookmark handler to bookmark recipe
   RecipeView.bookmarkHandler(showBookmarkRecipe);
 
-  // 3) Calling search handler to get user input
+  // 4) Calling search handler to get user input
   SearchView.searchHandler(showRecipeItem);
 
-  // 4) Executing pagination handler to render the extract recipe item and changing pagination button
+  // 5) Executing pagination handler to render the extract recipe item and changing pagination button
   PaginationView.paginationHandler(showPaginationView);
+
+  // 6) Executing bookmarkLocalStorageHandler to render recipe data from local storage
+  BookmarkView.bookmarkLocalStorageHandler(showBookmarkRecipe);
 };
 init();

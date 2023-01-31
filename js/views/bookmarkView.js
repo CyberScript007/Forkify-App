@@ -4,6 +4,12 @@ import icon from 'url:../../img/icons.svg';
 class BookmarkView extends View {
   _parentEl = document.querySelector('.bookmark');
 
+  bookmarkLocalStorageHandler(handler) {
+    this._parentEl.addEventListener('load', function () {
+      handler();
+    });
+  }
+
   _generateHtml() {
     return `
         ${this._data.map(i => this._generateRecipeItemMarkup(i)).join('')}
