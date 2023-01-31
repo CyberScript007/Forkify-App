@@ -23,7 +23,7 @@ export default class View {
 
     newElArr.forEach((newEl, i) => {
       const curEl = curElArr[i];
-      if (!newEl.isEqualNode(curEl)) {
+      if (!newEl.isEqualNode(curEl) && newEl.firstChild.nodeValue !== '') {
         curEl.textContent = newEl.textContent;
       }
     });
