@@ -131,6 +131,16 @@
 
     &__link {
       text-decoration: none;
+      transition: background-color 0.3s linear, transform 0.3s linear;
+
+      &--active {
+        background-color: red;
+      }
+
+      &:hover {
+        background-color: $color-grey-light-1;
+        transform: translateY(-0.3rem);
+      }
     }
 
     &__details {
@@ -143,11 +153,6 @@
       // 290px / 16px = 18.125em to convert 290px to em
       @media only screen and (max-width: 18.125em) {
         flex-direction: column;
-      }
-
-      &:hover {
-        background-color: $color-grey-light-1;
-        transform: translateY(-0.3rem);
       }
     }
 
