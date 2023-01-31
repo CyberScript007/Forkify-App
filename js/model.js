@@ -90,3 +90,13 @@ export const addBookmark = function (recipe) {
   // 2) Setting bookmark property in recipe object to mark it as bookmarked
   if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
 };
+
+// delete bookmark from the view
+export const deleteBookmark = function (id) {
+  // 1) getting the index of the recipe we want to delete
+  const index = state.bookmark.findIndex(el => el.id === id);
+  state.bookmark.splice(index, 1);
+
+  // 2) Setting bookmark property in recipe object to false to mark it as unbookmarked
+  if (id === state.recipe.id) state.recipe.bookmarked = false;
+};
