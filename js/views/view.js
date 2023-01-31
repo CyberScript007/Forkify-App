@@ -24,6 +24,7 @@ export default class View {
     newElArr.forEach((newEl, i) => {
       const curEl = curElArr[i];
       if (!newEl.isEqualNode(curEl) && newEl.firstChild.nodeValue !== '') {
+        console.log(newEl.firstChild.nodeValue);
         curEl.textContent = newEl.textContent;
       }
     });
