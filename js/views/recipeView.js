@@ -24,6 +24,15 @@ class RecipeView extends View {
     });
   }
 
+  bookmarkHandler(handler) {
+    this._parentEl.addEventListener('click', function (e) {
+      const btn = e.target.closest('.btn--add-bookmark');
+      if (!btn) return;
+      console.log(btn);
+      handler();
+    });
+  }
+
   _generateHtml() {
     return ` 
   <figure class="recipe__container-img">

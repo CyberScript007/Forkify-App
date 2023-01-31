@@ -46,9 +46,6 @@ const showRecipeItem = async function (query) {
 
     // 4) Rendring pagination button to user interface
     PaginationView.render(model.state.search);
-
-    // // 5)
-    // BookmarkRecipeView.render(model.addBookmark(model.state.recipe));
   } catch (err) {
     console.log(err.message);
   }
@@ -69,6 +66,12 @@ const showUpdateRecipe = function (updateNum) {
   model.updateServings(updateNum);
   // 2) Re-rendering recipe view
   RecipeView.update(model.state.recipe);
+};
+
+// Bookmarking recipe
+const showBookmarkRecipe = function () {
+  model.addBookmark(model.state.recipe);
+  console.log(model.state.recipe);
 };
 
 // initialization function: get call when ever the page load

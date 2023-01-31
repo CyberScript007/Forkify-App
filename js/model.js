@@ -1,6 +1,5 @@
 import { helperFetchApi } from './helper';
-import { API_URL } from './config';
-import { RES_PER_PAGE } from './config';
+import { API_URL, RES_PER_PAGE } from './config';
 
 export const state = {
   recipe: {},
@@ -80,4 +79,13 @@ export const updateServings = function (newServings) {
     // old qty * new servings / old servings
   });
   state.recipe.servings = newServings;
+};
+
+// add bookmark to the view
+
+export const addBookmark = function (recipe) {
+  // 1) storing recipe we received to bookmark array
+  state.bookmark.push(recipe);
+  // 2) Setting bookmark property in recipe object to mark it as bookmarked
+  if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
 };
