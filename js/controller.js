@@ -83,7 +83,7 @@ const init = function () {
   RecipeView.updateServingsHandler(showUpdateRecipe);
 
   // 3) Executing bookmark handler to bookmark recipe
-  RecipeView.bookmarkHandler();
+  RecipeView.bookmarkHandler(showBookmarkRecipe);
 
   // 3) Calling search handler to get user input
   SearchView.searchHandler(showRecipeItem);
