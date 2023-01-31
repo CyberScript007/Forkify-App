@@ -28,6 +28,7 @@ const showRecipe = async function () {
     // 5) Rendering recipe view to user interface
     RecipeView.render(model.state.recipe);
 
+    debugger;
     // 6) updating bookmark recipe
     BookmarkView.update(model.state.bookmark);
 
@@ -81,6 +82,7 @@ const showBookmarkRecipe = function () {
     model.addBookmark(model.state.recipe);
   } else model.deleteBookmark(model.state.recipe.id);
   console.log(model.state.recipe);
+
   // 2) updating recipe view
   RecipeView.update(model.state.recipe);
 
