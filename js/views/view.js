@@ -23,7 +23,7 @@ export default class View {
 
     newElArr.forEach((newEl, i) => {
       const curEl = curElArr[i];
-      console.log('💥💥💥', newEl.firstChild.nodeValue);
+      console.log(curEl, newEl, newEl.isEqualNode(curEl));
       if (
         !newEl.isEqualNode(curEl) &&
         newEl.firstChild?.nodeValue.trim() !== ''
