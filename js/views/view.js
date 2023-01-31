@@ -20,13 +20,12 @@ export default class View {
 
     const newElArr = Array.from(newDom.querySelectorAll('*'));
     const curElArr = Array.from(this._parentEl.querySelectorAll('*'));
-    console.log(curElArr);
 
     newElArr.forEach((newEl, i) => {
       const curEl = curElArr[i];
       if (
         !newEl.isEqualNode(curEl) &&
-        newEl.firstChild?.nodeValue.trim() !== ''
+        newEl.firstChild?.nodeValue.trim() !== false
       ) {
         console.log(newEl.firstChild.nodeValue);
         curEl.textContent = newEl.textContent;
