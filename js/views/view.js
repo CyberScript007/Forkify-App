@@ -24,12 +24,12 @@ export default class View {
     newElArr.forEach((newEl, i) => {
       const curEl = curElArr[i];
       console.log(curEl, newEl, newEl.isEqualNode(curEl));
-      console.log(newEl.firstChild);
       if (
         !newEl.isEqualNode(curEl) &&
         newEl.firstChild?.nodeValue.trim() !== ''
       ) {
         curEl.textContent = newEl.textContent;
+        console.log(newEl.textContent);
       }
     });
   }
