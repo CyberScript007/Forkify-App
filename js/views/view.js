@@ -22,6 +22,7 @@ export default class View {
     const curElArr = Array.from(this._parentEl.querySelectorAll('*'));
 
     newElArr.forEach((newEl, i) => {
+      console.log(newEl);
       const curEl = curElArr[i];
       if (
         !newEl.isEqualNode(curEl) &&
