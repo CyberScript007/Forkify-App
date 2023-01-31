@@ -29,8 +29,7 @@ const showRecipe = async function () {
     RecipeView.render(model.state.recipe);
 
     // 6) updating bookmark recipe
-
-    BookmarkView.update(model.state.bookmark);
+    // BookmarkView.update(model.state.bookmark);
 
     // 7) updating recipe item view
     RecipeItemView.update(model.getSearchResultPage());
