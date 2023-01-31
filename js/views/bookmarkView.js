@@ -10,4 +10,4 @@ class BookmarkRecipeView extends View {
   }
 }
 
-export default new BookmarkRecipeView();
+// export default new BookmarkRecipeView();

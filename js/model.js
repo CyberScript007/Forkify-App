@@ -86,6 +86,7 @@ export const updateServings = function (newServings) {
 export const addBookmark = function (recipe) {
   // 1) storing recipe we received to bookmark array
   state.bookmark.push(recipe);
+  console.log(state.bookmark);
   // 2) Setting bookmark property in recipe object to mark it as bookmarked
   if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
 };
