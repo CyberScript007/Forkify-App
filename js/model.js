@@ -70,7 +70,7 @@ export const fetchSearchRecipe = async function (query) {
 };
 
 // pagination page
-export const getSearchResultPage = function (page = 1) {
+export const getSearchResultPage = function (page = state.search.page) {
   state.search.page = page;
   const start = (page - 1) * RES_PER_PAGE;
   const end = page * RES_PER_PAGE;
@@ -89,14 +89,20 @@ export const updateServings = function (newServings) {
 };
 
 // storing recipe data to local recipe
+const storeAndRemoveRecipe = function () {
+  localStorage.setItem('bookmark', JSON.stringify(state.bookmark));
+};
 
 // add bookmark to the view
 export const addBookmark = function (recipe) {
   // 1) storing recipe we received to bookmark array
   state.bookmark.push(recipe);
-  console.log(state.bookmark);
+
   // 2) Setting bookmark property in recipe object to mark it as bookmarked
   if (recipe.id === state.recipe.id) state.recipe.bookmarked = true;
+
+  // 3) exceuting storeAndRemoveRecipe
+  storeAndRemoveRecipe();
 };
 
 // delete bookmark from the view
@@ -107,4 +113,7 @@ export const deleteBookmark = function (id) {
 
   // 2) Setting bookmark property in recipe object to false to mark it as unbookmarked
   if (id === state.recipe.id) state.recipe.bookmarked = false;
+
+  // 3) exceuting storeAndRemoveRecipe
+  storeAndRemoveRecipe();
 };
