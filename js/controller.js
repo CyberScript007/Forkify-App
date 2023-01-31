@@ -29,7 +29,7 @@ const showRecipe = async function () {
     RecipeView.render(model.state.recipe);
 
     // 6) updating bookmark recipe
-    // BookmarkView.update(model.state.bookmark);
+    BookmarkView.update(model.state.bookmark);
 
     // 7) updating recipe item view
     RecipeItemView.update(model.getSearchResultPage());
@@ -104,7 +104,7 @@ const init = function () {
   SearchView.searchHandler(showRecipeItem);
 
   // 5) Executing pagination handler to render the extract recipe item and changing pagination button
-  PaginationView.paginationHandler(showPaginationView);
+  PaginationView.paginationHandler(showRecipe);
 
   // 6) Executing bookmarkLocalStorageHandler to render recipe data from local storage
   BookmarkView.bookmarkLocalStorageHandler(showBookmarkRecipe);

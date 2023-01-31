@@ -124,6 +124,7 @@ const init = function () {
 
   if (!storageData) return;
   state.bookmark = JSON.parse(storageData);
+  console.log(state.bookmark);
 };
 
 init();
