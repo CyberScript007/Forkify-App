@@ -60,7 +60,7 @@ class RecipeView extends View {
           <strong><span class="recipe__servings">${
             this._data.servings
           }</span></strong>
-          servings
+          <span>servings</span>
         </p>
       </div>
       <div class="recipe__counter-container">
