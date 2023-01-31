@@ -70,7 +70,7 @@ const showUpdateRecipe = function (updateNum) {
 // Bookmarking recipe
 const showBookmarkRecipe = function () {
   // 1) add or deleting bookmark from view
-  if (model.state.recipe.bookmarked) {
+  if (!model.state.recipe.bookmarked) {
     model.addBookmark(model.state.recipe);
   } else model.deleteBookmark(model.state.recipe.id);
   console.log(model.state.recipe);
