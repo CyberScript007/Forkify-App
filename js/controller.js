@@ -109,7 +109,7 @@ const init = function () {
   SearchView.searchHandler(showRecipeItem);
 
   // 5) Executing pagination handler to render the extract recipe item and changing pagination button
-  PaginationView.paginationHandler(showRecipe);
+  PaginationView.paginationHandler(showPaginationView);
 
   // 6) Executing bookmarkLocalStorageHandler to render recipe data from local storage
   BookmarkView.bookmarkLocalStorageHandler(bookmarkLocalStorageRecipe);

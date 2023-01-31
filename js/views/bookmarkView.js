@@ -7,7 +7,6 @@ class BookmarkView extends View {
   bookmarkLocalStorageHandler(handler) {
     window.addEventListener('load', function () {
       handler();
-      console.log('hello');
     });
   }
 
