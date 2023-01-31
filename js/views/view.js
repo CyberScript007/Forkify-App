@@ -22,13 +22,12 @@ export default class View {
     const curElArr = Array.from(this._parentEl.querySelectorAll('*'));
 
     newElArr.forEach((newEl, i) => {
-      console.log(newEl);
       const curEl = curElArr[i];
       if (
         !newEl.isEqualNode(curEl) &&
-        newEl.firstChild?.nodeValue.trim() !== false
+        newEl.firstChild?.nodeValue.trim() !== ''
       ) {
-        console.log(newEl.firstChild.nodeValue);
+        console.log('💥💥💥', newEl.firstChild.nodeValue.trim());
         curEl.textContent = newEl.textContent;
       }
     });
