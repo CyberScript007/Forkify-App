@@ -12,7 +12,6 @@ class BookmarkView extends View {
 
   _generateRecipeItemMarkup(i) {
     const id = window.location.hash.slice(1);
-    console.log(id, i.id);
     return `
         <a href="#${i.id}" class="recipe-item__link ${
       i.id === id ? 'recipe-item__link--active' : ''

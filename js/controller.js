@@ -29,7 +29,7 @@ const showRecipe = async function () {
     RecipeView.render(model.state.recipe);
 
     // 6) updating bookmark recipe
-    BookmarkView.render(model.state.bookmark);
+    BookmarkView.update(model.state.bookmark);
   } catch (err) {
     RecipeView.renderErrorMessage();
   }
