@@ -34,6 +34,7 @@ class RecipeView extends View {
   }
 
   _generateHtml() {
+    console.log(this._data);
     return ` 
   <figure class="recipe__container-img">
     <button class="back-arrow">
