@@ -71,6 +71,7 @@ export const fetchSearchRecipe = async function (query) {
 
 // pagination page
 export const getSearchResultPage = function (page = state.search.page) {
+  console.log(page);
   state.search.page = page;
   const start = (page - 1) * RES_PER_PAGE;
   const end = page * RES_PER_PAGE;
