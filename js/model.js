@@ -39,6 +39,7 @@ export const fetchRecipe = async function (id) {
       state.recipe.bookmarked = true;
     } else {
       state.recipe.bookmarked = false;
+      console.log('fasle');
     }
 
     console.log(state.recipe);
