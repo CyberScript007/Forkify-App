@@ -69,8 +69,11 @@ const showUpdateRecipe = function (updateNum) {
 
 // Bookmarking recipe
 const showBookmarkRecipe = function () {
+  // 1) bookmarking recipe
   model.addBookmark(model.state.recipe);
   console.log(model.state.recipe);
+  // 2) updating recipe view
+  RecipeView.update(model.state.recipe);
 };
 
 // initialization function: get call when ever the page load
