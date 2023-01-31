@@ -122,7 +122,7 @@ const init = function () {
   const storageData = localStorage.getItem('bookmark');
 
   if (!storageData) return;
-
+  debugger;
   state.bookmark = JSON.parse(storageData);
 };
 
