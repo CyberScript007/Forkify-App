@@ -133,6 +133,10 @@
       text-decoration: none;
     }
 
+    &__link--active {
+      background-color: $color-grey-light-1;
+    }
+
     &__details {
       display: flex;
       align-items: center;
