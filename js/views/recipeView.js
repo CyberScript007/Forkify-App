@@ -19,7 +19,6 @@ class RecipeView extends View {
       if (!btn) return;
 
       const updateTo = +btn.dataset.updateTo;
-      console.log(updateTo);
       if (updateTo > 0) handler(updateTo);
     });
   }
@@ -28,13 +27,11 @@ class RecipeView extends View {
     this._parentEl.addEventListener('click', function (e) {
       const btn = e.target.closest('.btn--add-bookmark');
       if (!btn) return;
-      console.log(btn);
       handler();
     });
   }
 
   _generateHtml() {
-    console.log(this._data);
     return ` 
   <figure class="recipe__container-img">
     <button class="back-arrow">
