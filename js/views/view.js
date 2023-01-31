@@ -31,6 +31,11 @@ export default class View {
         curEl.textContent = newEl.textContent;
         console.log(newEl.textContent);
       }
+
+      if (!newEl.isEqualNode(curEl)) {
+        newEl.attributes;
+        console.log(newEl.attributes);
+      }
     });
   }
 
