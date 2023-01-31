@@ -34,7 +34,7 @@ export const fetchRecipe = async function (id) {
     };
 
     // setting bookmarked to true or false when the recipe data is been fetch
-    if (state.bookmark.some(el => el.id === id)) {
+    if (!state.bookmark.some(el => el.id === id)) {
       state.recipe.bookmarked = true;
     } else {
       state.recipe.bookmarked = false;
