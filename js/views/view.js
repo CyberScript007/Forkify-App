@@ -20,6 +20,7 @@ export default class View {
 
     const newElArr = Array.from(newDom.querySelectorAll('*'));
     const curElArr = Array.from(this._parentEl.querySelectorAll('*'));
+    console.log(curElArr);
 
     newElArr.forEach((newEl, i) => {
       const curEl = curElArr[i];
