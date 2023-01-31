@@ -133,17 +133,12 @@
       text-decoration: none;
     }
 
-    &__link--active {
-      background-color: red !important;
-    }
-
     &__details {
       display: flex;
       align-items: center;
       padding: 1.5rem 2.5rem;
       gap: 2rem;
       cursor: pointer;
-      transition: background-color 0.3s linear, transform 0.3s linear;
 
       // 290px / 16px = 18.125em to convert 290px to em
       @media only screen and (max-width: 18.125em) {
