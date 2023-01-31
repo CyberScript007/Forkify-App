@@ -9,6 +9,7 @@ class PaginationView extends View {
     this._parentEl.addEventListener('click', function (e) {
       // using an event delegation to select child element from parent element
       const btn = e.target.closest('.btn--pagination');
+      console.log(btn.firstChild, btn.firstChild.nodeValue);
       // if btn is a falsy value return
       if (!btn) return;
       // get values from dataset attributes and converting it to number
