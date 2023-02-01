@@ -23,8 +23,8 @@ class ModalView extends View {
   }
 
   _closeModalWindow() {
-    this._overlay.addEventListener('click', this._toggle().bind(this));
-    this._closeModalBtn.addEventListener('click', this._toggle().bind(this));
+    this._overlay.addEventListener('click', this._toggle());
+    this._closeModalBtn.addEventListener('click', this._toggle());
   }
 
   getInputValueHandler(handler) {
