@@ -52,6 +52,7 @@ export const fetchSearchRecipe = async function (query) {
   try {
     state.search.query = query;
     const data = await helperFetchApi(`${API_URL}?search=${query}`);
+    console.log(data);
 
     const { recipes } = data.data;
 
