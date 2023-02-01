@@ -3,7 +3,7 @@ import View from './view';
 class ModalView {
   _parent = document.querySelector('.modal');
   _overlay = document.querySelector('.overlay');
-  _openModaBtn = document.querySelector('.add-recipe');
+  _openModalBtn = document.querySelector('.add-recipe');
   _closeModalBtn = document.querySelector('.btn--close-modal');
 
   constructor() {
@@ -16,8 +16,8 @@ class ModalView {
     this._parent.classList.toggle('hidden');
   }
 
-  _openModalWindow() {
-    this._openModaBtn.addEventListener('click', this._toggle().bind(this));
+  openModalWindow() {
+    this._openModalBtn.addEventListener('click', this._toggle().bind(this));
   }
 
   _closeModalWindow() {
