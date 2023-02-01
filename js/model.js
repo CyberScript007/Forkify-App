@@ -129,7 +129,8 @@ export const uploadRecipe = async function (recipeUpload) {
       .filter(el => el[0].startsWith('ingredients') && el[1] !== '')
       .map(el => {
         const ingredientsSplit = el[1].split(',');
-        return ingredientsSplit;
+        const [quantity, unit, description] = ingredientsSplit;
+        return { quantity, unit, description };
       });
     console.log(ingredients);
   } catch (err) {
