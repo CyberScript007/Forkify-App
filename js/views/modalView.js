@@ -1,6 +1,6 @@
 import View from './view';
 
-class ModalView {
+class ModalView extends View {
   _parent = document.querySelector('.modal');
   _overlay = document.querySelector('.overlay');
   _openModalBtn = document.querySelector('.add-recipe');
