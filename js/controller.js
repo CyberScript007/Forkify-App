@@ -121,6 +121,6 @@ const init = function () {
   BookmarkView.bookmarkLocalStorageHandler(bookmarkLocalStorageRecipe);
 
   // 7)
-  ModalView.openModalWindow(showRecipeUpload);
+  ModalView.getInputValueHandler(showRecipeUpload);
 };
 init();
