@@ -21,6 +21,7 @@ export const fetchRecipe = async function (id) {
 
     // destructing the data
     const { recipe } = data.data;
+    console.log(recipe);
 
     // renaming the data
     state.recipe = {
@@ -123,9 +124,9 @@ export const deleteBookmark = function (id) {
 
 // uploading recipe
 
-export const uploadRecipe = async function (recipeUpload) {
+export const uploadRecipe = async function (recipeData) {
   try {
-    const ingredients = Object.entries(recipeUpload)
+    const ingredients = Object.entries(recipeData)
       .filter(el => el[0].startsWith('ingredients') && el[1] !== '')
       .map(el => {
         const ingredientsSplit = el[1].split(',');
@@ -136,7 +137,9 @@ export const uploadRecipe = async function (recipeUpload) {
         const [quantity, unit, description] = ingredientsSplit;
         return { quantity: quantity ? +quantity : null, unit, description };
       });
-    console.log(recipeUpload);
+    console.log(recipeData);
+
+    const recipeUpload = {};
   } catch (err) {
     throw err;
   }
