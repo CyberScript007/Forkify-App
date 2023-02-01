@@ -140,7 +140,6 @@ export const uploadRecipe = async function (recipeData) {
         const [quantity, unit, description] = ingredientsSplit;
         return { quantity: quantity ? +quantity : null, unit, description };
       });
-    console.log(recipeData);
 
     const recipeUploadData = {
       cooking_time: recipeData.prep_time,
@@ -156,9 +155,8 @@ export const uploadRecipe = async function (recipeData) {
       recipeUploadData
     );
     const { recipe } = data.data;
-    console.log(recipe);
     state.recipe = createObjectRecipe(recipe);
-    console.log(state.recipe);
+    addBookmark(state.recipe);
   } catch (err) {
     throw err;
   }
