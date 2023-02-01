@@ -29,9 +29,10 @@ class ModalView extends View {
   getInputValueHandler(handler) {
     this._parentEl.addEventListener('click', function (e) {
       e.preventDefault();
-      const data = [...new FormData(this)];
+      const dataArr = [...new FormData(this)];
+      const data = Object.fromEntries(dataArr);
       console.log(data);
-      handler();
+      handler(data);
     });
   }
 }

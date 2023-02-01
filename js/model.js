@@ -122,8 +122,8 @@ export const deleteBookmark = function (id) {
 
 // uploading recipe
 
-export const uploadRecipe = function () {
-  console.log('recipe');
+export const uploadRecipe = function (recipe) {
+  console.log(recipe);
 };
 
 const init = function () {
