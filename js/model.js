@@ -150,7 +150,7 @@ export const uploadRecipe = async function (recipeData) {
     };
     console.log(recipeUpload);
     const recipeApi = await helperFetchApi(
-      `${API_URL}&key=${API_KEY}`,
+      `${API_URL}?key=${API_KEY}`,
       recipeUpload
     );
     console.log(recipeApi);
