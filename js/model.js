@@ -136,7 +136,7 @@ export const uploadRecipe = async function (recipeUpload) {
         const [quantity, unit, description] = ingredientsSplit;
         return { quantity: quantity ? +quantity : null, unit, description };
       });
-    console.log(ingredients);
+    console.log(recipeUpload);
   } catch (err) {
     throw err;
   }
