@@ -1,5 +1,6 @@
 import { helperFetchApi } from './helper';
 import { API_URL, RES_PER_PAGE } from './config';
+import { async } from 'regenerator-runtime';
 
 export const state = {
   recipe: {},
@@ -122,8 +123,13 @@ export const deleteBookmark = function (id) {
 
 // uploading recipe
 
-export const uploadRecipe = function (recipe) {
-  console.log(recipe);
+export const uploadRecipe = async function (recipeUpload) {
+  try {
+    const ingredients = Object.entries(recipeUpload);
+    console.log(ingredients);
+  } catch (err) {
+    throw err;
+  }
 };
 
 const init = function () {
