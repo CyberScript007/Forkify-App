@@ -6,10 +6,10 @@ class ModalView extends View {
   _openModalBtn = document.querySelector('.add-recipe');
   _closeModalBtn = document.querySelector('.btn--close-modal');
 
-  constructor() {
-    super();
-    this._closeModalWindow();
-  }
+  // constructor() {
+  //   super();
+  //   this._closeModalWindow();
+  // }
 
   _toggle() {
     this._overlay.classList.toggle('hidden');
