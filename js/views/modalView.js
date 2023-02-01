@@ -19,7 +19,7 @@ class ModalView extends View {
 
   _openModalWindow() {
     console.log(this);
-    this._openModalBtn.addEventListener('click', this._toggle().bind(this));
+    this._openModalBtn.addEventListener('click', this._toggle());
   }
 
   _closeModalWindow() {
