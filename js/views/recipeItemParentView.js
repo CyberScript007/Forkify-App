@@ -9,7 +9,7 @@ class RecipeItemParentView extends View {
       this._data.id === id ? 'recipe-item__link--active' : ''
     }">
         <li class="recipe-item__details">
-            <figure class="recipe-item__container">
+            <figure class="recipe-item__container-img">
             <img
                 src="${this._data.imageUrl}"
                 alt="Recipe item image"
