@@ -5,6 +5,7 @@ import SearchView from './views/searchView.js';
 import RecipeItemView from './views/recipeItemView.js';
 import PaginationView from './views/PaginationView.js';
 import BookmarkView from './views/bookmarkView.js';
+import ModalView from './views/modalView.js';
 import responsiveView from './views/responsiveView.js';
 
 import 'core-js/stable';
