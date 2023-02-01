@@ -8,7 +8,6 @@ class ModalView extends View {
 
   constructor() {
     super();
-    this.openModalWindow();
     this._closeModalWindow();
   }
 
