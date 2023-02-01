@@ -16,8 +16,9 @@ class ModalView extends View {
     this._parent.classList.toggle('hidden');
   }
 
-  openModalWindow() {
+  openModalWindow(handler) {
     this._openModalBtn.addEventListener('click', this._toggle().bind(this));
+    handler();
   }
 
   _closeModalWindow() {

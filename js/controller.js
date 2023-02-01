@@ -98,7 +98,6 @@ const bookmarkLocalStorageRecipe = function () {
 // Rendering recipe upload to view
 const showRecipeUpload = function () {
   model.uploadRecipe();
-  ModalView.openModalWindow();
 };
 
 // initialization function: get call when ever the page load
@@ -122,6 +121,6 @@ const init = function () {
   BookmarkView.bookmarkLocalStorageHandler(bookmarkLocalStorageRecipe);
 
   // 7)
-  ModalView.getInputValueHandler(showRecipeUpload);
+  ModalView.openModalWindow(showRecipeUpload);
 };
 init();
