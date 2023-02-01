@@ -11,7 +11,7 @@ export default class View {
       return this.renderErrorMessage();
     console.log(data);
     console.log(data.length);
-    console.log('💥💥💥💥', Array.isArray(data));
+    console.log('💥💥💥💥', Array.isArray(data.length === 0));
     this._data = data;
     const markUp = this._generateHtml();
     this._clear();
