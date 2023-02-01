@@ -142,7 +142,7 @@ export const uploadRecipe = async function (recipeData) {
       });
     console.log(recipeData);
 
-    const recipeUpload = {
+    const recipeUploadData = {
       cooking_time: recipeData.prep_time,
       image_url: recipeData.image_url,
       servings: recipeData.servings,
@@ -151,10 +151,11 @@ export const uploadRecipe = async function (recipeData) {
       publisher: recipeData.publisher,
       ingredients,
     };
-    const recipe = await helperFetchApi(
+    const data = await helperFetchApi(
       `${API_URL}?key=${API_KEY}`,
-      recipeUpload
+      recipeUploadData
     );
+    const { recipe } = data.data;
     console.log(recipe);
     state.recipe = createObjectRecipe(recipe);
     console.log(state.recipe);
