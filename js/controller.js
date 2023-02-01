@@ -98,7 +98,7 @@ const bookmarkLocalStorageRecipe = function () {
 // Rendering recipe upload to view
 const showRecipeUpload = async function (uploadData) {
   try {
-    model.uploadRecipe(uploadData);
+    await model.uploadRecipe(uploadData);
   } catch (err) {
     ModalView.renderErrorMessage(err.message);
   }
