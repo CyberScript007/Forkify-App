@@ -120,6 +120,12 @@ export const deleteBookmark = function (id) {
   storeAndRemoveRecipe();
 };
 
+// uploading recipe
+
+export const uploadRecipe = function () {
+  console.log('recipe');
+};
+
 const init = function () {
   const storageData = localStorage.getItem('bookmark');
 

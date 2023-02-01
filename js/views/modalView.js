@@ -1,5 +1,7 @@
+import View from './view';
+
 class ModalView {
-  _modalWindow = document.querySelector('.modal');
+  _parent = document.querySelector('.modal');
   _overlay = document.querySelector('.overlay');
   _openModaBtn = document.querySelector('.add-recipe');
   _closeModalBtn = document.querySelector('.btn--close-modal');
@@ -11,7 +13,7 @@ class ModalView {
 
   _toggle() {
     this._overlay.classList.toggle('hidden');
-    this._modalWindow.classList.toggle('hidden');
+    this._parent.classList.toggle('hidden');
   }
 
   _openModalWindow() {
@@ -21,6 +23,15 @@ class ModalView {
   _closeModalWindow() {
     this._overlay.addEventListener('click', this._toggle().bind(this));
     this._closeModalBtn.addEventListener('click', this._toggle().bind(this));
+  }
+
+  getInputValueHandler(handler) {
+    this._parent.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      console.log('hello');
+      handler();
+    });
   }
 }
 

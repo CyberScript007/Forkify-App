@@ -95,6 +95,11 @@ const bookmarkLocalStorageRecipe = function () {
   BookmarkView.render(model.state.bookmark);
 };
 
+// Rendering recipe upload to view
+const showRecipeUpload = function () {
+  model.uploadRecipe();
+};
+
 // initialization function: get call when ever the page load
 const init = function () {
   // 1) Calling recipe handler to pass the recipe promise (fetchRecipe) as an argument
@@ -114,5 +119,8 @@ const init = function () {
 
   // 6) Executing bookmarkLocalStorageHandler to render recipe data from local storage
   BookmarkView.bookmarkLocalStorageHandler(bookmarkLocalStorageRecipe);
+
+  // 7)
+  ModalView.getInputValueHandler(showRecipeUpload);
 };
 init();
