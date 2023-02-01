@@ -125,9 +125,12 @@ export const deleteBookmark = function (id) {
 
 export const uploadRecipe = async function (recipeUpload) {
   try {
-    const ingredients = Object.entries(recipeUpload).filter(
-      el => el[0].startsWith('ingredients') && el[1] !== ''
-    );
+    const ingredients = Object.entries(recipeUpload)
+      .filter(el => el[0].startsWith('ingredients') && el[1] !== '')
+      .map(el => {
+        const ingredientsSplit = el[1].split(',');
+        return ingredientsSplit;
+      });
     console.log(ingredients);
   } catch (err) {
     throw err;
