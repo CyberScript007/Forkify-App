@@ -3,6 +3,7 @@ import icon from 'url:../../img/icons.svg';
 
 class BookmarkView extends View {
   _parentEl = document.querySelector('.bookmark');
+  _errorMessage = 'No recipes found for your query! Please try again ;)';
 
   bookmarkLocalStorageHandler(handler) {
     window.addEventListener('load', function () {

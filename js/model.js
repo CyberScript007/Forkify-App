@@ -55,7 +55,7 @@ export const fetchSearchRecipe = async function (query) {
     console.log(data);
 
     const { recipes } = data.data;
-    if (recipes.length === 0) throw new Error('there zero leghtt');
+    if (recipes.length === 0) throw new Error();
 
     state.search.recipes = recipes.map(i => {
       return {
@@ -67,7 +67,6 @@ export const fetchSearchRecipe = async function (query) {
     });
     state.search.page = 1;
   } catch (err) {
-    console.log(err);
     throw err;
   }
 };

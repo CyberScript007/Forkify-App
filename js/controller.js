@@ -53,7 +53,6 @@ const showRecipeItem = async function (query) {
     // 4) Rendring pagination button to user interface
     PaginationView.render(model.state.search);
   } catch (err) {
-    console.log(err);
     RecipeItemView.renderErrorMessage();
   }
 };
