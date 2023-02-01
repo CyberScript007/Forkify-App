@@ -9,6 +9,7 @@ export default class View {
   render(data) {
     if (!data || Array.isArray(data && data.length === 0))
       return this.renderErrorMessage();
+    console.log(data);
     this._data = data;
     const markUp = this._generateHtml();
     this._clear();
