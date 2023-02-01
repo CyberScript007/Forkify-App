@@ -96,8 +96,12 @@ const bookmarkLocalStorageRecipe = function () {
 };
 
 // Rendering recipe upload to view
-const showRecipeUpload = function (uploadData) {
-  model.uploadRecipe(uploadData);
+const showRecipeUpload = async function (uploadData) {
+  try {
+    model.uploadRecipe(uploadData);
+  } catch (err) {
+    ModalView.renderErrorMessage(err.message);
+  }
 };
 
 // initialization function: get call when ever the page load

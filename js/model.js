@@ -129,6 +129,10 @@ export const uploadRecipe = async function (recipeUpload) {
       .filter(el => el[0].startsWith('ingredients') && el[1] !== '')
       .map(el => {
         const ingredientsSplit = el[1].split(',');
+        if (ingredientsSplit.length !== 3)
+          throw new Error(
+            'Please use the correct format, quantity, unit, description must be specifier'
+          );
         const [quantity, unit, description] = ingredientsSplit;
         return { quantity: quantity ? +quantity : null, unit, description };
       });
