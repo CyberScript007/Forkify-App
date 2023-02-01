@@ -47,8 +47,6 @@ export const fetchRecipe = async function (id) {
     } else {
       state.recipe.bookmarked = false;
     }
-
-    console.log(state.recipe);
   } catch (err) {
     throw err;
   }
@@ -60,7 +58,6 @@ export const fetchSearchRecipe = async function (query) {
   try {
     state.search.query = query;
     const data = await helperFetchApi(`${API_URL}?search=${query}`);
-    console.log(data);
 
     const { recipes } = data.data;
     console.log(recipes);
@@ -154,7 +151,6 @@ export const uploadRecipe = async function (recipeData) {
       publisher: recipeData.publisher,
       ingredients,
     };
-    console.log(recipeUpload);
     const recipe = await helperFetchApi(
       `${API_URL}?key=${API_KEY}`,
       recipeUpload
