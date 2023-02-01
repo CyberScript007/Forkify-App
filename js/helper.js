@@ -9,9 +9,18 @@ const rejectPromise = function (sec) {
   });
 };
 
-export const helperFetchApi = async function (url) {
+export const helperFetchApi = async function (url, upload = undefined) {
   try {
-    const res = await Promise.race([fetch(url), rejectPromise(API_TIMEOUT)]);
+    const fetchData = upload
+      ? fetch(url, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: upload,
+        })
+      : fetch(url);
+    const res = await Promise.race([fetchData, rejectPromise(API_TIMEOUT)]);
 
     // rejecting the promise if response.ok is not true
     if (!res.ok) throw new Error(` ${res.status} bad request 💥💥💥`);

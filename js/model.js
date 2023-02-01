@@ -1,5 +1,5 @@
 import { helperFetchApi } from './helper';
-import { API_URL, RES_PER_PAGE } from './config';
+import { API_URL, RES_PER_PAGE, API_KEY } from './config';
 import { async } from 'regenerator-runtime';
 
 export const state = {
@@ -149,6 +149,8 @@ export const uploadRecipe = async function (recipeData) {
       ingredients,
     };
     console.log(recipeUpload);
+    const recipeApi = await helperFetchApi(`${API_URL}&key=${API_KEY}`);
+    console.log(recipeApi);
   } catch (err) {
     throw err;
   }
