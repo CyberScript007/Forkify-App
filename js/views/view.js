@@ -6,11 +6,12 @@ export default class View {
   _message = 'Start by searching for a recipe or an ingredient. Have fun!';
   _errorMessage = 'No recipes found for your query! Please try again ;)';
 
-  render(data) {
+  render(data, render = false) {
     if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderErrorMessage();
     this._data = data;
     const markUp = this._generateHtml();
+    if (render) return markUp;
     this._clear();
     this._parentEl.insertAdjacentHTML('afterbegin', markUp);
   }
