@@ -7,11 +7,8 @@ export default class View {
   _errorMessage = 'No recipes found for your query! Please try again ;)';
 
   render(data) {
-    if (!data || Array.isArray(data && data.length === 0))
+    if (!data || (Array.isArray(data) && data.length === 0))
       return this.renderErrorMessage();
-    console.log(data);
-    console.log(data.length);
-    console.log('💥💥💥💥', Array.isArray(data.length !== 0));
     this._data = data;
     const markUp = this._generateHtml();
     this._clear();
