@@ -41,7 +41,7 @@
   &__details {
     display: flex;
     justify-content: center;
-    padding: 6vh 6vw 4vh 6vw;
+    padding: 6vh 4vw 4vh 4vw;
     gap: 3vw;
 
     // 537px / 16px = 33.5625em to convert 537px to em
@@ -54,8 +54,8 @@
       padding: 6vh 2vw 4vh 2vw;
     }
 
-    // 335px / 16px = 20.9375em to convert 335px to em
-    @media only screen and (max-width: 20.9375em) {
+    // 430px / 16px = 20.9375em to convert 430px to em
+    @media only screen and (max-width: 26.875em) {
       flex-direction: column;
     }
   }
@@ -82,18 +82,14 @@
     }
   }
 
-  &__servings {
-    font-weight: bold;
-  }
-
   &__update {
     display: flex;
     align-items: center;
     gap: 2vw;
     width: 70%;
 
-    // 335px / 16px = 20.9375em to convert 335px to em
-    @media only screen and (max-width: 20.9375em) {
+    // 430px / 16px = 26.875em to convert 430px to em
+    @media only screen and (max-width: 26.875em) {
       width: 100%;
     }
   }
@@ -115,6 +111,21 @@
     text-transform: uppercase;
     color: $color-primary;
     padding-bottom: 5vh;
+  }
+
+  &__info {
+    display: flex;
+    gap: 1vw;
+  }
+
+  &__user {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 100%;
+    background-color: $color-grey-light-2;
   }
 
   // recipe-item
@@ -145,23 +156,26 @@
     }
 
     &__details {
-      display: flex;
+      display: grid;
       align-items: center;
       padding: 1.5rem 2.5rem;
       gap: 2rem;
+      grid-template-columns: max-content 1fr;
       cursor: pointer;
-
-      // 290px / 16px = 18.125em to convert 290px to em
-      @media only screen and (max-width: 18.125em) {
-        flex-direction: column;
-      }
     }
 
-    &__container {
+    &__container-img {
       position: relative;
       width: 7rem;
       height: 7rem;
       border-radius: 100%;
+
+      // 310px / 16px = 18.125em to convert 310px to em
+      @media only screen and (max-width: 19.375em) {
+        grid-column: 1 / 3;
+        margin: 0 auto;
+        text-align: center;
+      }
     }
 
     &__background-blend {
@@ -175,6 +189,15 @@
       border-radius: 100%;
     }
 
+    &__content {
+      width: 100%;
+
+      // 310px / 16px = 18.125em to convert 310px to em
+      @media only screen and (max-width: 19.375em) {
+        grid-column: 1 / 3;
+      }
+    }
+
     &__title {
       text-transform: uppercase;
       font-weight: 500;
@@ -185,6 +208,27 @@
       text-transform: uppercase;
       font-size: 1.2rem;
       color: $color-grey-dark-1;
+      margin-right: auto;
+    }
+
+    &__info {
+      width: 100%;
+      display: flex;
+    }
+
+    &__user {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: $color-grey-light-3;
+      border-radius: 100%;
+
+      &-icon {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
     }
   }
 

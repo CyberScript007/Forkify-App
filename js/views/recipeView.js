@@ -64,7 +64,7 @@ class RecipeView extends View {
           <use xlink:href="${icon}#icon-users"></use>
         </svg>
         <p class="recipe__text">
-          <span class="recipe__servings">${this._data.servings}</span>
+          <strong class="recipe__servings">${this._data.servings}</strong>
           servings
         </p>
       </div>
@@ -84,13 +84,20 @@ class RecipeView extends View {
           </svg>
         </button>
       </div>
-      <button class="btn recipe__bookmark btn--add-bookmark">
-        <svg class="icon--white icon">
-          <use xlink:href="${icon}#icon-bookmark${
+      <div class="recipe__info">
+        <div class="recipe__user">
+          <svg class="icon--grey icon">
+            <use xlink:href="${icon}#icon-user"></use>
+          </svg>
+        </div>
+        <button class="btn recipe__bookmark btn--add-bookmark">
+          <svg class="icon--white icon">
+            <use xlink:href="${icon}#icon-bookmark${
       this._data.bookmarked ? '1' : ''
     }"></use>
-        </svg>
-      </button>
+          </svg>
+        </button>
+      </div>
     </div>
   </div>
   <div class="recipe__ingredients">

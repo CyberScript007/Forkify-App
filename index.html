@@ -65,7 +65,7 @@
           </div> -->
           <!--<a href="#" class="recipe-item__link link">
             <li class="recipe-item__details">
-              <figure class="recipe-item__container">
+              <figure class="recipe-item__container-img">
                 <img
                   src="img/ronaldo.jpg"
                   alt="Recipe item image"
@@ -77,7 +77,14 @@
               </figure>
               <div class="recipe-item__content">
                 <h4 class="heading--4 recipe-item__title">avocado egg salad</h4>
-                <p class="recipe-item__text">two peas and their pod</p>
+                <div class="recipe-item__info">
+                  <p class="recipe-item__text">two peas and their pod</p>
+                  <div class="recipe-item__user">
+                    <svg class="icon--grey recipe-item__user-icon">
+                      <use xlink:href="img/icons.svg#icon-user"></use>
+                    </svg>
+                  </div>
+                </div>
               </div>
             </li>
           </a>
@@ -133,7 +140,7 @@
                 <use xlink:href="img/icons.svg#icon-arrow-left"></use>
               </svg>
             </button>
-            <img src="img/champs.jpg" alt="recipe image" class="recipe__img" />
+            <img src="img/ronaldo.jpg" alt="recipe image" class="recipe__img" />
             <div class="background-blend"></div>
             <figcaption class="recipe__caption">
               <h1 class="heading--1 recipe__title">
@@ -172,11 +179,18 @@
                   </svg>
                 </button>
               </div>
-              <button class="btn recipe__bookmark btn--add-bookmark">
-                <svg class="icon--white icon">
-                  <use xlink:href="img/icons.svg#icon-bookmark"></use>
-                </svg>
-              </button>
+              <div class="recipe__info">
+                <div class="recipe__user">
+                  <svg class="icon--grey icon">
+                    <use xlink:href="img/icons.svg#icon-user"></use>
+                  </svg>
+                </div>
+                <button class="btn recipe__bookmark btn--add-bookmark">
+                  <svg class="icon--white icon">
+                    <use xlink:href="img/icons.svg#icon-bookmark"></use>
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
           <div class="recipe__ingredients">
@@ -187,9 +201,13 @@
                   <use xlink:href="img/icons.svg#icon-check"></use>
                 </svg>
                 <p class="recipe__ingredients-item__text">
-                  <span class="recipe__ingredients-item__text--quantity">4</span>
+                  <span class="recipe__ingredients-item__text--quantity"
+                    >4</span
+                  >
                   <span class="recipe__ingredients-item__text--unit">cup</span>
-                  <span class="recipe__ingredients-item__text--description">chopped sweet onion</span>
+                  <span class="recipe__ingredients-item__text--description"
+                    >chopped sweet onion</span
+                  >
                 </p>
               </li>
               <li class="recipe__ingredients-item">
