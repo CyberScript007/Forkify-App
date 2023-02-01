@@ -130,7 +130,7 @@ export const uploadRecipe = async function (recipeUpload) {
       .map(el => {
         const ingredientsSplit = el[1].split(',');
         const [quantity, unit, description] = ingredientsSplit;
-        return { quantity, unit, description };
+        return { quantity: quantity ? +quantity : null, unit, description };
       });
     console.log(ingredients);
   } catch (err) {
