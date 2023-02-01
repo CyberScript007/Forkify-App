@@ -7,6 +7,8 @@ export default class View {
   _errorMessage = 'No recipes found for your query! Please try again ;)';
 
   render(data) {
+    if (!data || Array.isArray(data && data.length === 0))
+      return this.renderErrorMessage();
     this._data = data;
     const markUp = this._generateHtml();
     this._clear();
@@ -58,7 +60,7 @@ export default class View {
     this._parentEl.insertAdjacentHTML('afterbegin', markUp);
   }
 
-  renderMessage(message = this._message) {
+  renderSuccessMessage(message = this._message) {
     const markUp = `
         <div class="message__container">
             <div class="message">
