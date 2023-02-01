@@ -2,7 +2,7 @@ class ModalView {
   _modalWindow = document.querySelector('.modal');
   _overlay = document.querySelector('.overlay');
   _openModaBtn = document.querySelector('.add-recipe');
-  _closeModalBtn = document.querySelector('.btn--close');
+  _closeModalBtn = document.querySelector('.btn--close-modal');
 
   constructor() {
     this._openModalWindow();
