@@ -7,6 +7,7 @@ class ModalView extends View {
   _closeModalBtn = document.querySelector('.btn--close-modal');
 
   constructor() {
+    super();
     this._openModalWindow();
     this._closeModalWindow();
   }
