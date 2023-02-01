@@ -9,15 +9,15 @@ const rejectPromise = function (sec) {
   });
 };
 
-export const helperFetchApi = async function (url, upload = undefined) {
+export const helperFetchApi = async function (url, uploadData = undefined) {
   try {
-    const fetchData = upload
+    const fetchData = uploadData
       ? fetch(url, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify(upload),
+          body: JSON.stringify(uploadData),
         })
       : fetch(url);
     const res = await Promise.race([fetchData, rejectPromise(API_TIMEOUT)]);

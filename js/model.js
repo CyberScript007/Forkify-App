@@ -149,7 +149,10 @@ export const uploadRecipe = async function (recipeData) {
       ingredients,
     };
     console.log(recipeUpload);
-    const recipeApi = await helperFetchApi(`${API_URL}key=${API_KEY}`);
+    const recipeApi = await helperFetchApi(
+      `${API_URL}key=${API_KEY}`,
+      recipeUpload
+    );
     console.log(recipeApi);
   } catch (err) {
     throw err;
