@@ -17,7 +17,7 @@ export const helperFetchApi = async function (url, upload = undefined) {
           headers: {
             'Content-Type': 'application/json',
           },
-          body: upload,
+          body: JSON.stringify(upload),
         })
       : fetch(url);
     const res = await Promise.race([fetchData, rejectPromise(API_TIMEOUT)]);
