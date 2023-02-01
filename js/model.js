@@ -13,6 +13,21 @@ export const state = {
   bookmark: [],
 };
 
+// create object recipe function
+const createObjectRecipe = function (recipe) {
+  return {
+    imageUrl: recipe.image_url,
+    ingredients: recipe.ingredients,
+    cookingTime: recipe.cooking_time,
+    publisher: recipe.publisher,
+    servings: recipe.servings,
+    id: recipe.id,
+    sourceUrl: recipe.source_url,
+    title: recipe.title,
+    ...(recipe.key && { key: recipe.key }),
+  };
+};
+
 // Consuming a recipe view promise
 export const fetchRecipe = async function (id) {
   try {
@@ -21,19 +36,9 @@ export const fetchRecipe = async function (id) {
 
     // destructing the data
     const { recipe } = data.data;
-    console.log(recipe);
 
     // renaming the data
-    state.recipe = {
-      imageUrl: recipe.image_url,
-      ingredients: recipe.ingredients,
-      cookingTime: recipe.cooking_time,
-      publisher: recipe.publisher,
-      servings: recipe.servings,
-      id: recipe.id,
-      sourceUrl: recipe.source_url,
-      title: recipe.title,
-    };
+    state.recipe = createObjectRecipe(recipe);
 
     // setting bookmarked to true or false when the recipe data is been fetch
     if (state.bookmark.some(el => el.id === id)) {
@@ -57,7 +62,7 @@ export const fetchSearchRecipe = async function (query) {
     console.log(data);
 
     const { recipes } = data.data;
-    if (recipes.length === 0) throw new Error();
+    console.log(recipes);
 
     state.search.recipes = recipes.map(i => {
       return {
@@ -149,11 +154,13 @@ export const uploadRecipe = async function (recipeData) {
       ingredients,
     };
     console.log(recipeUpload);
-    const recipeApi = await helperFetchApi(
+    const recipe = await helperFetchApi(
       `${API_URL}?key=${API_KEY}`,
       recipeUpload
     );
-    console.log(recipeApi);
+    console.log(recipe);
+    state.recipe = createObjectRecipe(recipe);
+    console.log(state.recipe);
   } catch (err) {
     throw err;
   }
