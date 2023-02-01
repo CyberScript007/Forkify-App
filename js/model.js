@@ -39,6 +39,7 @@ export const fetchRecipe = async function (id) {
 
     // renaming the data
     state.recipe = createObjectRecipe(recipe);
+    console.log(createObjectRecipe(recipe));
 
     // setting bookmarked to true or false when the recipe data is been fetch
     if (state.bookmark.some(el => el.id === id)) {
