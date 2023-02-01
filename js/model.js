@@ -125,7 +125,9 @@ export const deleteBookmark = function (id) {
 
 export const uploadRecipe = async function (recipeUpload) {
   try {
-    const ingredients = Object.entries(recipeUpload);
+    const ingredients = Object.entries(recipeUpload).filter(el =>
+      el[0].startsWith('ingredients');
+    );
     console.log(ingredients);
   } catch (err) {
     throw err;
