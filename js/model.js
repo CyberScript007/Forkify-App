@@ -39,7 +39,6 @@ export const fetchRecipe = async function (id) {
 
     // renaming the data
     state.recipe = createObjectRecipe(recipe);
-    console.log(createObjectRecipe(recipe));
 
     // setting bookmarked to true or false when the recipe data is been fetch
     if (state.bookmark.some(el => el.id === id)) {
@@ -53,19 +52,22 @@ export const fetchRecipe = async function (id) {
 };
 
 // Consuming search input promise
-
 export const fetchSearchRecipe = async function (query) {
   try {
+    // 1) storing user input
     state.search.query = query;
+
+    // 2) using user input to fetch data from api
     const data = await helperFetchApi(
       `${API_URL}?search=${query}&key=${API_KEY}`
     );
 
+    // 3) destructing data
     const { recipes } = data.data;
     console.log(recipes);
 
+    // 4) reformating data recieved from api
     state.search.recipes = recipes.map(i => {
-      console.log(i);
       return {
         id: i.id,
         imageUrl: i.image_url,
@@ -74,6 +76,8 @@ export const fetchSearchRecipe = async function (query) {
         ...(i.key && { key: i.key }),
       };
     });
+
+    // 5) setting number of page to 1
     state.search.page = 1;
   } catch (err) {
     throw err;
@@ -82,15 +86,19 @@ export const fetchSearchRecipe = async function (query) {
 
 // pagination page
 export const getSearchResultPage = function (page = state.search.page) {
+  // 1) storing page value to state.search.page
   state.search.page = page;
+
+  // 2) the number the page will start from
   const start = (page - 1) * RES_PER_PAGE;
+
+  // 3) the number the  page will end at
   const end = page * RES_PER_PAGE;
 
   return state.search.recipes.slice(start, end);
 };
 
 // Update recipe servings
-
 export const updateServings = function (newServings) {
   state.recipe.ingredients.forEach(ing => {
     ing.quantity = (ing.quantity * newServings) / state.recipe.servings;
@@ -130,9 +138,9 @@ export const deleteBookmark = function (id) {
 };
 
 // uploading recipe
-
 export const uploadRecipe = async function (recipeData) {
   try {
+    // 1) formating ingredients Array to the format api will accept to send data
     const ingredients = Object.entries(recipeData)
       .filter(el => el[0].startsWith('ingredients') && el[1] !== '')
       .map(el => {
@@ -145,33 +153,46 @@ export const uploadRecipe = async function (recipeData) {
         return { quantity: quantity ? +quantity : null, unit, description };
       });
 
+    // 2) formating user input to the format api will accept to send data
     const recipeUploadData = {
-      cooking_time: recipeData.prep_time,
+      cooking_time: +recipeData.prep_time,
       image_url: recipeData.image_url,
-      servings: recipeData.servings,
+      servings: +recipeData.servings,
       title: recipeData.title,
       source_url: recipeData.url,
       publisher: recipeData.publisher,
       ingredients,
     };
+
+    // 3) storing data recieved from api
     const data = await helperFetchApi(
       `${API_URL}?key=${API_KEY}`,
       recipeUploadData
     );
+
+    // 4) destructing the data
     const { recipe } = data.data;
+
+    // 5) receate recipe object to format api will use to fetch the data
     state.recipe = createObjectRecipe(recipe);
+
+    // 6) bookmarking the recipe store in state.recipe object
     addBookmark(state.recipe);
   } catch (err) {
     throw err;
   }
 };
 
+// getting bookamrk data from local storage when the page load
 const init = function () {
+  // 1) storing bookmark data from local storage
   const storageData = localStorage.getItem('bookmark');
 
+  // 2) checking if the storageData is a falsy value and return immediately
   if (!storageData) return;
+
+  // 3) storing storageData to bookmark array
   state.bookmark = JSON.parse(storageData);
-  console.log(state.bookmark);
 };
 
 init();
