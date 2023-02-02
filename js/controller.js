@@ -108,7 +108,7 @@ const showRecipeUpload = async function (uploadData) {
     RecipeView.render(model.state.recipe);
 
     // Rendering uploadData to bookmark view
-    BookmarkView.render(model.state.bookmark);
+    // BookmarkView.render(model.state.bookmark);
 
     // Rendering success message
     ModalView.renderSuccessMessage();
