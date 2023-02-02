@@ -115,6 +115,9 @@ const showRecipeUpload = async function (uploadData) {
 
     //
     window.history.pushState(null, '', `#${model.state.recipe.id}`);
+    console.log(
+      window.history.pushState(null, '', `#${model.state.recipe.id}`)
+    );
   } catch (err) {
     ModalView.renderErrorMessage(err.message);
   }
