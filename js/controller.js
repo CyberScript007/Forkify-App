@@ -104,14 +104,14 @@ const showRecipeUpload = async function (uploadData) {
     // fetching uploadData from api
     await model.uploadRecipe(uploadData);
 
-    // Rendering success message
-    ModalView.renderSuccessMessage();
-
     // Rendering uploadData to User Interface
     RecipeView.render(model.state.recipe);
 
     // Rendering uploadData to bookmark view
     BookmarkView.render(model.state.bookmark);
+
+    // Rendering success message
+    ModalView.renderSuccessMessage();
   } catch (err) {
     ModalView.renderErrorMessage(err.message);
   }
