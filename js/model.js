@@ -68,6 +68,7 @@ export const fetchSearchRecipe = async function (query) {
         imageUrl: i.image_url,
         title: i.title,
         publisher: i.publisher,
+        ...(i.key && { key: i.key }),
       };
     });
     state.search.page = 1;
