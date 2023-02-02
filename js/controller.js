@@ -98,20 +98,20 @@ const bookmarkLocalStorageRecipe = function () {
 // Rendering recipe upload to view
 const showRecipeUpload = async function (uploadData) {
   try {
+    // Rendering spinner
+    ModalView.renderSpinner();
+
     // fetching uploadData from api
     await model.uploadRecipe(uploadData);
 
-    // Rendering spinner
-    ModalView.renderSpinner();
+    // Rendering success message
+    ModalView.renderSuccessMessage();
 
     // Rendering uploadData to User Interface
     RecipeView.render(model.state.recipe);
 
     // Rendering uploadData to bookmark view
     BookmarkView.render(model.state.bookmark);
-
-    // Rendering success message
-    // ModalView.renderSuccessMessage();
   } catch (err) {
     ModalView.renderErrorMessage(err.message);
   }
