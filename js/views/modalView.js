@@ -10,21 +10,21 @@ class ModalView extends View {
   constructor() {
     super();
     this._openModalWindow();
-    this.closeModalWindow();
+    this._closeModalWindow();
   }
 
-  _toggle() {
+  toggle() {
     this._overlay.classList.toggle('hidden');
     this._parentEl.classList.toggle('hidden');
   }
 
   _openModalWindow() {
-    this._openModalBtn.addEventListener('click', this._toggle.bind(this));
+    this._openModalBtn.addEventListener('click', this.toggle.bind(this));
   }
 
-  closeModalWindow() {
-    this._overlay.addEventListener('click', this._toggle.bind(this));
-    this._closeModalBtn.addEventListener('click', this._toggle.bind(this));
+  _closeModalWindow() {
+    this._overlay.addEventListener('click', this.toggle.bind(this));
+    this._closeModalBtn.addEventListener('click', this.toggle.bind(this));
   }
 
   getInputValueHandler(handler) {

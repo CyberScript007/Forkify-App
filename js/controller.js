@@ -119,7 +119,7 @@ const showRecipeUpload = async function (uploadData) {
 
     // close window modal
     setTimeout(function () {
-      ModalView.closeModalWindow();
+      ModalView.toggle();
     }, MODAL_CLOSE_SEC * 1000);
   } catch (err) {
     ModalView.renderErrorMessage(err.message);
