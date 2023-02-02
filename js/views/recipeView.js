@@ -1,7 +1,5 @@
 import icon from 'url:../../img/icons.svg';
 import View from './view';
-import Fraction from '../../node_modules/fractional';
-console.log(Fraction);
 
 // import { Fraction } from 'fractional';
 // console.log(Fraction);
