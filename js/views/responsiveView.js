@@ -1,9 +1,12 @@
+import { POPUP_CLOSE_SEC } from '../config';
+
 class ResponsiveView {
   #aside = document.querySelector('.recipe-item');
   #bookmark = document.querySelector('.bookmark');
   #popupClose = document.querySelector('.popup__close');
   #popup = document.querySelector('.popup');
   #recipeContainer = document.querySelector('.recipe__container');
+
   constructor() {
     // Hide recipe container when you click on back arrow
     this.#recipeContainer.addEventListener(
@@ -23,6 +26,8 @@ class ResponsiveView {
     window.addEventListener('load', this.#popupHandler.bind(this));
 
     this.#popupClose.addEventListener('click', this.#popupHandler.bind(this));
+
+    this.#popupTimeOutHandler();
   }
 
   #backArrowHandler(e) {
@@ -37,6 +42,10 @@ class ResponsiveView {
 
   #popupHandler() {
     this.#popup.classList.toggle('hidden');
+  }
+
+  #popupTimeOutHandler() {
+    setTimeout(this.#popupHandler, POPUP_CLOSE_SEC * 1000);
   }
 
   #asideHandler(e) {
