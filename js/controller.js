@@ -100,7 +100,7 @@ const showRecipeUpload = async function (uploadData) {
   try {
     await model.uploadRecipe(uploadData);
     RecipeView.render(model.state.recipe);
-    // BookmarkView.render(model.state.recipe);
+    BookmarkView.render(model.state.recipe);
   } catch (err) {
     ModalView.renderErrorMessage(err.message);
   }
