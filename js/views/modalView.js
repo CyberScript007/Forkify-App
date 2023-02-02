@@ -2,7 +2,7 @@ import View from './view';
 
 class ModalView extends View {
   _parentEl = document.querySelector('.modal');
-
+  _message = 'Your recipe is successfully uploaded';
   _overlay = document.querySelector('.overlay');
   _openModalBtn = document.querySelector('.add-recipe');
   _closeModalBtn = document.querySelector('.btn--close-modal');
