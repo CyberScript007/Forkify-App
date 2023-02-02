@@ -10,7 +10,7 @@ class ModalView extends View {
   constructor() {
     super();
     this._openModalWindow();
-    this._closeModalWindow();
+    this.closeModalWindow();
   }
 
   _toggle() {
@@ -22,7 +22,7 @@ class ModalView extends View {
     this._openModalBtn.addEventListener('click', this._toggle.bind(this));
   }
 
-  _closeModalWindow() {
+  closeModalWindow() {
     this._overlay.addEventListener('click', this._toggle.bind(this));
     this._closeModalBtn.addEventListener('click', this._toggle.bind(this));
   }

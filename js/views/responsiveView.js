@@ -1,5 +1,6 @@
 class ResponsiveView {
   #aside = document.querySelector('.recipe-item');
+  #bookmark = document.querySelector('.bookmark');
   #recipeContainer = document.querySelector('.recipe__container');
   constructor() {
     /**

@@ -1,4 +1,5 @@
 import * as model from './model.js';
+import { MODAL_CLOSE_SEC } from './config.js';
 
 import RecipeView from './views/recipeView.js';
 import SearchView from './views/searchView.js';
@@ -115,6 +116,11 @@ const showRecipeUpload = async function (uploadData) {
 
     // changing url to uploadData url
     window.history.pushState(null, '', `#${model.state.recipe.id}`);
+
+    // close window modal
+    setTimeout(function () {
+      ModalView.closeModalWindow();
+    }, MODAL_CLOSE_SEC * 1000);
   } catch (err) {
     ModalView.renderErrorMessage(err.message);
   }
