@@ -1,6 +1,8 @@
 class ResponsiveView {
   #aside = document.querySelector('.recipe-item');
   #bookmark = document.querySelector('.bookmark');
+  #popupClose = document.querySelector('.pop__close');
+  #popup = document.querySelector('.popup');
   #recipeContainer = document.querySelector('.recipe__container');
   constructor() {
     // Hide recipe container when you click on back arrow
@@ -17,6 +19,10 @@ class ResponsiveView {
     );
 
     this.#bookmark.addEventListener('click', this.#bookmarHandler.bind(this));
+
+    window.addEventListener('load', this.#popupHandler.bind(this));
+
+    this.#popupClose.addEventListener('click', this.#popupHandler.bind(this));
   }
 
   #backArrowHandler(e) {
@@ -27,6 +33,10 @@ class ResponsiveView {
       this.#recipeContainer.classList.remove('recipe-visible');
       this.#aside.classList.remove('sidebar-hidden');
     }
+  }
+
+  #popupHandler() {
+    this.#popup.classList.toggle('hidden');
   }
 
   #asideHandler(e) {
