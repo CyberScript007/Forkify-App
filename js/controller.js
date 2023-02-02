@@ -99,7 +99,7 @@ const bookmarkLocalStorageRecipe = function () {
 const showRecipeUpload = async function (uploadData) {
   try {
     // Rendering spinner
-    ModalView.renderSpinner();
+    // ModalView.renderSpinner();
 
     // fetching uploadData from api
     await model.uploadRecipe(uploadData);
