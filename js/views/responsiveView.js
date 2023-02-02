@@ -45,7 +45,7 @@ class ResponsiveView {
   }
 
   #popupTimeOutHandler() {
-    setTimeout(this.#popupHandler, POPUP_CLOSE_SEC * 1000);
+    setTimeout(this.#popupHandler.bind(this), POPUP_CLOSE_SEC * 1000);
   }
 
   #asideHandler(e) {
