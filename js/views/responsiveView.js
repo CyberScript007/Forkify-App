@@ -8,25 +8,30 @@ class ResponsiveView {
   #recipeContainer = document.querySelector('.recipe__container');
 
   constructor() {
-    // Hide recipe container when you click on back arrow
+    // to invoke back arrow handler
     this.#recipeContainer.addEventListener(
       'click',
       this.#backArrowHandler.bind(this)
     );
 
-    //  Hide recipe-item container when you click on recipe-item__link
+    //  to invoke aside handler
     this.#aside.addEventListener('click', this.#asideHandler.bind(this));
 
+    // invoking two events on window handler
     ['load', 'resize'].forEach(i =>
       window.addEventListener(i, this.#windowHandler.bind(this))
     );
 
+    // to invoke bookmark handler
     this.#bookmark.addEventListener('click', this.#bookmarHandler.bind(this));
 
+    // to invoke popup  handler when page load
     window.addEventListener('load', this.#popupHandler.bind(this));
 
+    // to invoke popup  handler when click on popup close button
     this.#popupClose.addEventListener('click', this.#popupHandler.bind(this));
 
+    // to execute popup handler in setimeout function
     this.#popupTimeOutHandler();
   }
 
