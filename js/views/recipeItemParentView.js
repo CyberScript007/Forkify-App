@@ -26,7 +26,9 @@ class RecipeItemParentView extends View {
                   : this._data.title)} </h4>
                 <div class="recipe-item__info">
                   <p class="recipe-item__text">${this._data.publisher}</p>
-                  <div class="recipe-item__user hidden">
+                  <div class="recipe-item__user ${
+                    this._data.key ? '' : 'hidden'
+                  }">
                     <svg class="icon--grey recipe-item__user-icon">
                       <use xlink:href="${icon}#icon-user"></use>
                     </svg>
