@@ -43,7 +43,7 @@ class ResponsiveView {
     const link = e.target.closest('.link');
     if (!link) return;
     if (window.innerWidth <= Number.parseInt('1073px')) {
-      this.#aside.classList.add('hidden');
+      this.#aside.classList.add('sidebar-hidden');
       this.#recipeContainer.classList.remove('recipe-hidden');
       this.#recipeContainer.classList.add('recipe-visible');
     }
