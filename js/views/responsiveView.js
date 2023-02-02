@@ -1,7 +1,7 @@
 class ResponsiveView {
   #aside = document.querySelector('.recipe-item');
   #bookmark = document.querySelector('.bookmark');
-  #popupClose = document.querySelector('.pop__close');
+  #popupClose = document.querySelector('.popup__close');
   #popup = document.querySelector('.popup');
   #recipeContainer = document.querySelector('.recipe__container');
   constructor() {
