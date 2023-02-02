@@ -112,6 +112,9 @@ const showRecipeUpload = async function (uploadData) {
 
     // Rendering uploadData to bookmark view
     BookmarkView.render(model.state.bookmark);
+
+    //
+    window.history.pushState(null, '', `#${model.state.recipe.id}`);
   } catch (err) {
     ModalView.renderErrorMessage(err.message);
   }
